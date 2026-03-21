@@ -53,29 +53,25 @@ function setTheme(isDark) {
     if (isDark) {
         document.body.classList.add('dark-mode');
         themeCheckbox.checked = true;
+        localStorage.setItem('theme', 'dark');
     } else {
         document.body.classList.remove('dark-mode');
         themeCheckbox.checked = false;
+        localStorage.setItem('theme', 'light');
     }
 }
 
-function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+// Check saved state or system default
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedTheme === 'dark') {
-        setTheme(true);
-    } else if (savedTheme === 'light') {
-        setTheme(false);
-    } else {
-        setTheme(systemPrefersDark);
-    }
+if (savedTheme) {
+    setTheme(savedTheme === 'dark');
+} else {
+    setTheme(systemPrefersDark);
 }
 
-initTheme();
-
+// The Trigger
 themeCheckbox.addEventListener('change', () => {
-    const isNowDark = themeCheckbox.checked;
-    setTheme(isNowDark);
-    localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
+    setTheme(themeCheckbox.checked);
 });
