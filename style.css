@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box; /* This prevents padding from adding to width */
+}
+
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -8,8 +12,10 @@
 }
 
 html, body {
-    max-width: 100%;
+    max-width: 100vw;
     overflow-x: hidden; 
+    margin: 0;
+    padding: 0;
     position: relative;
 }
 
@@ -41,7 +47,8 @@ body {
     grid-template-columns: 1fr 4.5fr 1fr; 
     gap: 15px;
     width: 100%;
-    max-width: 1400px;
+    max-width: 100vw;
+    overflow-x: hidden;
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
@@ -61,6 +68,8 @@ body {
 }
 
 .ticker-zone {
+    width: 100%;
+    max-width: 100vw;
     grid-column: 1 / 4;
     background: var(--accent);
     color: var(--header-text);
