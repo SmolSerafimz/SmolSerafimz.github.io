@@ -4,6 +4,7 @@
     --text-color: #333333;
     --box-bg: #fafafa;
     --accent: #000000;
+    --header-text: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,7 @@
         --text-color: #e0e0e0;
         --box-bg: #001d3d; /* Deeper blue for boxes */
         --accent: #ffc300; /* Gold/Apricot accent */
+        --header-text: #000000;
     }
 }
 
@@ -84,7 +86,7 @@ body {
 
 .box-header {
     background-color: var(--accent);
-    color: #000;
+    color: var(--header-text);
     margin: -15px -15px 15px -15px; 
     padding: 5px 10px;
     font-weight: bold;
