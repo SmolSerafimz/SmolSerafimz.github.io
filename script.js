@@ -3,46 +3,55 @@ function createStars() {
     const ctx = canvas.getContext('2d');
     const container = document.getElementById('star-container');
     
-    // Match canvas to window size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     container.appendChild(canvas);
 
     const stars = [];
-    const starCount = window.innerWidth < 768 ? 50 : 150;
+    const starCount = window.innerWidth < 768 ? 30 : 100; // Lowered for sanity
 
     for (let i = 0; i < starCount; i++) {
         stars.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            size: Math.random() * 2 + 1,
+            size: Math.random() * 1.5 + 0.5, // Smaller stars are cheaper
             opacity: Math.random(),
-            speed: Math.random() * 0.02 + 0.005
+            speed: Math.random() * 0.01 + 0.002 // Slower twinkle
         });
     }
 
-    function draw() {
-        if (getComputedStyle(container).visibility === 'hidden') {
+    let lastTime = 0;
+    function draw(timestamp) {
+        // 1. HARD STOP: Check if we are in Light Mode
+        if (!document.body.classList.contains('dark-mode')) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             requestAnimationFrame(draw);
-            return; // Don't draw if in Light Mode
+            return;
         }
+
+        // 2. FRAME THROTTLE: Only update every ~33ms (30 FPS)
+        if (timestamp - lastTime < 33) {
+            requestAnimationFrame(draw);
+            return;
+        }
+        lastTime = timestamp;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "white";
 
-        stars.forEach(star => {
+        for (let i = 0; i < stars.length; i++) {
+            const star = stars[i];
             star.opacity += star.speed;
             if (star.opacity > 1 || star.opacity < 0) star.speed *= -1;
             
             ctx.globalAlpha = Math.max(0, star.opacity);
-            ctx.beginPath();
-            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-            ctx.fill();
-        });
+            // Using fillRect (square pixels) is significantly faster than arc (circles)
+            ctx.fillRect(star.x, star.y, star.size, star.size);
+        }
 
         requestAnimationFrame(draw);
     }
-    draw();
+    requestAnimationFrame(draw);
 }
 
 // Fire the engines when the page loads
