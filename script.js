@@ -1,6 +1,7 @@
 function createStars() {
     const container = document.getElementById('star-container');
-    const starCount = 150; // Adjust for density
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 40 : 150;
 
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
