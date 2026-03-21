@@ -59,17 +59,26 @@ function setTheme(isDark) {
     }
 }
 
+// 1. Check for saved preference, otherwise check system setting
 const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const systemQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    setTheme(true);
+if (savedTheme) {
+    setTheme(savedTheme === 'dark');
 } else {
-    setTheme(false);
+    setTheme(systemQuery.matches);
 }
 
+// 2. LISTEN for manual toggle
 themeCheckbox.addEventListener('change', () => {
     const isNowDark = themeCheckbox.checked;
     setTheme(isNowDark);
     localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
+});
+
+// 3. LISTEN for system-level changes (e.g., sunset/sunrise mode)
+systemQuery.addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) { // Only auto-switch if user hasn't picked a side
+        setTheme(e.matches);
+    }
 });
