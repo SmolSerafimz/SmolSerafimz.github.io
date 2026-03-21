@@ -36,13 +36,6 @@ body {
     visibility: var(--star-visibility);
 }
 
-.star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle var(--duration) infinite ease-in-out;
-}
-
 .site-wrapper {
     display: grid;
     grid-template-columns: 1fr 4.5fr 1fr; 
@@ -85,7 +78,7 @@ body {
 }
 
 @keyframes marquee {
-    from { transform: translateX(100vw); }
+    from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
 }
 
@@ -274,18 +267,5 @@ body.dark-mode {
     }
     .header-banner, .ticker-zone {
         grid-column: 1;
-    }
-}
-
-@keyframes twinkle {
-    0%, 100% { 
-        opacity: 0.3; 
-        transform: scale(1); 
-        box-shadow: 0 0 2px white; 
-    }
-    50% { 
-        opacity: 1; 
-        transform: scale(1.2); 
-        box-shadow: 0 0 8px white; 
     }
 }
