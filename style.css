@@ -2,7 +2,7 @@
     /* Light Mode (Normal) */
     --bg-color: #ffffff;
     --text-color: #333333;
-    --box-bg: #fafafa;
+    --box-bg: #f8f9fa;
     --accent: #ffc300;
     --header-text: #ffffff;
 }
@@ -51,8 +51,8 @@ body {
 
 .ticker-zone {
     grid-column: 1 / 4;
-    background: #000;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
     overflow: hidden;
     white-space: nowrap;
     padding: 8px 0;
