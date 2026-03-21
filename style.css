@@ -24,7 +24,7 @@ body {
     background-image: var(--bg-img);
     background-repeat: repeat;
     background-attachment: fixed;
-    background-size: 200px;
+    background-size: 50px;
     color: var(--text-color);
     font-family: sans-serif;
     margin: 0;
