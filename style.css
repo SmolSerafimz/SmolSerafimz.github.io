@@ -1,9 +1,11 @@
 :root {
+    /* Light Mode (Normal) */
     --bg-color: #ffffff;
     --text-color: #333333;
     --box-bg: #F0F0F0;
     --accent: #ffc300;
     --header-text: #ffffff;
+    --bg-img: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,16 +15,21 @@
         --box-bg: #001d3d;
         --accent: #ffc300;
         --header-text: #000000;
+        --bg-img: url('assets/bg.webp');
     }
 }
 
 body {
     background-color: var(--bg-color);
+    background-image: var(--bg-img);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 200px;
     color: var(--text-color);
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .site-wrapper {
@@ -39,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px 0;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--accent);
 }
 
 .logo {
