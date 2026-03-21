@@ -7,15 +7,13 @@
     --star-visibility: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #000814;
-        --text-color: #e0e0e0;
-        --box-bg: #001d3d;
-        --accent: #ffc300;
-        --header-text: #000000;
-        --star-visibility: visible;
-    }
+body.dark-mode {
+    --bg-color: #000814;
+    --text-color: #e0e0e0;
+    --box-bg: #001d3d;
+    --accent: #ffc300;
+    --header-text: #000000;
+    --star-visibility: visible;
 }
 
 body {
