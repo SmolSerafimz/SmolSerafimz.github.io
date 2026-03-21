@@ -94,6 +94,12 @@ body {
     letter-spacing: 1px;
 }
 
+.centered-header {
+    text-align: center;
+    border-bottom: 1px solid var(--accent); /* Optional: Adds a 'underline' divider */
+    padding-bottom: 10px;
+}
+
 .nav-links {
     list-style: none;
     padding: 0;
