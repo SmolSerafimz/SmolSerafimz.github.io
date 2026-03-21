@@ -7,13 +7,10 @@
     --star-visibility: hidden;
 }
 
-body.dark-mode {
-    --bg-color: #000814;
-    --text-color: #e0e0e0;
-    --box-bg: #001d3d;
-    --accent: #ffc300;
-    --header-text: #000000;
-    --star-visibility: visible;
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; 
+    position: relative;
 }
 
 body {
@@ -29,9 +26,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
+    pointer-events: none;
     /* Uses the variable for background so Light Mode stays white */
     background: var(--bg-color); 
     overflow: hidden;
@@ -49,9 +47,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 4.5fr 1fr; 
     gap: 15px;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .header-banner {
