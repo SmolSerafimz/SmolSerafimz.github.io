@@ -6,6 +6,11 @@
     --accent: #ffc300;
     --header-text: #ffffff;
     --bg-img: none;
+    @media (prefers-color-scheme: light) {
+    #star-container {
+        display: none; /* Deactivates the stars during the day */
+    }
+}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +35,24 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: #000814;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite ease-in-out;
 }
 
 .site-wrapper {
@@ -143,5 +166,18 @@ body {
     }
     .header-banner, .ticker-zone {
         grid-column: 1;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+        box-shadow: 0 0 2px white; 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2); 
+        box-shadow: 0 0 8px white; 
     }
 }
