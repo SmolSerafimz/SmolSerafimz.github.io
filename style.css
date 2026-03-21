@@ -262,12 +262,12 @@ input:checked + .slider:before {
 }
 
 body.dark-mode {
-    --bg-color: #000814;
-    --text-color: #e0e0e0;
-    --box-bg: #001d3d;
-    --accent: #ffc300;
-    --header-text: #000000;
-    --star-visibility: visible;
+    --bg-color: #000814 !important;
+    --text-color: #e0e0e0 !important;
+    --box-bg: #001d3d !important;
+    --accent: #ffc300 !important;
+    --header-text: #000000 !important;
+    --star-visibility: visible !important;
 }
 
 @media (max-width: 1024px) {
