@@ -210,39 +210,64 @@ body {
     box-shadow: 0 0 10px var(--accent);
 }
 
-.theme-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 10px 0;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
 }
 
-.theme-btn {
-    background: var(--accent); /* Makes the button pop like a Gold switch */
-    border: none;
-    color: var(--header-text);
-    padding: 8px 12px;
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The actual slider track */
+.slider {
+    position: absolute;
     cursor: pointer;
-    border-radius: 20px; /* Rounded pill shape for the toggle */
-    font-size: 1.1rem;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.2); /* 3D Button feel */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Grey when 'Off' (Day) */
+    transition: .4s;
+    border-radius: 34px;
 }
 
-.theme-btn:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+/* The circle inside the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
 }
 
-.theme-btn:hover {
-    box-shadow: 0 0 15px var(--accent);
+/* When checked (Night), change track to Gold */
+input:checked + .slider {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+/* When checked, move the circle to the right */
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+body.dark-mode {
+    --bg-color: #000814;
+    --text-color: #e0e0e0;
+    --box-bg: #001d3d;
+    --accent: #ffc300;
+    --header-text: #000000;
+    --star-visibility: visible;
 }
 
 @media (max-width: 1024px) {
