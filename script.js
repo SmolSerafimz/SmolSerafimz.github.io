@@ -31,19 +31,27 @@ window.onload = createStars;
 
 const themeCheckbox = document.getElementById('theme-checkbox');
 
-themeCheckbox.addEventListener('change', () => {
-    if (themeCheckbox.checked) {
+function setTheme(isDark) {
+    if (isDark) {
         document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
+        themeCheckbox.checked = true;
     } else {
         document.body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
+        themeCheckbox.checked = false;
     }
-});
-
-// Check for saved preference on load
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeCheckbox.checked = true; // Make sure the toggle is on the right
 }
+
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    setTheme(true);
+} else {
+    setTheme(false);
+}
+
+themeCheckbox.addEventListener('change', () => {
+    const isNowDark = themeCheckbox.checked;
+    setTheme(isNowDark);
+    localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
+});
