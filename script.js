@@ -21,35 +21,37 @@ function createStars() {
     }
 
 let lastTime = 0;
-    function draw(timestamp) {
-        // 1. SMART STOP: If Light Mode, sleep for 1000ms (1 second) instead of 16ms
+function draw() {
+        // 1. If Light Mode: Wipe, Wait, and Re-check
         if (!document.body.classList.contains('dark-mode')) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            setTimeout(() => requestAnimationFrame(draw), 1000); 
+            setTimeout(() => requestAnimationFrame(draw), 500); // Check every half-second
             return;
         }
 
-        // 2. FRAME THROTTLE: Only update every ~33ms (30 FPS)
-        if (timestamp - lastTime < 33) {
-            requestAnimationFrame(draw);
-            return;
-        }
-        lastTime = timestamp;
-
+        // 2. Clear and Draw Stars
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "white";
 
         for (let i = 0; i < stars.length; i++) {
             const star = stars[i];
             star.opacity += star.speed;
-            if (star.opacity > 1 || star.opacity < 0) star.speed *= -1;
             
-            ctx.globalAlpha = Math.max(0, star.opacity);
+            // Reverse twinkle direction
+            if (star.opacity > 1 || star.opacity < 0) {
+                star.speed *= -1;
+            }
+            
+            ctx.globalAlpha = Math.max(0, Math.min(1, star.opacity));
             ctx.fillRect(star.x, star.y, star.size, star.size);
         }
 
+        // 3. Run at standard speed while in Dark Mode
         requestAnimationFrame(draw);
     }
+    
+    // Initial kickstart
+    requestAnimationFrame(draw);
 
 // Fire the engines when the page loads
 window.onload = createStars;
