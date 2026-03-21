@@ -1,5 +1,4 @@
 :root {
-    /* Light Mode (Normal) */
     --bg-color: #ffffff;
     --text-color: #333333;
     --box-bg: #F0F0F0;
@@ -9,11 +8,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Dark Mode (Midnight Blue) */
-        --bg-color: #000814; /* Midnight Blue */
+        --bg-color: #000814;
         --text-color: #e0e0e0;
-        --box-bg: #001d3d; /* Deeper blue for boxes */
-        --accent: #ffc300; /* Gold/Apricot accent */
+        --box-bg: #001d3d;
+        --accent: #ffc300;
         --header-text: #000000;
     }
 }
@@ -24,7 +22,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease;
 }
 
 .site-wrapper {
@@ -95,9 +93,14 @@ body {
     letter-spacing: 1px;
 }
 
+.featured-content {
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(255, 195, 0, 0.1);
+}
+
 .centered-header {
     text-align: center;
-    border-bottom: 1px solid var(--accent); /* Optional: Adds a 'underline' divider */
+    border-bottom: 1px solid var(--accent);
     padding-bottom: 10px;
 }
 
