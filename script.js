@@ -20,12 +20,12 @@ function createStars() {
         });
     }
 
-    let lastTime = 0;
+let lastTime = 0;
     function draw(timestamp) {
-        // 1. HARD STOP: Check if we are in Light Mode
+        // 1. SMART STOP: If Light Mode, sleep for 1000ms (1 second) instead of 16ms
         if (!document.body.classList.contains('dark-mode')) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            requestAnimationFrame(draw);
+            setTimeout(() => requestAnimationFrame(draw), 1000); 
             return;
         }
 
@@ -45,14 +45,11 @@ function createStars() {
             if (star.opacity > 1 || star.opacity < 0) star.speed *= -1;
             
             ctx.globalAlpha = Math.max(0, star.opacity);
-            // Using fillRect (square pixels) is significantly faster than arc (circles)
             ctx.fillRect(star.x, star.y, star.size, star.size);
         }
 
         requestAnimationFrame(draw);
     }
-    requestAnimationFrame(draw);
-}
 
 // Fire the engines when the page loads
 window.onload = createStars;
