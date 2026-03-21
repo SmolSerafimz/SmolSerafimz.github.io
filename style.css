@@ -1,10 +1,28 @@
+:root {
+    /* Light Mode (Normal) */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --box-bg: #fafafa;
+    --accent: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode (Midnight Blue) */
+        --bg-color: #000814; /* Midnight Blue */
+        --text-color: #e0e0e0;
+        --box-bg: #001d3d; /* Deeper blue for boxes */
+        --accent: #ffc300; /* Gold/Apricot accent */
+    }
+}
+
 body {
-    background-color: #ffffff;
-    color: #333333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    display: block;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .site-wrapper {
@@ -57,9 +75,9 @@ body {
 }
 
 .box {
-    border: 1px solid #333;
+    border: 1px solid var(--text-color);
     padding: 15px;
-    background: #fafafa;
+    background: var(--box-bg);
     text-align: left;
 }
 
