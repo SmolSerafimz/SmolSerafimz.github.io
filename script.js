@@ -8,50 +8,41 @@ function createStars() {
     container.appendChild(canvas);
 
     const stars = [];
-    const starCount = window.innerWidth < 768 ? 30 : 100; // Lowered for sanity
+    const starCount = window.innerWidth < 768 ? 30 : 100;
 
     for (let i = 0; i < starCount; i++) {
         stars.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            size: Math.random() * 1.5 + 0.5, // Smaller stars are cheaper
+            size: Math.random() * 1.5 + 0.5,
             opacity: Math.random(),
-            speed: Math.random() * 0.01 + 0.002 // Slower twinkle
+            speed: Math.random() * 0.01 + 0.002
         });
     }
 
-let lastTime = 0;
-function draw() {
-        // 1. If Light Mode: Wipe, Wait, and Re-check
+    function draw() {
         if (!document.body.classList.contains('dark-mode')) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            setTimeout(() => requestAnimationFrame(draw), 500); // Check every half-second
+            setTimeout(() => requestAnimationFrame(draw), 500);
             return;
         }
 
-        // 2. Clear and Draw Stars
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "white";
 
         for (let i = 0; i < stars.length; i++) {
             const star = stars[i];
             star.opacity += star.speed;
-            
-            // Reverse twinkle direction
             if (star.opacity > 1 || star.opacity < 0) {
                 star.speed *= -1;
             }
-            
             ctx.globalAlpha = Math.max(0, Math.min(1, star.opacity));
             ctx.fillRect(star.x, star.y, star.size, star.size);
         }
-
-        // 3. Run at standard speed while in Dark Mode
         requestAnimationFrame(draw);
     }
-    
-    // Initial kickstart
     requestAnimationFrame(draw);
+} // <--- THIS WAS THE MISSING BRACKET THAT KILLED THE THEME
 
 // Fire the engines when the page loads
 window.onload = createStars;
