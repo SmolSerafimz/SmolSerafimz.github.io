@@ -1,30 +1,48 @@
 function createStars() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     const container = document.getElementById('star-container');
-    const isMobile = window.innerWidth < 768;
-    const starCount = isMobile ? 40 : 150;
+    
+    // Match canvas to window size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    container.appendChild(canvas);
+
+    const stars = [];
+    const starCount = window.innerWidth < 768 ? 50 : 150;
 
     for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        
-        // Randomize position
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        
-        // Randomize size (1px to 3px)
-        const size = Math.random() * 2 + 1;
-        
-        // Randomize twinkle speed
-        const duration = Math.random() * 3 + 2;
-
-        star.style.left = `${x}%`;
-        star.style.top = `${y}%`;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.setProperty('--duration', `${duration}s`);
-
-        container.appendChild(star);
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 1,
+            opacity: Math.random(),
+            speed: Math.random() * 0.02 + 0.005
+        });
     }
+
+    function draw() {
+        if (getComputedStyle(container).visibility === 'hidden') {
+            requestAnimationFrame(draw);
+            return; // Don't draw if in Light Mode
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "white";
+
+        stars.forEach(star => {
+            star.opacity += star.speed;
+            if (star.opacity > 1 || star.opacity < 0) star.speed *= -1;
+            
+            ctx.globalAlpha = Math.max(0, star.opacity);
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+    }
+    draw();
 }
 
 // Fire the engines when the page loads
