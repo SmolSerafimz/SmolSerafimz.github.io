@@ -28,3 +28,22 @@ function createStars() {
 
 // Fire the engines when the page loads
 window.onload = createStars;
+
+const themeCheckbox = document.getElementById('theme-checkbox');
+
+themeCheckbox.addEventListener('change', () => {
+    if (themeCheckbox.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// Check for saved preference on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeCheckbox.checked = true; // Make sure the toggle is on the right
+}
