@@ -51,11 +51,12 @@ body {
 
 .ticker-zone {
     grid-column: 1 / 4;
-    background: #ffffff;
-    color: #000000;
+    background: var(--accent);
+    color: var(--header-text);
     overflow: hidden;
     white-space: nowrap;
     padding: 8px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ticker-text {
