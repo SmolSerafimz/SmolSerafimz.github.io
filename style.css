@@ -89,7 +89,7 @@ body.dark-mode {
     padding-left: 100%; /* Forces the text to start completely off-screen to the right */
     font-weight: bold;
     text-transform: uppercase;
-    animation: marquee 15s linear infinite; /* Adjusted speed for readability */
+    animation: marquee 20s linear infinite; /* Adjusted speed for readability */
 }
 
 @keyframes marquee {
