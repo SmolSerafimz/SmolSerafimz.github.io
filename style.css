@@ -165,6 +165,18 @@ body.dark-mode {
     margin: 15px 0;
 }
 
+.quote-box {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-left: 4px solid var(--accent);
+}
+
+.quote-box p {
+    margin: 10px 0;
+}
+
 .dot {
     display: inline-block;
     width: 14px;
