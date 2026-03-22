@@ -173,13 +173,29 @@ body.dark-mode {
 .quote-box p {
     margin: 10px 0;
     font-style: italic;
-}
-    
+} /* SEALED */
+
 .quote-box small {
     display: block;
     text-align: right;
     font-style: italic;
     opacity: 0.8;
+}
+
+/* --- THEME CONTROLS ALIGNMENT --- */
+.theme-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.theme-controls span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .dot {
