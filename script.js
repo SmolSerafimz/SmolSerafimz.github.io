@@ -42,9 +42,8 @@ function createStars() {
         requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
-} // <--- THIS WAS THE MISSING BRACKET THAT KILLED THE THEME
+}
 
-// Fire the engines when the page loads
 window.onload = createStars;
 
 const themeCheckbox = document.getElementById('theme-checkbox');
@@ -61,7 +60,6 @@ function setTheme(isDark) {
     }
 }
 
-// Check saved state or system default
 const savedTheme = localStorage.getItem('theme');
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -71,7 +69,6 @@ if (savedTheme) {
     setTheme(systemPrefersDark);
 }
 
-// The Trigger
 themeCheckbox.addEventListener('change', () => {
     setTheme(themeCheckbox.checked);
 });
