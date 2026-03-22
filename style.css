@@ -22,10 +22,17 @@ html, body {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Adding a transition ensures a smooth shift, not a jarring flash */
+    transition: background-color 0.4s ease; 
+}
+
+body.dark-mode {
+    --bg-color: #000814;
+    --text-color: #e0e0e0;
+    --box-bg: #001d3d;
+    --accent: #ffc300;
+    --header-text: #000000;
+    --star-visibility: visible;
 }
 
 #star-container {
@@ -36,8 +43,8 @@ body {
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    /* Uses the variable for background so Light Mode stays white */
-    background: var(--bg-color); 
+    /* Remove fixed background here so it doesn't block the body */
+    background: transparent; 
     overflow: hidden;
     visibility: var(--star-visibility);
 }
@@ -277,4 +284,20 @@ body.dark-mode {
         width: 100%;
         padding: 5px;
     }
+
+    body {
+    background-color: #ffffff !important; /* Force white on Android */
+    color: #333333;
+}
+
+/* Explicit Dark Mode */
+body.dark-mode {
+    background-color: #000814 !important; /* Force dark on Android */
+    color: #e0e0e0;
+}
+
+/* Ensure the star container doesn't have a 'ghost' background */
+#star-container {
+    background-color: transparent !important;
+}
 }
