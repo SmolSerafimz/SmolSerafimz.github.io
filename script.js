@@ -1,3 +1,20 @@
+const comicData = {
+    "001": {
+        title: "Episode 1 Name",
+        image: "assets/ep001_web.webp",
+        panels: 4,
+        about: "Info about this episode.",
+        stats: { like: 12, love: 45, laugh: 5, shock: 2, sad: 0, fire: 28 }
+    },
+    "002": {
+        title: "Episode 2 Name",
+        image: "assets/ep002_web.webp",
+        panels: 3,
+        about: "Info about this episode too.",
+        stats: { like: 8, love: 20, laugh: 2, shock: 0, sad: 1, fire: 15 }
+    }
+};
+
 function createStars() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
