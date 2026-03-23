@@ -7,6 +7,11 @@ function createStars() {
     canvas.height = window.innerHeight;
     container.appendChild(canvas);
 
+    window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    });
+
     const stars = [];
     const starCount = window.innerWidth < 768 ? 30 : 100;
 
@@ -69,6 +74,26 @@ if (savedTheme) {
     setTheme(systemPrefersDark);
 }
 
-themeCheckbox.addEventListener('change', () => {
-    setTheme(themeCheckbox.checked);
+if (themeCheckbox) {
+    themeCheckbox.addEventListener('change', () => {
+        setTheme(themeCheckbox.checked);
+    });
+}
+
+const reactionBtns = document.querySelectorAll('.reaction-btn');
+
+reactionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove 'selected' from all other buttons in the bar
+        reactionBtns.forEach(b => b.classList.remove('selected'));
+        
+        // Add 'selected' to the one you just clicked
+        btn.classList.add('selected');
+        
+        // Add a small 'thump' animation effect
+        btn.style.transform = "scale(1.3)";
+        setTimeout(() => {
+            btn.style.transform = "";
+        }, 150);
+    });
 });
