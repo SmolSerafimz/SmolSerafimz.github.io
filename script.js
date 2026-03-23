@@ -151,3 +151,9 @@ reactionBtns.forEach(btn => {
         }, 150);
     });
 });
+
+const episodeKeys = Object.keys(comicData); 
+
+const latestEp = Math.max(...episodeKeys.map(Number));
+
+loadEpisode(latestEp.toString());
