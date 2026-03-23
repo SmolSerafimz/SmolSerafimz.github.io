@@ -1,21 +1,21 @@
 const comicData = {
     "001": {
         title: "Episode 1 Name",
-        image: "assets/ep001_web.webp",
+        image: "assets/001_1.webp",
         panels: 4,
         about: "Info about this episode.",
         stats: { like: 12, love: 45, laugh: 5, shock: 2, sad: 0, fire: 28 }
     },
     "002": {
         title: "Episode 2 Name",
-        image: "assets/ep002_web.webp",
+        image: "assets/002_1.webp",
         panels: 3,
         about: "Info about this episode too.",
         stats: { like: 8, love: 20, laugh: 2, shock: 0, sad: 1, fire: 15 }
-    }
-    "002": {
+    },
+    "003": {
         title: "Episode 3 Name",
-        image: "assets/ep003_web.webp",
+        image: "assets/003_1.webp",
         panels: 3,
         about: "Info about this episode as well",
         stats: { like: 4, love: 23, laugh: 4, shock: 0, sad: 2, fire: 56 }
@@ -23,33 +23,36 @@ const comicData = {
 };
 
 function loadEpisode(epNumber) {
+    // Ensure epNumber is a string to match keys like "001"
     const data = comicData[epNumber];
-    
-    // 1. Safety Check: If data doesn't exist, don't stall the rig
-    if (!data) {
-        console.error("Episode " + epNumber + " not found in the Archive DNA.");
-        return;
-    }
+    if (!data) return;
 
-    // 2. Update the Title & Image
+    document.querySelector('.ticker-text').innerText = `LATEST NEWS: Episode ${epNumber} - ${data.title} IS NOW LIVE!`;
+
+    // Reset view to first panel when an episode loads
     document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
-    document.getElementById('main-comic-display').src = data.image;
-
-    // 3. Update the 'About' text
+    document.getElementById('main-comic-display').src = data.image; // Loads the default image from DNA
     document.getElementById('episode-about-text').innerHTML = `<p>${data.about}</p>`;
 
-    // 4. Regenerate the Panel Dots
     const dotContainer = document.getElementById('panel-dots');
-    dotContainer.innerHTML = ''; // Clear old dots
+    dotContainer.innerHTML = ''; 
     
     for (let i = 0; i < data.panels; i++) {
         const dot = document.createElement('span');
-        dot.className = i === 0 ? 'dot active' : 'dot'; // First dot is active
+        const panelNumber = i + 1; // Creates 1, 2, 3...
+        dot.className = (i === 0) ? 'dot active' : 'dot';
+        
+        dot.onclick = function() {
+            // THE WELD: This now actually swaps the image!
+            document.getElementById('main-comic-display').src = `assets/${epNumber}_${panelNumber}.webp`;
+            
+            // Visual feedback: Move the 'active' class
+            document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+        };
+
         dotContainer.appendChild(dot);
     }
-
-    // 5. Update Reaction Counts (If we decide to show them)
-    // We'll wire the actual 'Number' display once the UI for counts is 100% sealed
 }
 
 function createStars() {
@@ -134,26 +137,32 @@ if (themeCheckbox) {
     });
 }
 
-const reactionBtns = document.querySelectorAll('.reaction-btn');
-
-reactionBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove 'selected' from all other buttons in the bar
-        reactionBtns.forEach(b => b.classList.remove('selected'));
-        
-        // Add 'selected' to the one you just clicked
-        btn.classList.add('selected');
-        
-        // Add a small 'thump' animation effect
-        btn.style.transform = "scale(1.3)";
-        setTimeout(() => {
-            btn.style.transform = "";
-        }, 150);
-    });
-});
-
 const episodeKeys = Object.keys(comicData); 
 
 const latestEp = Math.max(...episodeKeys.map(Number));
 
+const paddedEp = latestEp.toString().padStart(3, '0');
+
 loadEpisode(latestEp.toString());
+
+const worldQuotes = [
+    { text: "Test quote 3.", author: "Heh" },
+    { text: "Test quote 4", author: "Haha" },
+    { text: "Test quote 2.", author: "Giggle" },
+    { text: "Test quote 1.", author: "Funny" }
+];
+
+function setDailyQuote() {
+    const quoteElement = document.getElementById('daily-quote');
+    const authorElement = document.querySelector('.quote-box small');
+    
+    // Pick a random index from the Quote DNA
+    const randomIndex = Math.floor(Math.random() * worldQuotes.length);
+    const selected = worldQuotes[randomIndex];
+
+    quoteElement.innerText = `"${selected.text}"`;
+    authorElement.innerText = `— ${selected.author}`;
+}
+
+// Add this to your window.addEventListener('load', ...) or just call it:
+setDailyQuote();
