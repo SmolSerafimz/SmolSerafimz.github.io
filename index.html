@@ -78,10 +78,10 @@
                     <button class="reaction-btn" title="Sad">😢</button>
                     <button class="reaction-btn" title="Fire">🔥</button>
                 </div>
-                
-            </div>
-            <div class="box">
                 <h2 class="centered-header">About Episode</h2>
+                <div id="episode-about-text" class="episode-lore-box">
+                    <p>Welcome to the latest entry in the chronicle...</p>
+                </div>
             </div>
         </main>
 
@@ -89,9 +89,9 @@
             <div class="box">
                 <div class="box-header">ARCHIVE</div>
                 <ul class="nav-links">
-                    <li><a href="#">Episode 001</a></li>
-                    <li><a href="#">Episode 002</a></li>
-                    <li><a href="#">Episode 003</a></li>
+                    <li><a href="#" onclick="loadEpisode('001'); return false;">Episode 001</a></li>
+                    <li><<a href="#" onclick="loadEpisode('002'); return false;">Episode 002</a></li>
+                    <li><<a href="#" onclick="loadEpisode('003'); return false;">Episode 003</a></li>
                 </ul>
             </div>
         </aside>
