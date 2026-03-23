@@ -339,15 +339,6 @@ input:checked + .slider:before {
     transform: translateX(24px);
 }
 
-body.dark-mode {
-    --bg-color: #000814;
-    --text-color: #e0e0e0;
-    --box-bg: #001d3d;
-    --accent: #ffc300;
-    --header-text: #000000;
-    --star-visibility: visible;
-}
-
 @media (max-width: 1024px) {
     .site-wrapper {
         display: flex;
