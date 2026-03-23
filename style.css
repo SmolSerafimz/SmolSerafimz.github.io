@@ -158,6 +158,7 @@ body.dark-mode {
     display: block;
     padding: 5px;
     border-left: 3px solid transparent;
+    transition: all 0.2s ease;
 }
 
 .nav-links a.active {
