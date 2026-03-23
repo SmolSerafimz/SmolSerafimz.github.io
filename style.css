@@ -224,8 +224,21 @@ body.dark-mode {
 }
 
 .sub-menu {
+    list-style: none;   
+    padding-left: 0; 
+    margin-left: 0;
+}
+
+.sub-menu li {
     padding-left: 0;
-    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.sub-menu li::before {
+    content: "•";       
+    color: #555;      
+    margin-right: 8px;   
+    font-size: 0.8em;
 }
 
 .sub-menu a {
