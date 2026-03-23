@@ -311,6 +311,47 @@ body.dark-mode {
     border-radius: 50%;
 }
 
+.episode-lore-box {
+    text-align: left;
+    padding: 15px;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.05); /* Slight tint to separate it from the art */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+body.dark-mode .episode-lore-box {
+    background: rgba(255, 255, 255, 0.05); /* Lighter tint for Night Mode */
+}
+
+.episode-info-zone {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--accent);
+    text-align: left;
+}
+
+.info-header {
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.reaction-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.reaction-count {
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
 /* When checked (Night), change track to Gold */
 input:checked + .slider {
     background-color: var(--accent);
