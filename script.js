@@ -27,6 +27,8 @@ function loadEpisode(epNumber) {
     const data = comicData[epNumber];
     if (!data) return;
 
+    document.querySelector('.ticker-text').innerText = `LATEST NEWS: Episode ${epNumber} - ${data.title} IS NOW LIVE!`;
+
     // Reset view to first panel when an episode loads
     document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
     document.getElementById('main-comic-display').src = data.image; // Loads the default image from DNA
@@ -138,6 +140,8 @@ if (themeCheckbox) {
 const episodeKeys = Object.keys(comicData); 
 
 const latestEp = Math.max(...episodeKeys.map(Number));
+
+const paddedEp = latestEp.toString().padStart(3, '0');
 
 loadEpisode(latestEp.toString());
 
