@@ -15,6 +15,36 @@ const comicData = {
     }
 };
 
+function loadEpisode(epNumber) {
+    const data = comicData[epNumber];
+    
+    // 1. Safety Check: If data doesn't exist, don't stall the rig
+    if (!data) {
+        console.error("Episode " + epNumber + " not found in the Archive DNA.");
+        return;
+    }
+
+    // 2. Update the Title & Image
+    document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
+    document.getElementById('main-comic-display').src = data.image;
+
+    // 3. Update the 'About' text
+    document.getElementById('episode-about-text').innerHTML = `<p>${data.about}</p>`;
+
+    // 4. Regenerate the Panel Dots
+    const dotContainer = document.getElementById('panel-dots');
+    dotContainer.innerHTML = ''; // Clear old dots
+    
+    for (let i = 0; i < data.panels; i++) {
+        const dot = document.createElement('span');
+        dot.className = i === 0 ? 'dot active' : 'dot'; // First dot is active
+        dotContainer.appendChild(dot);
+    }
+
+    // 5. Update Reaction Counts (If we decide to show them)
+    // We'll wire the actual 'Number' display once the UI for counts is 100% sealed
+}
+
 function createStars() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
