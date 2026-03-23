@@ -182,7 +182,6 @@ body.dark-mode {
 }
 
 .quote-box {
-    margin-top: 10px;
     border-left: 4px solid var(--accent);
 }
 
