@@ -44,7 +44,7 @@ function createStars() {
     requestAnimationFrame(draw);
 }
 
-window.onload = createStars;
+window.addEventListener('load', createStars);
 
 const themeCheckbox = document.getElementById('theme-checkbox');
 
