@@ -13,6 +13,13 @@ const comicData = {
         about: "Info about this episode too.",
         stats: { like: 8, love: 20, laugh: 2, shock: 0, sad: 1, fire: 15 }
     }
+    "002": {
+        title: "Episode 3 Name",
+        image: "assets/ep003_web.webp",
+        panels: 3,
+        about: "Info about this episode as well",
+        stats: { like: 4, love: 23, laugh: 4, shock: 0, sad: 2, fire: 56 }
+    }
 };
 
 function loadEpisode(epNumber) {
