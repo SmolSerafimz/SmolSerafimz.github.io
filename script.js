@@ -143,7 +143,7 @@ const latestEp = Math.max(...episodeKeys.map(Number));
 
 const paddedEp = latestEp.toString().padStart(3, '0');
 
-loadEpisode(latestEp.toString());
+loadEpisode(paddedEp);
 
 const worldQuotes = [
     { text: "Test quote 3.", author: "Heh" },
