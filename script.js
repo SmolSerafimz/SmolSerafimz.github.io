@@ -182,6 +182,7 @@ function populateArchive() {
         const a = document.createElement('a');
         
         a.href = "#";
+        const epTitle = comicData[epKey].title;
         a.innerText = `Episode ${epKey}`;
         
         // When clicked, load that episode
@@ -194,3 +195,5 @@ function populateArchive() {
         archiveList.appendChild(li);
     });
 }
+
+populateArchive();
