@@ -183,7 +183,7 @@ function populateArchive() {
         
         a.href = "#";
         const epTitle = comicData[epKey].title;
-        a.innerText = `Episode ${epKey}`;
+        a.innerText = `${epKey}: ${epTitle}`;
         
         // When clicked, load that episode
         a.onclick = (e) => {
