@@ -3,22 +3,19 @@ const comicData = {
         title: "Episode 1 Name",
         image: "assets/001_1.webp",
         panels: 4,
-        about: "Info about this episode.",
-        stats: { like: 12, love: 45, laugh: 5, shock: 2, sad: 0, fire: 28 }
+        about: "Info about this episode."
     },
     "002": {
         title: "Episode 2 Name",
         image: "assets/002_1.webp",
         panels: 3,
-        about: "Info about this episode too.",
-        stats: { like: 8, love: 20, laugh: 2, shock: 0, sad: 1, fire: 15 }
+        about: "Info about this episode too."
     },
     "003": {
         title: "Episode 3 Name",
         image: "assets/003_1.webp",
         panels: 3,
         about: "Info about this episode as well",
-        stats: { like: 4, love: 23, laugh: 4, shock: 0, sad: 2, fire: 56 }
     }
 };
 
