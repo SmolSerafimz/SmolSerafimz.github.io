@@ -166,3 +166,31 @@ function setDailyQuote() {
 
 // Add this to your window.addEventListener('load', ...) or just call it:
 setDailyQuote();
+
+function populateArchive() {
+    const archiveList = document.getElementById('archive-list');
+    if (!archiveList) return;
+
+    // Clear any existing "Scrap"
+    archiveList.innerHTML = '';
+
+    // Get all keys ("001", "002", etc.), sort them descending (Newest first)
+    const keys = Object.keys(comicData).sort((a, b) => b.localeCompare(a));
+
+    keys.forEach(epKey => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        
+        a.href = "#";
+        a.innerText = `Episode ${epKey}`;
+        
+        // When clicked, load that episode
+        a.onclick = (e) => {
+            e.preventDefault();
+            loadEpisode(epKey);
+        };
+
+        li.appendChild(a);
+        archiveList.appendChild(li);
+    });
+}
