@@ -129,10 +129,9 @@ const paddedEp = latestEp.toString().padStart(3, '0');
 loadEpisode(paddedEp);
 
 const worldQuotes = [
-    { text: "Test quote 3.", author: "Heh" },
-    { text: "Test quote 4", author: "Haha" },
-    { text: "Test quote 2.", author: "Giggle" },
-    { text: "Test quote 1.", author: "Funny" }
+    { text: "Hmm.. we still have not arrived yet.", author: "???" },
+    { text: "Much cuteness incoming.", author: "???" },
+    { text: "I sense yumminess ahead.", author: "???" }
 ];
 
 function setDailyQuote() {
