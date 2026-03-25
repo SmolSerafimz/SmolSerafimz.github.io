@@ -138,9 +138,12 @@ function setDailyQuote() {
     const quoteElement = document.getElementById('daily-quote');
     const authorElement = document.querySelector('.quote-box small');
     
-    // Pick a random index from the Quote DNA
-    const randomIndex = Math.floor(Math.random() * worldQuotes.length);
-    const selected = worldQuotes[randomIndex];
+    
+    const today = new Date();
+    const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+
+    const index = dateSeed % worldQuotes.length;
+    const selected = worldQuotes[index];
 
     quoteElement.innerText = `"${selected.text}"`;
     authorElement.innerText = `— ${selected.author}`;
