@@ -1,3 +1,5 @@
+# SmolSerafimz.github.io
+
 The official website for Smol Serafimz franchise.
 
 All content, including but not limited to artwork, characters, and narrative lore, 
