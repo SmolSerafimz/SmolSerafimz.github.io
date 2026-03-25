@@ -24,8 +24,6 @@ function loadEpisode(epNumber) {
     const data = comicData[epNumber];
     if (!data) return;
 
-    document.querySelector('.ticker-text').innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
-
     // Reset view to first panel when an episode loads
     document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
     document.getElementById('main-comic-display').src = data.image; // Loads the default image from DNA
@@ -194,3 +192,4 @@ function populateArchive() {
 }
 
 populateArchive();
+document.querySelector('.ticker-text').innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
