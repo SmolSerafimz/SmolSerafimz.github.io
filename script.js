@@ -24,7 +24,7 @@ function loadEpisode(epNumber) {
     const data = comicData[epNumber];
     if (!data) return;
 
-    document.querySelector('.ticker-text').innerText = `LATEST NEWS: Episode ${epNumber} - ${data.title} IS NOW LIVE!`;
+    document.querySelector('.ticker-text').innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
 
     // Reset view to first panel when an episode loads
     document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
