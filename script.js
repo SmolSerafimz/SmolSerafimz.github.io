@@ -1,21 +1,9 @@
 const comicData = {
     "001": {
-        title: "Episode 1 Name",
+        title: "The Prologue",
         image: "assets/001_1.webp",
         panels: 4,
-        about: "Info about this episode."
-    },
-    "002": {
-        title: "Episode 2 Name",
-        image: "assets/002_1.webp",
-        panels: 3,
-        about: "Info about this episode too."
-    },
-    "003": {
-        title: "Episode 3 Name",
-        image: "assets/003_1.webp",
-        panels: 3,
-        about: "Info about this episode as well",
+        about: "The official beginning of the Smol Serafimz story! In a cozy care free world where many beings live in harmony, a question arises among the gnomes if anything is amiss in their eternal journey. The Primordial was already aware of this so he sent his little agents to remedy the situation."
     }
 };
 
