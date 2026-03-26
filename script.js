@@ -182,4 +182,16 @@ function populateArchive() {
 }
 
 populateArchive();
-document.querySelector('.ticker-text').innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
+function updateUniversalTicker() {
+    const ticker = document.querySelector('.ticker-text');
+    if (ticker) {
+        ticker.innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
+    }
+}
+
+// Call it when the page loads
+window.addEventListener('load', () => {
+    updateUniversalTicker();
+    // Your other load functions are already here, just add this one!
+});
+
