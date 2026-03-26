@@ -371,6 +371,8 @@ input:checked + .slider:before {
     margin-bottom: 30px;
     padding-bottom: 15px;
     width: 100%;
+    max-width: calc(100% - 60px); 
+    margin: 0 auto 30px auto;
 }
 
 .wiki-profile-img {
@@ -389,6 +391,7 @@ input:checked + .slider:before {
     background: rgba(0, 0, 0, 0.05);
     border: 1px solid var(--accent);
     padding: 15px;
+    margin-left: 30px;
     margin-bottom: 30px;
     display: table; /* Shrinks to fit text width */
 }
