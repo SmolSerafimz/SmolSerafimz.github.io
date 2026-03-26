@@ -337,6 +337,8 @@ input:checked + .slider:before {
     text-align: left; /* As you requested */
     line-height: 1.6;
     margin-bottom: 40px;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 
 .wiki-quick-links {
@@ -373,7 +375,7 @@ input:checked + .slider:before {
 
 .wiki-profile-img {
     float: right;
-    width: 250px;
+    width: 200px;
     max-width: 45%; 
     height: auto;
     margin-left: 20px;
