@@ -414,6 +414,10 @@ body.dark-mode .wiki-contents-box {
         gap: 15px;
     }
     
+    .wiki-body-text {
+        padding: 0 15px;
+    }
+    
     .wiki-main-title {
         font-size: 2rem;
     }
