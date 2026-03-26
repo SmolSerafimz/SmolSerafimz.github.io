@@ -53,8 +53,8 @@ body.dark-mode {
     display: grid;
     grid-template-columns: 1fr 4.5fr 1fr; 
     gap: 15px;
-    width: 100%;
-    max-width: 100vw;
+    width: 95%;
+    max-width: 1400px;
     overflow-x: hidden;
     margin: 0 auto;
     padding: 10px;
@@ -337,6 +337,8 @@ input:checked + .slider:before {
     text-align: left; /* As you requested */
     line-height: 1.6;
     margin-bottom: 40px;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 
 .wiki-quick-links {
@@ -369,11 +371,13 @@ input:checked + .slider:before {
     margin-bottom: 30px;
     padding-bottom: 15px;
     width: 100%;
+    max-width: calc(100% - 60px); 
+    margin: 0 auto 30px auto;
 }
 
 .wiki-profile-img {
     float: right;
-    width: 250px;
+    width: 200px;
     max-width: 45%; 
     height: auto;
     margin-left: 20px;
@@ -387,6 +391,7 @@ input:checked + .slider:before {
     background: rgba(0, 0, 0, 0.05);
     border: 1px solid var(--accent);
     padding: 15px;
+    margin-left: 30px;
     margin-bottom: 30px;
     display: table; /* Shrinks to fit text width */
 }
@@ -407,6 +412,10 @@ body.dark-mode .wiki-contents-box {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+    }
+    
+    .wiki-body-text {
+        padding: 0 15px;
     }
     
     .wiki-main-title {
