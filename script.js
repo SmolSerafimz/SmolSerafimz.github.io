@@ -89,8 +89,6 @@ function createStars() {
     requestAnimationFrame(draw);
 }
 
-window.addEventListener('load', createStars);
-
 const themeCheckbox = document.getElementById('theme-checkbox');
 
 function setTheme(isDark) {
@@ -122,11 +120,11 @@ if (themeCheckbox) {
 
 const episodeKeys = Object.keys(comicData); 
 
-const latestEp = Math.max(...episodeKeys.map(Number));
-
-const paddedEp = latestEp.toString().padStart(3, '0');
-
-loadEpisode(paddedEp);
+if (document.getElementById('main-comic-display')) {
+    const latestEp = Math.max(...episodeKeys.map(Number));
+    const paddedEp = latestEp.toString().padStart(3, '0');
+    loadEpisode(paddedEp);
+}
 
 const worldQuotes = [
     { text: "Hmm.. we still have not arrived yet.", author: "???" },
@@ -148,9 +146,6 @@ function setDailyQuote() {
     quoteElement.innerText = `"${selected.text}"`;
     authorElement.innerText = `— ${selected.author}`;
 }
-
-// Add this to your window.addEventListener('load', ...) or just call it:
-setDailyQuote();
 
 function populateArchive() {
     const archiveList = document.getElementById('archive-list');
@@ -181,5 +176,18 @@ function populateArchive() {
     });
 }
 
-populateArchive();
-document.querySelector('.ticker-text').innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
+function updateUniversalTicker() {
+    const ticker = document.querySelector('.ticker-text');
+    if (ticker) {
+        ticker.innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
+    }
+}
+
+// Call it when the page loads
+window.addEventListener('load', () => {
+    createStars();
+    updateUniversalTicker();
+    setDailyQuote();
+    populateArchive();
+});
+
