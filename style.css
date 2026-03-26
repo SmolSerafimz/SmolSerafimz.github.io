@@ -360,6 +360,41 @@ input:checked + .slider:before {
     color: var(--accent);
 }
 
+/* Custom Wiki Logic */
+.wiki-title-centered {
+    font-size: 2.5rem;
+    color: var(--accent);
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.wiki-profile-img {
+    float: right;
+    width: 250px;
+    max-width: 45%; 
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border: 1px solid var(--accent);
+    background: var(--box-bg);
+}
+
+.wiki-contents-box {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--accent);
+    padding: 15px;
+    margin-bottom: 30px;
+    display: table; /* Shrinks to fit text width */
+}
+
+body.dark-mode .wiki-contents-box {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 @media (max-width: 1024px) {
     .site-wrapper {
         display: flex;
