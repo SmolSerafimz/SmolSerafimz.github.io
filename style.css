@@ -413,6 +413,14 @@ body.dark-mode .wiki-contents-box {
         font-size: 2rem;
     }
 
+    .wiki-profile-img {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 20px 0;
+    }
+
     .header-banner, .ticker-zone {
     width: 100%; /* Ensures they span the full width of the phone screen */
     }
