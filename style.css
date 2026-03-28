@@ -334,8 +334,10 @@ input:checked + .slider:before {
 
 .wiki-body-text {
     width: 100%;
-    text-align: left; /* As you requested */
+    text-align: left;
     line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.8;
     margin-bottom: 40px;
     padding: 0 30px;
     box-sizing: border-box;
@@ -390,9 +392,10 @@ input:checked + .slider:before {
     text-align: left;
     background: rgba(0, 0, 0, 0.05);
     border: 1px solid var(--accent);
-    padding: 15px;
+    padding: 20px;
     margin-left: 30px;
     margin-bottom: 30px;
+    font-size: 1.1rem;
     display: table; /* Shrinks to fit text width */
 }
 
@@ -416,6 +419,8 @@ body.dark-mode .wiki-contents-box {
     
     .wiki-body-text {
         padding: 0 15px;
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
     
     .wiki-main-title {
