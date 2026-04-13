@@ -133,9 +133,9 @@ if (document.getElementById('main-comic-display')) {
 }
 
 const worldQuotes = [
-    { text: "Hmm.. we still have not arrived yet.", author: "???" },
-    { text: "Much cuteness incoming.", author: "???" },
-    { text: "I sense yumminess ahead.", author: "???" }
+    { text: "I'm smol and fun my name is Bun!", author: "Bun" },
+    { text: "I'm serious and tough my name is Fluff!", author: "Fluff" },
+    { text: "Much yumminess!", author: "Cake" }
 ];
 
 function setDailyQuote() {
