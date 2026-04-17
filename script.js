@@ -10,6 +10,12 @@ const comicData = {
         image: "assets/002_1.webp",
         panels: 3,
         about: "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!"
+    },
+            "003": {
+        title: "Pillow Attac",
+        image: "assets/003_1.webp",
+        panels: 3,
+        about: "It's a brand new day and Bun is up to something. Whatever mischievous things does she plot?"
     }
 };
 
