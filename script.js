@@ -4,6 +4,12 @@ const comicData = {
         image: "assets/001_1.webp",
         panels: 4,
         about: "The official beginning of the Smol Serafimz story! In a cozy care free world where many beings live in harmony, a question arises among the gnomes if anything is amiss in their eternal journey. The Primordial was already aware of this so he sent his little agents to remedy the situation."
+    },
+        "002": {
+        title: "The First Ever",
+        image: "assets/002_1.webp",
+        panels: 3,
+        about: "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!"
     }
 };
 
@@ -127,9 +133,9 @@ if (document.getElementById('main-comic-display')) {
 }
 
 const worldQuotes = [
-    { text: "Hmm.. we still have not arrived yet.", author: "???" },
-    { text: "Much cuteness incoming.", author: "???" },
-    { text: "I sense yumminess ahead.", author: "???" }
+    { text: "I'm smol and fun my name is Bun!", author: "Bun" },
+    { text: "I'm serious and tough my name is Fluff!", author: "Fluff" },
+    { text: "Much yumminess!", author: "Cake" }
 ];
 
 function setDailyQuote() {
