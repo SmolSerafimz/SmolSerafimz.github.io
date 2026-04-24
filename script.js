@@ -11,11 +11,17 @@ const comicData = {
         panels: 3,
         about: "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!"
     },
-            "003": {
+        "003": {
         title: "Pillow Attac",
         image: "assets/003_1.webp",
         panels: 3,
         about: "It's a brand new day and Bun is up to something. Whatever mischievous things does she plot?"
+    },
+        "004": {
+        title: "Pro-cat-ination",
+        image: "assets/004_1.webp",
+        panels: 4,
+        about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic edeavours at the moment."
     }
 };
 
