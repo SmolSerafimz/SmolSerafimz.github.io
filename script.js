@@ -22,6 +22,12 @@ const comicData = {
         image: "assets/004_1.webp",
         panels: 4,
         about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic endeavours at the moment."
+    },
+        "005": {
+        title: "Cotton Candy",
+        image: "assets/005_1.webp",
+        panels: 3,
+        about: "Cotton Candy season is here and Fluff already found one in the fields. But these are always troublesome to eat when you are fluffy. But fear not Bun is here to help!"
     }
 };
 
