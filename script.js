@@ -21,7 +21,7 @@ const comicData = {
         title: "Pro-cat-ination",
         image: "assets/004_1.webp",
         panels: 4,
-        about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic edeavours at the moment."
+        about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic endeavours at the moment."
     }
 };
 
