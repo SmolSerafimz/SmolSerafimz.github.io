@@ -30,7 +30,7 @@ const comicData = {
         about: "Cotton Candy season is here and Fluff already found one in the fields. But these are always troublesome to eat when you are fluffy. But fear not Bun is here to help!"
     },        
         "006": {
-        title: "What?",
+        title: "Fast Cake",
         image: "assets/006_1.webp",
         panels: 1,
         about: "Munching pretzels a moment ago and speeding by on a superbike the next. Cake is quite unpredictable. She must have found it in Tinkerhat's yard."
