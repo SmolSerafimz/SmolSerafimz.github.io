@@ -1,42 +1,3 @@
-const comicData = {
-    "001": {
-        title: "The Prologue",
-        image: "assets/001_1.webp",
-        panels: 4,
-        about: "The official beginning of the Smol Serafimz story! In a cozy care free world where many beings live in harmony, a question arises among the gnomes if anything is amiss in their eternal journey. The Primordial was already aware of this so he sent his little agents to remedy the situation."
-    },
-        "002": {
-        title: "The First Ever",
-        image: "assets/002_1.webp",
-        panels: 3,
-        about: "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!"
-    },
-        "003": {
-        title: "Pillow Attac",
-        image: "assets/003_1.webp",
-        panels: 3,
-        about: "It's a brand new day and Bun is up to something. Whatever mischievous things does she plot?"
-    },
-        "004": {
-        title: "Pro-cat-ination",
-        image: "assets/004_1.webp",
-        panels: 4,
-        about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic endeavours at the moment."
-    },
-        "005": {
-        title: "Cotton Candy",
-        image: "assets/005_1.webp",
-        panels: 3,
-        about: "Cotton Candy season is here and Fluff already found one in the fields. But these are always troublesome to eat when you are fluffy. But fear not Bun is here to help!"
-    },        
-        "006": {
-        title: "Fast Cake",
-        image: "assets/006_1.webp",
-        panels: 1,
-        about: "Munching pretzels a moment ago and speeding by on a superbike the next. Cake is quite unpredictable. She must have found it in Tinkerhat's yard."
-    }
-};
-
 function loadEpisode(epNumber) {
     // Ensure epNumber is a string to match keys like "001"
     const data = comicData[epNumber];
@@ -221,3 +182,47 @@ window.addEventListener('load', () => {
     populateArchive();
 });
 
+const comicData = {
+    "001": {
+        title: "The Prologue",
+        image: "assets/001_1.webp",
+        panels: 4,
+        about: "The official beginning of the Smol Serafimz story! In a cozy care free world where many beings live in harmony, a question arises among the gnomes if anything is amiss in their eternal journey. The Primordial was already aware of this so he sent his little agents to remedy the situation."
+    },
+        "002": {
+        title: "The First Ever",
+        image: "assets/002_1.webp",
+        panels: 3,
+        about: "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!"
+    },
+        "003": {
+        title: "Pillow Attac",
+        image: "assets/003_1.webp",
+        panels: 3,
+        about: "It's a brand new day and Bun is up to something. Whatever mischievous things does she plot?"
+    },
+        "004": {
+        title: "Pro-cat-ination",
+        image: "assets/004_1.webp",
+        panels: 4,
+        about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic endeavours at the moment."
+    },
+        "005": {
+        title: "Cotton Candy",
+        image: "assets/005_1.webp",
+        panels: 3,
+        about: "Cotton Candy season is here and Fluff already found one in the fields. But these are always troublesome to eat when you are fluffy. But fear not Bun is here to help!"
+    },        
+        "006": {
+        title: "Fast Cake",
+        image: "assets/006_1.webp",
+        panels: 1,
+        about: "Munching pretzels a moment ago and speeding by on a superbike the next. Cake is quite unpredictable. She must have found it in Tinkerhat's yard."
+    },
+        "007": {
+        title: "Bun Appetite",
+        image: "assets/007_1.webp",
+        panels: 3,
+        about: "When Bun is up to something she is a force to be reckoned with."
+    }
+};
