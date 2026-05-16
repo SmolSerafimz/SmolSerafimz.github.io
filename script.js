@@ -43,13 +43,11 @@ const comicData = {
     }
 };
 function loadEpisode(epNumber) {
-    // Ensure epNumber is a string to match keys like "001"
     const data = comicData[epNumber];
     if (!data) return;
 
-    // Reset view to first panel when an episode loads
     document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
-    document.getElementById('main-comic-display').src = data.image; // Loads the default image from DNA
+    document.getElementById('main-comic-display').src = data.image;
     document.getElementById('episode-about-text').innerHTML = `<p>${data.about}</p>`;
 
     const dotContainer = document.getElementById('panel-dots');
@@ -57,14 +55,12 @@ function loadEpisode(epNumber) {
     
     for (let i = 0; i < data.panels; i++) {
         const dot = document.createElement('span');
-        const panelNumber = i + 1; // Creates 1, 2, 3...
+        const panelNumber = i + 1;
         dot.className = (i === 0) ? 'dot active' : 'dot';
         
         dot.onclick = function() {
-            // THE WELD: This now actually swaps the image!
             document.getElementById('main-comic-display').src = `assets/${epNumber}_${panelNumber}.webp`;
             
-            // Visual feedback: Move the 'active' class
             document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
             dot.classList.add('active');
         };
@@ -74,32 +70,42 @@ function loadEpisode(epNumber) {
 }
 
 function createStars() {
+    
+    const container = document.getElementById('star-container');
+    if (!container) return;
+    
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    const container = document.getElementById('star-container');
     
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     container.appendChild(canvas);
 
-    window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    });
+    let stars = [];
 
-    const stars = [];
-    const starCount = window.innerWidth < 768 ? 30 : 100;
+    function generateStars() {
+        stars = [];
+        const starCount = window.innerWidth < 768 ? 30 : 100;
 
-    for (let i = 0; i < starCount; i++) {
-        stars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 1.5 + 0.5,
-            opacity: Math.random(),
-            speed: Math.random() * 0.01 + 0.002
-        });
+        for (let i = 0; i < starCount; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 1.5 + 0.5,
+                opacity: Math.random(),
+                speed: Math.random() * 0.01 + 0.002
+            });
+        }
     }
 
+    generateStars();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        generateStars(); // Re-calculates coordinates for the new screen size
+    });
+    
     function draw() {
         if (!document.body.classList.contains('dark-mode')) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -171,7 +177,7 @@ function setDailyQuote() {
     const quoteElement = document.getElementById('daily-quote');
     const authorElement = document.querySelector('.quote-box small');
     
-    
+    if (!quoteElement || !authorElement) return;
     const today = new Date();
     const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
 
@@ -186,10 +192,9 @@ function populateArchive() {
     const archiveList = document.getElementById('archive-list');
     if (!archiveList) return;
 
-    // Clear any existing "Scrap"
+
     archiveList.innerHTML = '';
 
-    // Get all keys ("001", "002", etc.), sort them descending (Newest first)
     const keys = Object.keys(comicData).sort((a, b) => b.localeCompare(a));
 
     keys.forEach(epKey => {
@@ -200,7 +205,6 @@ function populateArchive() {
         const epTitle = comicData[epKey].title;
         a.innerText = `${epKey}: ${epTitle}`;
         
-        // When clicked, load that episode
         a.onclick = (e) => {
             e.preventDefault();
             loadEpisode(epKey);
@@ -218,7 +222,6 @@ function updateUniversalTicker() {
     }
 }
 
-// Call it when the page loads
 window.addEventListener('load', () => {
     createStars();
     updateUniversalTicker();
