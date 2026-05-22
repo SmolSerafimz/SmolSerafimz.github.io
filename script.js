@@ -40,6 +40,12 @@ const comicData = {
         image: "assets/007_1.webp",
         panels: 3,
         about: "When Bun is up to something she is a force to be reckoned with."
+    },
+        "008": {
+        title: "Even Better",
+        image: "assets/008_1.webp",
+        panels: 4,
+        about: "It's time to get up and Cake is already here to welcome Fluff. Cake also wants to offer breakfast but due to shortage a replacement is in order. Hopefully Fluff does not mind the alternative."
     }
 };
 function loadEpisode(epNumber) {
