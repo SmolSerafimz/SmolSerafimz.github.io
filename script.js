@@ -46,6 +46,12 @@ const comicData = {
         image: "assets/008_1.webp",
         panels: 4,
         about: "It's time to get up and Cake is already here to welcome Fluff. Cake also wants to offer breakfast but due to shortage a replacement is in order. Hopefully Fluff does not mind the alternative."
+    },
+        "009": {
+        title: "It Blends",
+        image: "assets/009_1.webp",
+        panels: 3,
+        about: "Cake is up to something and she's got a blender. Bun and Fluff must investigate."
     }
 };
 function loadEpisode(epNumber) {
