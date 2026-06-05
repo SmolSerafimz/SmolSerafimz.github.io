@@ -52,6 +52,12 @@ const comicData = {
         image: "assets/009_1.webp",
         panels: 3,
         about: "Cake is up to something and she's got a blender. Bun and Fluff must investigate."
+    },
+        "010": {
+        title: "Much Sleepiness",
+        image: "assets/010_1.webp",
+        panels: 5,
+        about: "Morning is here and lots of games are to be played. But Cake is still sleepy."
     }
 };
 function loadEpisode(epNumber) {
