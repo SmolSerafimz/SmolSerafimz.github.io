@@ -58,6 +58,12 @@ const comicData = {
         image: "assets/010_1.webp",
         panels: 5,
         about: "Morning is here and lots of games are to be played. But Cake is still sleepy."
+    },
+        "011": {
+        title: "A New Egg",
+        image: "assets/011_1.webp",
+        panels: 3,
+        about: "Cake has found a Celestimal egg! This is huge news for the trio. It means a fourth Serafim is to join them soon! Who could it be?"
     }
 };
 function loadEpisode(epNumber) {
