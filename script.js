@@ -64,6 +64,12 @@ const comicData = {
         image: "assets/011_1.webp",
         panels: 3,
         about: "Cake has found a Celestimal egg! This is huge news for the trio. It means a fourth Serafim is to join them soon! Who could it be?"
+    },
+        "012": {
+        title: "Always good",
+        image: "assets/012_1.webp",
+        panels: 3,
+        about: "Fluff is getting picky today and Cake is is here to help. Whatever will Fluff choose?"
     }
 };
 function loadEpisode(epNumber) {
