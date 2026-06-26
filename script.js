@@ -70,6 +70,12 @@ const comicData = {
         image: "assets/012_1.webp",
         panels: 3,
         about: "Fluff is getting picky today and Cake is is here to help. Whatever will Fluff choose?"
+    },
+        "013": {
+        title: "Print Time",
+        image: "assets/013_1.webp",
+        panels: 1,
+        about: "They found a 3d printer in Tinkerhat's workshop! Time to make fun figurines with it I guess."
     }
 };
 function loadEpisode(epNumber) {
