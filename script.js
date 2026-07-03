@@ -76,6 +76,12 @@ const comicData = {
         image: "assets/013_1.webp",
         panels: 1,
         about: "They found a 3d printer in Tinkerhat's workshop! Time to make fun figurines with it I guess."
+    },
+        "014": {
+        title: "Hidden Cake",
+        image: "assets/014_1.webp",
+        panels: 4,
+        about: "Cake finally tried to make her first ever cake. But she does not seem impressed how it turned out."
     }
 };
 function loadEpisode(epNumber) {
