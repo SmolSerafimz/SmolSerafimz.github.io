@@ -82,6 +82,12 @@ const comicData = {
         image: "assets/014_1.webp",
         panels: 4,
         about: "Cake finally tried to make her first ever cake. But she does not seem impressed how it turned out."
+    },
+        "015": {
+        title: "Weekends",
+        image: "assets/015_1.webp",
+        panels: 1,
+        about: "Sometimes it's best to get all your favorite things in one place and take a break."
     }
 };
 function loadEpisode(epNumber) {
