@@ -88,6 +88,12 @@ const comicData = {
         image: "assets/015_1.webp",
         panels: 1,
         about: "Sometimes it's best to get all your favorite things in one place and take a break."
+    },
+        "016": {
+        title: "Neighbours",
+        image: "assets/016_1.webp",
+        panels: 5,
+        about: "It appears that Cake has found something. Since she loves to read books about dragons, this is a big and exciting discovery for her."
     }
 };
 function loadEpisode(epNumber) {
