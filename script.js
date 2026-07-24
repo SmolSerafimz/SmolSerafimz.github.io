@@ -94,6 +94,12 @@ const comicData = {
         image: "assets/016_1.webp",
         panels: 5,
         about: "It appears that Cake has found something. Since she loves to read books about dragons, this is a big and exciting discovery for her."
+    },
+        "017": {
+        title: "Waffle",
+        image: "assets/017_1.webp",
+        panels: 4,
+        about: "The great moment has finally arrived. The great happiness in the Cozy Realm was high enough so a new Serafim has arrived to join the trio! Fun fact: Waffle predates these series as he was originally designed to be a cute and rascally pet in my android game I never ended up creating."
     }
 };
 function loadEpisode(epNumber) {
