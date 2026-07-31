@@ -100,6 +100,12 @@ const comicData = {
         image: "assets/017_1.webp",
         panels: 4,
         about: "The great moment has finally arrived. The great happiness in the Cozy Realm was high enough so a new Serafim has arrived to join the trio! Fun fact: Waffle predates these series as he was originally designed to be a cute and rascally pet in my android game I never ended up creating."
+    },
+        "018": {
+        title: "New Spookiness",
+        image: "assets/018_1.webp",
+        panels: 3,
+        about: "The spooky season has arrived and it is all new for Waffle."
     }
 };
 function loadEpisode(epNumber) {
