@@ -106,6 +106,12 @@ const comicData = {
         image: "assets/018_1.webp",
         panels: 3,
         about: "The spooky season has arrived and it is all new for Waffle."
+    },
+        "019": {
+        title: "The Usual",
+        image: "assets/019_1.webp",
+        panels: 2,
+        about: "There is no need to even wonder what to take for breakfast when your favorite cerial is in stock."
     }
 };
 function loadEpisode(epNumber) {
