@@ -111,7 +111,7 @@ const comicData = {
         title: "The Usual",
         image: "assets/019_1.webp",
         panels: 2,
-        about: "There is no need to even wonder what to take for breakfast when your favorite cerial is in stock."
+        about: "There is no need to even wonder what to take for breakfast when your favorite cereal is in stock."
     }
 };
 function loadEpisode(epNumber) {
