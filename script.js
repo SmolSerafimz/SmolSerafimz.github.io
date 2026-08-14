@@ -112,6 +112,12 @@ const comicData = {
         image: "assets/019_1.webp",
         panels: 2,
         about: "There is no need to even wonder what to take for breakfast when your favorite cereal is in stock."
+    },
+        "020": {
+        title: "Mystery Time",
+        image: "assets/020_1.webp",
+        panels: 1,
+        about: "Someone ate the cake! A team of legendary detectives is working on the case."
     }
 };
 function loadEpisode(epNumber) {
