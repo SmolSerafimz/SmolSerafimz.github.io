@@ -118,6 +118,12 @@ const comicData = {
         image: "assets/020_1.webp",
         panels: 1,
         about: "Someone ate the cake! A team of legendary detectives is working on the case."
+    },
+        "021": {
+        title: "Bath Time",
+        image: "assets/021_1.webp",
+        panels: 4,
+        about: "After playing all day long the time has come for a bath. But Waffle is not very keen on getting into the water."
     }
 };
 function loadEpisode(epNumber) {
