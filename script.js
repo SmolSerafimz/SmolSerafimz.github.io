@@ -124,6 +124,12 @@ const comicData = {
         image: "assets/021_1.webp",
         panels: 4,
         about: "After playing all day long the time has come for a bath. But Waffle is not very keen on getting into the water."
+    },
+        "022": {
+        title: "Magic Spring",
+        image: "assets/022_1.webp",
+        panels: 2,
+        about: "Fluff found a magic spring that makes you fluffy. Bun is obviously not going to miss out on that."
     }
 };
 function loadEpisode(epNumber) {
