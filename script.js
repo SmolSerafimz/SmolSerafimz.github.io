@@ -130,6 +130,12 @@ const comicData = {
         image: "assets/022_1.webp",
         panels: 2,
         about: "Fluff found a magic spring that makes you fluffy. Bun is obviously not going to miss out on that."
+    },
+        "023": {
+        title: "Waffle likes bath",
+        image: "assets/023_1.webp",
+        panels: 4,
+        about: "Waffle is still in the pond. Turns out he likes bath just not getting into it. Cake is once more trying to fix things."
     }
 };
 function loadEpisode(epNumber) {
