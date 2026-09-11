@@ -136,6 +136,12 @@ const comicData = {
         image: "assets/023_1.webp",
         panels: 4,
         about: "Waffle is still in the pond. Turns out he likes bath just not getting into it. Cake is once more trying to fix things."
+    },
+        "024": {
+        title: "Waffle's new hoodie",
+        image: "assets/024_1.webp",
+        panels: 4,
+        about: "Waffle got a hip new hoodie. But it has drawstrings which means Bun must pull."
     }
 };
 function loadEpisode(epNumber) {
