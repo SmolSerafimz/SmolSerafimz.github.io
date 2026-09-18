@@ -142,6 +142,12 @@ const comicData = {
         image: "assets/024_1.webp",
         panels: 4,
         about: "Waffle got a hip new hoodie. But it has drawstrings which means Bun must pull."
+    },
+        "025": {
+        title: "Raptor Training",
+        image: "assets/025_1.webp",
+        panels: 3,
+        about: "Fluff has decided that it's time for Waffle to become a proper raptor, like in the movies. So training is underway."
     }
 };
 function loadEpisode(epNumber) {
