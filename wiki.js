@@ -1,33 +1,24 @@
-const testArticle = {
-    title: "Test Article",
+let wikiData = {};
 
-    intro: "This is a temporary test article used to build the Smol Serafimz Wiki engine.",
-
-    infobox: {
-        type: "Test",
-        status: "Testing",
-        firstAppearance: "N/A"
-    },
-
-    sections: [
-        {
-            title: "Description",
-            content: "This section exists to test the article renderer."
-        },
-        {
-            title: "History",
-            content: "This is placeholder content. No actual Smol Serafimz lore has been entered yet."
-        },
-        {
-            title: "Trivia",
-            content: "The entire article is temporary and will eventually be replaced by real wiki data."
+fetch('data/wiki-test.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to load wiki-test.json: ${response.status}`);
         }
-    ]
-};
+
+        return response.json();
+    })
+    .then(data => {
+        wikiData = data;
+
+        initializeWiki();
+    })
+    .catch(error => {
+        console.error('Failed to load wiki data:', error);
+    });
 
 
 function renderArticle(article) {
-
     document.getElementById('article-title').innerText = article.title;
 
     document.getElementById('article-intro-text').innerHTML =
@@ -58,6 +49,7 @@ function renderArticle(article) {
 
     sections.innerHTML = '';
 
+
     article.sections.forEach(section => {
 
         const sectionElement = document.createElement('section');
@@ -73,4 +65,21 @@ function renderArticle(article) {
 }
 
 
-renderArticle(testArticle);
+function initializeWiki() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const articleId = urlParams.get('article');
+
+
+    if (articleId && wikiData[articleId]) {
+
+        renderArticle(wikiData[articleId]);
+
+    } else {
+
+        renderArticle(wikiData['test-article']);
+
+    }
+
+}
