@@ -192,9 +192,16 @@ function initializeSite() {
     const episodeKeys = Object.keys(comicData);
 
     if (document.getElementById('main-comic-display')) {
-        const latestEp = Math.max(...episodeKeys.map(Number));
-        const paddedEp = latestEp.toString().padStart(3, '0');
-        loadEpisode(paddedEp);
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestedEpisode = urlParams.get('episode');
+
+        if (requestedEpisode && comicData[requestedEpisode]) {
+            loadEpisode(requestedEpisode);
+        } else {
+            const latestEp = Math.max(...episodeKeys.map(Number));
+            const paddedEp = latestEp.toString().padStart(3, '0');
+            loadEpisode(paddedEp);
+        }
     }
 
     createStars();
