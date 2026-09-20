@@ -1,0 +1,402 @@
+{
+    "025": {
+        "title": "Raptor Training",
+        "image": "assets/025_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "024",
+            "next": null
+        },
+        "intro": "Fluff has decided that it's time for Waffle to become a proper raptor, like in the movies. So training is underway.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "024": {
+        "title": "Waffle's new hoodie",
+        "image": "assets/024_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "023",
+            "next": "025"
+        },
+        "intro": "Waffle got a hip new hoodie. But it has drawstrings which means Bun must pull.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "023": {
+        "title": "Waffle likes bath",
+        "image": "assets/023_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "022",
+            "next": "024"
+        },
+        "intro": "Waffle is still in the pond. Turns out he likes bath just not getting into it. Cake is once more trying to fix things.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "022": {
+        "title": "Magic Spring",
+        "image": "assets/022_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 2,
+            "location": "",
+            "previous": "021",
+            "next": "023"
+        },
+        "intro": "Fluff found a magic spring that makes you fluffy. Bun is obviously not going to miss out on that.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "021": {
+        "title": "Bath Time",
+        "image": "assets/021_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "020",
+            "next": "022"
+        },
+        "intro": "After playing all day long the time has come for a bath. But Waffle is not very keen on getting into the water.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "020": {
+        "title": "Mystery Time",
+        "image": "assets/020_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 1,
+            "location": "",
+            "previous": "019",
+            "next": "021"
+        },
+        "intro": "Someone ate the cake! A team of legendary detectives is working on the case.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "019": {
+        "title": "The Usual",
+        "image": "assets/019_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 2,
+            "location": "",
+            "previous": "018",
+            "next": "020"
+        },
+        "intro": "There is no need to even wonder what to take for breakfast when your favorite cereal is in stock.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "018": {
+        "title": "New Spookiness",
+        "image": "assets/018_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "017",
+            "next": "019"
+        },
+        "intro": "The spooky season has arrived and it is all new for Waffle.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "017": {
+        "title": "Waffle",
+        "image": "assets/017_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "016",
+            "next": "018"
+        },
+        "intro": "The great moment has finally arrived. The great happiness in the Cozy Realm was high enough so a new Serafim has arrived to join the trio! Fun fact: Waffle predates these series as he was originally designed to be a cute and rascally pet in my android game I never ended up creating.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "016": {
+        "title": "Neighbours",
+        "image": "assets/016_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 5,
+            "location": "",
+            "previous": "015",
+            "next": "017"
+        },
+        "intro": "It appears that Cake has found something. Since she loves to read books about dragons, this is a big and exciting discovery for her.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "015": {
+        "title": "Weekends",
+        "image": "assets/015_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 1,
+            "location": "",
+            "previous": "014",
+            "next": "016"
+        },
+        "intro": "Sometimes it's best to get all your favorite things in one place and take a break.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "014": {
+        "title": "Hidden Cake",
+        "image": "assets/014_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "013",
+            "next": "015"
+        },
+        "intro": "Cake finally tried to make her first ever cake. But she does not seem impressed how it turned out.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "013": {
+        "title": "Print Time",
+        "image": "assets/013_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 1,
+            "location": "",
+            "previous": "012",
+            "next": "014"
+        },
+        "intro": "They found a 3d printer in Tinkerhat's workshop! Time to make fun figurines with it I guess.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "012": {
+        "title": "Always good",
+        "image": "assets/012_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "011",
+            "next": "013"
+        },
+        "intro": "Fluff is getting picky today and Cake is is here to help. Whatever will Fluff choose?",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "011": {
+        "title": "A New Egg",
+        "image": "assets/011_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "010",
+            "next": "012"
+        },
+        "intro": "Cake has found a Celestimal egg! This is huge news for the trio. It means a fourth Serafim is to join them soon! Who could it be?",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "010": {
+        "title": "Much Sleepiness",
+        "image": "assets/010_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 5,
+            "location": "",
+            "previous": "009",
+            "next": "011"
+        },
+        "intro": "Morning is here and lots of games are to be played. But Cake is still sleepy.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "009": {
+        "title": "It Blends",
+        "image": "assets/009_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "008",
+            "next": "010"
+        },
+        "intro": "Cake is up to something and she's got a blender. Bun and Fluff must investigate.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "008": {
+        "title": "Even Better",
+        "image": "assets/008_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "007",
+            "next": "009"
+        },
+        "intro": "It's time to get up and Cake is already here to welcome Fluff. Cake also wants to offer breakfast but due to shortage a replacement is in order. Hopefully Fluff does not mind the alternative.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "007": {
+        "title": "Bun Appetite",
+        "image": "assets/007_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "006",
+            "next": "008"
+        },
+        "intro": "When Bun is up to something she is a force to be reckoned with.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "006": {
+        "title": "Fast Cake",
+        "image": "assets/006_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 1,
+            "location": "",
+            "previous": "005",
+            "next": "007"
+        },
+        "intro": "Munching pretzels a moment ago and speeding by on a superbike the next. Cake is quite unpredictable. She must have found it in Tinkerhat's yard.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "005": {
+        "title": "Cotton Candy",
+        "image": "assets/005_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "004",
+            "next": "006"
+        },
+        "intro": "Cotton Candy season is here and Fluff already found one in the fields. But these are always troublesome to eat when you are fluffy. But fear not Bun is here to help!",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "004": {
+        "title": "Pro-cat-ination",
+        "image": "assets/004_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": "003",
+            "next": "005"
+        },
+        "intro": "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic endeavours at the moment.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "003": {
+        "title": "Pillow Attac",
+        "image": "assets/003_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "002",
+            "next": "004"
+        },
+        "intro": "It's a brand new day and Bun is up to something. Whatever mischievous things does she plot?",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "002": {
+        "title": "The First Ever",
+        "image": "assets/002_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 3,
+            "location": "",
+            "previous": "001",
+            "next": "003"
+        },
+        "intro": "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
+    "001": {
+        "title": "The Prologue",
+        "image": "assets/001_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 4,
+            "location": "",
+            "previous": null,
+            "next": "002"
+        },
+        "intro": "The official beginning of the Smol Serafimz story! In a cozy care free world where many beings live in harmony, a question arises among the gnomes if anything is amiss in their eternal journey. The Primordial was already aware of this so he sent his little agents to remedy the situation.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    }
+}
