@@ -27,7 +27,7 @@ function loadEpisode(epNumber) {
     const dotContainer = document.getElementById('panel-dots');
     dotContainer.innerHTML = ''; 
     
-    for (let i = 0; i < data.panels; i++) {
+    for (let i = 0; i < data.info.panels; i++) {
         const dot = document.createElement('span');
         const panelNumber = i + 1;
         dot.className = (i === 0) ? 'dot active' : 'dot';
