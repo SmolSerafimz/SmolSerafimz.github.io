@@ -1,0 +1,25 @@
+{
+    "test-article": {
+        "title": "Test Article",
+        "intro": "This is a temporary test article used to test the Smol Serafimz Wiki system.",
+        "infobox": {
+            "Type": "Test",
+            "Status": "Testing",
+            "First appearance": "N/A"
+        },
+        "sections": [
+            {
+                "title": "Description",
+                "content": "This section exists to test the article renderer."
+            },
+            {
+                "title": "History",
+                "content": "This is placeholder content for testing the wiki system."
+            },
+            {
+                "title": "Trivia",
+                "content": "This article is temporary and will eventually be replaced by real wiki data."
+            }
+        ]
+    }
+}

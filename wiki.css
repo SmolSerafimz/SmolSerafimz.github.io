@@ -1,3 +1,9 @@
+#article-title {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+}
+
 #wiki-article {
     max-width: 1000px;
     margin: 0 auto;
@@ -21,6 +27,7 @@
 .wiki-infobox {
     border: 1px solid #aaa;
     background: #f8f8f8;
+    color: #222;
 }
 
 .wiki-infobox-title {
@@ -29,6 +36,7 @@
     text-align: center;
     padding: 10px;
     border-bottom: 1px solid #aaa;
+    color: #222;
 }
 
 .wiki-infobox-row {
@@ -36,10 +44,12 @@
     grid-template-columns: 45% 55%;
     border-bottom: 1px solid #ddd;
     padding: 7px;
+    color: #222;
 }
 
 .wiki-infobox-row strong {
     font-weight: bold;
+    color: #222;
 }
 
 #article-sections {
