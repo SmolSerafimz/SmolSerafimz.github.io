@@ -1,162 +1,28 @@
-const comicData = {
-    "001": {
-        title: "The Prologue",
-        image: "assets/001_1.webp",
-        panels: 4,
-        about: "The official beginning of the Smol Serafimz story! In a cozy care free world where many beings live in harmony, a question arises among the gnomes if anything is amiss in their eternal journey. The Primordial was already aware of this so he sent his little agents to remedy the situation."
-    },
-        "002": {
-        title: "The First Ever",
-        image: "assets/002_1.webp",
-        panels: 3,
-        about: "The messengers of fun are finally here! The valley is about to be much more interesting from now on with this trio around. Lots of hijinks and play ahead. Join them in the following episodes as they discover the world around them and have fun everywhere!"
-    },
-        "003": {
-        title: "Pillow Attac",
-        image: "assets/003_1.webp",
-        panels: 3,
-        about: "It's a brand new day and Bun is up to something. Whatever mischievous things does she plot?"
-    },
-        "004": {
-        title: "Pro-cat-ination",
-        image: "assets/004_1.webp",
-        panels: 4,
-        about: "Fluff has decided that its important to study so she borrowed some cool sounding books from Scribes the librarian gnome. But Cake is not very keen on her academic endeavours at the moment."
-    },
-        "005": {
-        title: "Cotton Candy",
-        image: "assets/005_1.webp",
-        panels: 3,
-        about: "Cotton Candy season is here and Fluff already found one in the fields. But these are always troublesome to eat when you are fluffy. But fear not Bun is here to help!"
-    },        
-        "006": {
-        title: "Fast Cake",
-        image: "assets/006_1.webp",
-        panels: 1,
-        about: "Munching pretzels a moment ago and speeding by on a superbike the next. Cake is quite unpredictable. She must have found it in Tinkerhat's yard."
-    },
-        "007": {
-        title: "Bun Appetite",
-        image: "assets/007_1.webp",
-        panels: 3,
-        about: "When Bun is up to something she is a force to be reckoned with."
-    },
-        "008": {
-        title: "Even Better",
-        image: "assets/008_1.webp",
-        panels: 4,
-        about: "It's time to get up and Cake is already here to welcome Fluff. Cake also wants to offer breakfast but due to shortage a replacement is in order. Hopefully Fluff does not mind the alternative."
-    },
-        "009": {
-        title: "It Blends",
-        image: "assets/009_1.webp",
-        panels: 3,
-        about: "Cake is up to something and she's got a blender. Bun and Fluff must investigate."
-    },
-        "010": {
-        title: "Much Sleepiness",
-        image: "assets/010_1.webp",
-        panels: 5,
-        about: "Morning is here and lots of games are to be played. But Cake is still sleepy."
-    },
-        "011": {
-        title: "A New Egg",
-        image: "assets/011_1.webp",
-        panels: 3,
-        about: "Cake has found a Celestimal egg! This is huge news for the trio. It means a fourth Serafim is to join them soon! Who could it be?"
-    },
-        "012": {
-        title: "Always good",
-        image: "assets/012_1.webp",
-        panels: 3,
-        about: "Fluff is getting picky today and Cake is is here to help. Whatever will Fluff choose?"
-    },
-        "013": {
-        title: "Print Time",
-        image: "assets/013_1.webp",
-        panels: 1,
-        about: "They found a 3d printer in Tinkerhat's workshop! Time to make fun figurines with it I guess."
-    },
-        "014": {
-        title: "Hidden Cake",
-        image: "assets/014_1.webp",
-        panels: 4,
-        about: "Cake finally tried to make her first ever cake. But she does not seem impressed how it turned out."
-    },
-        "015": {
-        title: "Weekends",
-        image: "assets/015_1.webp",
-        panels: 1,
-        about: "Sometimes it's best to get all your favorite things in one place and take a break."
-    },
-        "016": {
-        title: "Neighbours",
-        image: "assets/016_1.webp",
-        panels: 5,
-        about: "It appears that Cake has found something. Since she loves to read books about dragons, this is a big and exciting discovery for her."
-    },
-        "017": {
-        title: "Waffle",
-        image: "assets/017_1.webp",
-        panels: 4,
-        about: "The great moment has finally arrived. The great happiness in the Cozy Realm was high enough so a new Serafim has arrived to join the trio! Fun fact: Waffle predates these series as he was originally designed to be a cute and rascally pet in my android game I never ended up creating."
-    },
-        "018": {
-        title: "New Spookiness",
-        image: "assets/018_1.webp",
-        panels: 3,
-        about: "The spooky season has arrived and it is all new for Waffle."
-    },
-        "019": {
-        title: "The Usual",
-        image: "assets/019_1.webp",
-        panels: 2,
-        about: "There is no need to even wonder what to take for breakfast when your favorite cereal is in stock."
-    },
-        "020": {
-        title: "Mystery Time",
-        image: "assets/020_1.webp",
-        panels: 1,
-        about: "Someone ate the cake! A team of legendary detectives is working on the case."
-    },
-        "021": {
-        title: "Bath Time",
-        image: "assets/021_1.webp",
-        panels: 4,
-        about: "After playing all day long the time has come for a bath. But Waffle is not very keen on getting into the water."
-    },
-        "022": {
-        title: "Magic Spring",
-        image: "assets/022_1.webp",
-        panels: 2,
-        about: "Fluff found a magic spring that makes you fluffy. Bun is obviously not going to miss out on that."
-    },
-        "023": {
-        title: "Waffle likes bath",
-        image: "assets/023_1.webp",
-        panels: 4,
-        about: "Waffle is still in the pond. Turns out he likes bath just not getting into it. Cake is once more trying to fix things."
-    },
-        "024": {
-        title: "Waffle's new hoodie",
-        image: "assets/024_1.webp",
-        panels: 4,
-        about: "Waffle got a hip new hoodie. But it has drawstrings which means Bun must pull."
-    },
-        "025": {
-        title: "Raptor Training",
-        image: "assets/025_1.webp",
-        panels: 3,
-        about: "Fluff has decided that it's time for Waffle to become a proper raptor, like in the movies. So training is underway."
-    }
-};
+let comicData = {};
+
+fetch('data/episodes.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to load episodes.json: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        comicData = data;
+
+        initializeSite();
+    })
+    .catch(error => {
+        console.error('Failed to load episode data:', error);
+    });
+
 function loadEpisode(epNumber) {
     const data = comicData[epNumber];
     if (!data) return;
 
     document.getElementById('episode-title').innerText = "Episode " + epNumber + ": " + data.title;
     document.getElementById('main-comic-display').src = data.image;
-    document.getElementById('episode-about-text').innerHTML = `<p>${data.about}</p>`;
+    document.getElementById('episode-about-text').innerHTML = `<p>${data.intro}</p>`;
 
     const dotContainer = document.getElementById('panel-dots');
     dotContainer.innerHTML = ''; 
@@ -267,14 +133,6 @@ if (themeCheckbox) {
     });
 }
 
-const episodeKeys = Object.keys(comicData); 
-
-if (document.getElementById('main-comic-display')) {
-    const latestEp = Math.max(...episodeKeys.map(Number));
-    const paddedEp = latestEp.toString().padStart(3, '0');
-    loadEpisode(paddedEp);
-}
-
 const worldQuotes = [
     { text: "I'm smol and fun my name is Bun!", author: "Bun" },
     { text: "I'm serious and tough my name is Fluff!", author: "Fluff" },
@@ -330,10 +188,18 @@ function updateUniversalTicker() {
     }
 }
 
-window.addEventListener('load', () => {
+function initializeSite() {
+    const episodeKeys = Object.keys(comicData);
+
+    if (document.getElementById('main-comic-display')) {
+        const latestEp = Math.max(...episodeKeys.map(Number));
+        const paddedEp = latestEp.toString().padStart(3, '0');
+        loadEpisode(paddedEp);
+    }
+
     createStars();
     updateUniversalTicker();
     setDailyQuote();
     populateArchive();
-});
+}
 
