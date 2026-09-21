@@ -214,6 +214,130 @@ function renderLandingPage() {
 
 }
 
+function renderCharacterDirectory() {
+    document.getElementById('article-title').innerText = 'Characters';
+
+    document.getElementById('article-intro-text').innerHTML =
+        '<p>Characters appearing in the Smol Serafimz universe.</p>';
+
+    document.getElementById('article-infobox').innerHTML = '';
+
+    const categories = {};
+
+    Object.entries(charactersData).forEach(([id, character]) => {
+        const category = character.category || 'Others';
+
+        if (!categories[category]) {
+            categories[category] = [];
+        }
+
+        categories[category].push({ id, character });
+    });
+
+    let html = '';
+
+    Object.entries(categories).forEach(([category, characters]) => {
+        html += `
+            <section>
+                <h2>${category}</h2>
+                <div class="wiki-character-grid">
+                    ${characters.map(({ id, character }) => `
+                        <a class="wiki-character-card"
+                           href="wiki.html?type=character&id=${id}">
+                            ${character.infobox?.image
+                                ? `<img src="${character.infobox.image}" alt="${character.title}">`
+                                : ''}
+                            <span>${character.title}</span>
+                        </a>
+                    `).join('')}
+                </div>
+            </section>
+        `;
+    });
+
+    document.getElementById('article-sections').innerHTML = html;
+}
+
+
+function renderLocationDirectory() {
+    document.getElementById('article-title').innerText = 'Locations';
+
+    document.getElementById('article-intro-text').innerHTML =
+        '<p>Locations appearing in the Smol Serafimz universe.</p>';
+
+    document.getElementById('article-infobox').innerHTML = '';
+
+    document.getElementById('article-sections').innerHTML = `
+        <div class="wiki-location-list">
+            ${Object.entries(locationsData).map(([id, location]) => `
+                <a class="wiki-location-card"
+                   href="wiki.html?type=location&id=${id}">
+                    ${location.title}
+                </a>
+            `).join('')}
+        </div>
+    `;
+}
+
+
+function renderObjectDirectory() {
+    document.getElementById('article-title').innerText = 'Objects';
+
+    document.getElementById('article-intro-text').innerHTML =
+        '<p>Objects appearing in the Smol Serafimz universe.</p>';
+
+    document.getElementById('article-infobox').innerHTML = '';
+
+    document.getElementById('article-sections').innerHTML = `
+        <div class="wiki-object-list">
+            ${Object.entries(objectsData).map(([id, object]) => `
+                <a class="wiki-object-card"
+                   href="wiki.html?type=object&id=${id}">
+                    ${object.title}
+                </a>
+            `).join('')}
+        </div>
+    `;
+}
+
+
+function renderSeasonDirectory() {
+    document.getElementById('article-title').innerText = 'Seasons';
+
+    document.getElementById('article-intro-text').innerHTML =
+        '<p>Seasons of the Smol Serafimz comic.</p>';
+
+    document.getElementById('article-infobox').innerHTML = '';
+
+    const seasons = {};
+
+    Object.values(episodesData).forEach(episode => {
+        const season = episode.info?.season;
+
+        if (!season) {
+            return;
+        }
+
+        if (!seasons[season]) {
+            seasons[season] = 0;
+        }
+
+        seasons[season]++;
+    });
+
+    document.getElementById('article-sections').innerHTML = `
+        <div class="wiki-location-list">
+            ${Object.entries(seasons)
+                .sort(([a], [b]) => Number(a) - Number(b))
+                .map(([season, count]) => `
+                    <a class="wiki-location-card"
+                       href="wiki.html?type=season&id=${season}">
+                        Season ${season} (${count} episode${count === 1 ? '' : 's'})
+                    </a>
+                `).join('')}
+        </div>
+    `;
+}
 
 /* =========================================================
    CHARACTER LIST
