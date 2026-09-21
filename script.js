@@ -1,20 +1,38 @@
 let comicData = {};
+let updatesData = {};
 
-fetch('data/episodes.json')
-    .then(response => {
+Promise.all([
+    fetch('data/episodes.json').then(response => {
         if (!response.ok) {
             throw new Error(`Failed to load episodes.json: ${response.status}`);
         }
+
+        return response.json();
+    }),
+
+    fetch('data/updates.json').then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to load updates.json: ${response.status}`);
+        }
+
         return response.json();
     })
-    .then(data => {
-        comicData = data;
+])
 
-        initializeSite();
-    })
-    .catch(error => {
-        console.error('Failed to load episode data:', error);
-    });
+.then(([episodes, updates]) => {
+
+    comicData = episodes;
+    updatesData = updates;
+
+    initializeSite();
+
+})
+
+.catch(error => {
+
+    console.error('Failed to load site data:', error);
+
+});
 
 function loadEpisode(epNumber) {
     const data = comicData[epNumber];
@@ -188,6 +206,28 @@ function updateUniversalTicker() {
     }
 }
 
+function populateLatestUpdate() {
+
+    const updateElement = document.getElementById('latest-update-content');
+
+    if (!updateElement || !updatesData.updates || updatesData.updates.length === 0) {
+        return;
+    }
+
+    const latest = updatesData.updates[0];
+
+    const paragraphs = latest.text
+        .split('\n\n')
+        .map(paragraph => `<p>${paragraph}</p>`)
+        .join('');
+
+    updateElement.innerHTML = `
+        <h3>${latest.title}</h3>
+        <small>${latest.date}</small>
+        ${paragraphs}
+    `;
+}
+
 function initializeSite() {
     const episodeKeys = Object.keys(comicData);
 
@@ -208,5 +248,6 @@ function initializeSite() {
     updateUniversalTicker();
     setDailyQuote();
     populateArchive();
+    populateLatestUpdate();
 }
 
