@@ -28,67 +28,56 @@ Promise.all([
 
 
 function initializeWiki() {
-
     const urlParams = new URLSearchParams(window.location.search);
-
-    const articleId = urlParams.get('article');
     const type = urlParams.get('type');
     const id = urlParams.get('id');
 
-
-    // Character article
     if (type === 'character' && id && charactersData[id]) {
-
         renderCharacterArticle(charactersData[id]);
-
         return;
-
     }
 
-
-    // Episode article
     if (type === 'episode' && id && episodesData[id]) {
-
         renderEpisodeArticle(id, episodesData[id]);
-
         return;
-
     }
 
-
-    // Season article
     if (type === 'season' && id) {
-
         renderSeasonArticle(id);
-
         return;
-
     }
 
-
-    // Location article
     if (type === 'location' && id && locationsData[id]) {
-
         renderLocationArticle(locationsData[id]);
-
         return;
-
     }
 
-
-    // Object article
     if (type === 'object' && id && objectsData[id]) {
-
         renderObjectArticle(objectsData[id]);
-
         return;
-
     }
 
+    if (type === 'character') {
+        renderCharacterDirectory();
+        return;
+    }
 
-    // Default: wiki landing page
+    if (type === 'location') {
+        renderLocationDirectory();
+        return;
+    }
+
+    if (type === 'object') {
+        renderObjectDirectory();
+        return;
+    }
+
+    if (type === 'season') {
+        renderSeasonDirectory();
+        return;
+    }
+
     renderLandingPage();
-
 }
 
 
