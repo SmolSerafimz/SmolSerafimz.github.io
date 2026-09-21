@@ -1,0 +1,29 @@
+{
+  "title": "Smol Serafimz Official Wiki",
+  "intro": "Welcome to the official Smol Serafimz Wiki.",
+  "infobox": {
+    "title": "Smol Serafimz",
+    "type": "Webcomic",
+    "creator": "Smol Serafimz",
+    "started": "2026",
+    "status": "Ongoing"
+  },
+  "sections": {
+    "cast": {
+      "title": "Meet the Cast",
+      "intro": ""
+    },
+    "episodes": {
+      "title": "Episodes",
+      "intro": ""
+    },
+    "world": {
+      "title": "Explore the World",
+      "intro": ""
+    },
+    "objects": {
+      "title": "Objects",
+      "intro": ""
+    }
+  }
+}
