@@ -161,22 +161,23 @@ if (themeCheckbox) {
     });
 }
 
-const worldQuotes = [
-    { text: "I'm smol and fun my name is Bun!", author: "Bun" },
-    { text: "I'm serious and tough my name is Fluff!", author: "Fluff" },
-    { text: "Much yumminess!", author: "Cake" }
-];
-
 function setDailyQuote() {
+
     const quoteElement = document.getElementById('daily-quote');
     const authorElement = document.querySelector('.quote-box small');
-    
-    if (!quoteElement || !authorElement) return;
-    const today = new Date();
-    const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
 
-    const index = dateSeed % worldQuotes.length;
-    const selected = worldQuotes[index];
+    if (!quoteElement || !authorElement || !siteContentData.quotes || siteContentData.quotes.length === 0) {
+        return;
+    }
+
+    const today = new Date();
+    const dateSeed =
+        today.getFullYear() * 10000 +
+        (today.getMonth() + 1) * 100 +
+        today.getDate();
+
+    const index = dateSeed % siteContentData.quotes.length;
+    const selected = siteContentData.quotes[index];
 
     quoteElement.innerText = `"${selected.text}"`;
     authorElement.innerText = `— ${selected.author}`;
@@ -209,10 +210,16 @@ function populateArchive() {
 }
 
 function updateUniversalTicker() {
+
     const ticker = document.querySelector('.ticker-text');
-    if (ticker) {
-        ticker.innerText = "Welcome to the official home of Smol Serafimz! Plenty of hijinks and adventures to come!";
+
+    if (!ticker || !siteContentData.ticker || siteContentData.ticker.length === 0) {
+        return;
     }
+
+    const index = Math.floor(Math.random() * siteContentData.ticker.length);
+
+    ticker.innerText = siteContentData.ticker[index];
 }
 
 function populateLatestUpdate() {
