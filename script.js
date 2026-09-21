@@ -223,8 +223,9 @@ function populateLatestUpdate() {
 
     updateElement.innerHTML = `
         <h3>${latest.title}</h3>
-        <small>${latest.date}</small>
         ${paragraphs}
+        <small>${latest.date}</small>
+        
     `;
 }
 
