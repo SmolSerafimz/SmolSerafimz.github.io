@@ -86,6 +86,16 @@ function initializeWiki() {
     }
 
 
+    // Object article
+    if (type === 'object' && id && objectsData[id]) {
+
+        renderObjectArticle(objectsData[id]);
+
+        return;
+
+    }
+
+
     // Default: wiki landing page
     renderLandingPage();
 
@@ -167,12 +177,20 @@ function renderLandingPage() {
             <div id="wiki-locations"></div>
         </section>
 
+
+        <section>
+            <h2>Objects</h2>
+
+            <div id="wiki-objects"></div>
+        </section>
+
     `;
 
 
     renderCast();
     renderEpisodeTable();
     renderLocations();
+    renderObjects();
 
 }
 
@@ -400,6 +418,51 @@ function renderLocations() {
                 >
 
                     <span>${location.title}</span>
+
+                </a>
+
+            `).join('')}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   OBJECT LIST
+   ========================================================= */
+
+function renderObjects() {
+
+    const container = document.getElementById('wiki-objects');
+
+    const objects = Object.entries(objectsData);
+
+
+    if (objects.length === 0) {
+
+        container.innerHTML =
+            '<p>No objects have been added yet.</p>';
+
+        return;
+
+    }
+
+
+    container.innerHTML = `
+
+        <div class="wiki-object-list">
+
+            ${objects.map(([id, object]) => `
+
+                <a
+                    class="wiki-object-card"
+                    href="wiki.html?type=object&id=${id}"
+                >
+
+                    <span>${object.title}</span>
 
                 </a>
 
@@ -724,6 +787,22 @@ function addEpisodeSection(container, title, content) {
 
                     }
 
+
+                    const objectId = findObjectId(item);
+
+                    if (objectId) {
+
+                        return `
+                            <li>
+                                <a href="wiki.html?type=object&id=${objectId}">
+                                    ${item}
+                                </a>
+                            </li>
+                        `;
+
+                    }
+
+
                     return `<li>${item}</li>`;
 
                 }).join('')}
@@ -753,6 +832,19 @@ function findCharacterId(name) {
     const entry = Object.entries(charactersData).find(
         ([id, character]) =>
             character.title.toLowerCase() === String(name).toLowerCase()
+    );
+
+
+    return entry ? entry[0] : null;
+
+}
+
+
+function findObjectId(name) {
+
+    const entry = Object.entries(objectsData).find(
+        ([id, object]) =>
+            object.title.toLowerCase() === String(name).toLowerCase()
     );
 
 
@@ -1049,6 +1141,165 @@ function addLocationSection(container, title, content) {
 
 
 function addLocationAppearances(container, appearances) {
+
+    if (!appearances || appearances.length === 0) {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+
+    section.innerHTML = `
+
+        <h2>Appearances</h2>
+
+        <ul>
+
+            ${appearances.map(episodeId => `
+
+                <li>
+                    <a href="wiki.html?type=episode&id=${episodeId}">
+                        Episode ${episodeId}
+                    </a>
+                </li>
+
+            `).join('')}
+
+        </ul>
+
+    `;
+
+
+    container.appendChild(section);
+
+}
+
+
+/* =========================================================
+   OBJECT ARTICLE
+   ========================================================= */
+
+function renderObjectArticle(object) {
+
+    document.getElementById('article-title').innerText =
+        object.title;
+
+
+    document.getElementById('article-intro-text').innerHTML =
+        object.intro
+            ? `<p>${object.intro}</p>`
+            : '';
+
+
+    const infobox = document.getElementById('article-infobox');
+
+
+    const firstAppearance = object.infobox?.firstAppearance;
+
+
+    infobox.innerHTML = `
+
+        <div class="wiki-infobox">
+
+            <div class="wiki-infobox-title">
+                ${object.title}
+            </div>
+
+
+            ${object.infobox?.type
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Type</strong>
+                        <span>${object.infobox.type}</span>
+                    </div>
+                `
+                : ''
+            }
+
+
+            ${firstAppearance
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>First appearance</strong>
+                        <span>
+                            <a href="wiki.html?type=episode&id=${firstAppearance}">
+                                Episode ${firstAppearance}
+                            </a>
+                        </span>
+                    </div>
+                `
+                : ''
+            }
+
+        </div>
+
+    `;
+
+
+    const sections = document.getElementById('article-sections');
+
+    sections.innerHTML = '';
+
+
+    addObjectSection(
+        sections,
+        'Description',
+        object.description
+    );
+
+
+    addObjectSection(
+        sections,
+        'History',
+        object.history
+    );
+
+
+    addObjectAppearances(
+        sections,
+        object.appearances
+    );
+
+
+    addObjectSection(
+        sections,
+        'Trivia',
+        object.trivia
+    );
+
+
+    addObjectSection(
+        sections,
+        'Behind the scenes',
+        object.behindTheScenes
+    );
+
+}
+
+
+function addObjectSection(container, title, content) {
+
+    if (!content || content.trim() === '') {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+
+    section.innerHTML = `
+        <h2>${title}</h2>
+        <p>${content}</p>
+    `;
+
+
+    container.appendChild(section);
+
+}
+
+
+function addObjectAppearances(container, appearances) {
 
     if (!appearances || appearances.length === 0) {
         return;

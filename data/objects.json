@@ -1,1 +1,15 @@
-{}
+{
+  "test-object": {
+    "title": "Test Object",
+    "intro": "This is a temporary test object used to test the Smol Serafimz object wiki system.",
+    "infobox": {
+      "type": "Test object",
+      "firstAppearance": "001"
+    },
+    "description": "This is temporary placeholder information describing the object.",
+    "history": "This is temporary placeholder history information.",
+    "appearances": [],
+    "trivia": "This object is temporary and will eventually be replaced with real world information.",
+    "behindTheScenes": "Temporary behind-the-scenes information."
+  }
+}
