@@ -30,17 +30,34 @@ Promise.all([
 function initializeWiki() {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const articleId = urlParams.get('article');
 
+    const articleId = urlParams.get('article');
+    const type = urlParams.get('type');
+    const id = urlParams.get('id');
+
+
+    // Temporary test article
     if (articleId && wikiData[articleId]) {
 
         renderArticle(wikiData[articleId]);
 
-    } else {
-
-        renderLandingPage();
+        return;
 
     }
+
+
+    // Character article
+    if (type === 'character' && id && charactersData[id]) {
+
+        renderCharacterArticle(charactersData[id]);
+
+        return;
+
+    }
+
+
+    // Default: wiki landing page
+    renderLandingPage();
 
 }
 
@@ -98,9 +115,7 @@ function renderLandingPage() {
         <section>
             <h2>Meet the Cast</h2>
 
-            <p>
-                Character information will appear here.
-            </p>
+            <div id="wiki-cast"></div>
         </section>
 
 
@@ -122,7 +137,98 @@ function renderLandingPage() {
     `;
 
 
+    renderCast();
     renderEpisodeTable();
+
+}
+
+
+function renderCast() {
+
+    const container = document.getElementById('wiki-cast');
+
+    const characters = Object.entries(charactersData);
+
+
+    if (characters.length === 0) {
+
+        container.innerHTML = '<p>No characters have been added yet.</p>';
+
+        return;
+
+    }
+
+
+    const categories = {
+        "Celestimals": [],
+        "Gnomes": [],
+        "Others": []
+    };
+
+
+    characters.forEach(([id, character]) => {
+
+        const category = character.category;
+
+        if (categories[category]) {
+
+            categories[category].push({
+                id,
+                ...character
+            });
+
+        } else {
+
+            categories["Others"].push({
+                id,
+                ...character
+            });
+
+        }
+
+    });
+
+
+    let html = '';
+
+
+    Object.entries(categories).forEach(([category, characters]) => {
+
+        if (characters.length === 0) {
+            return;
+        }
+
+
+        html += `
+            <h3>${category}</h3>
+
+            <div class="wiki-character-grid">
+
+                ${characters.map(character => `
+
+                    <a
+                        class="wiki-character-card"
+                        href="wiki.html?type=character&id=${character.id}"
+                    >
+
+                        ${character.infobox.image
+                            ? `<img src="${character.infobox.image}" alt="${character.title}">`
+                            : ''
+                        }
+
+                        <span>${character.title}</span>
+
+                    </a>
+
+                `).join('')}
+
+            </div>
+        `;
+
+    });
+
+
+    container.innerHTML = html;
 
 }
 
@@ -132,6 +238,7 @@ function renderEpisodeTable() {
     const container = document.getElementById('wiki-episode-table');
 
     const episodes = Object.entries(episodesData);
+
 
     if (episodes.length === 0) {
 
@@ -170,11 +277,13 @@ function renderEpisodeTable() {
         <table class="wiki-season-table">
 
             <thead>
+
                 <tr>
                     <th>Season</th>
                     <th>Episodes</th>
                     <th>Originally released</th>
                 </tr>
+
             </thead>
 
             <tbody>
@@ -216,9 +325,130 @@ function renderEpisodeTable() {
 }
 
 
+function renderCharacterArticle(character) {
+
+    document.getElementById('article-title').innerText =
+        character.title;
+
+
+    document.getElementById('article-intro-text').innerHTML =
+        `<p>${character.intro}</p>`;
+
+
+    const infobox = document.getElementById('article-infobox');
+
+
+    const firstAppearance = character.infobox.firstAppearance;
+
+
+    infobox.innerHTML = `
+
+        <div class="wiki-infobox">
+
+            ${character.infobox.image
+                ? `
+                    <div class="wiki-infobox-image">
+                        <img
+                            src="${character.infobox.image}"
+                            alt="${character.title}"
+                        >
+                    </div>
+                `
+                : ''
+            }
+
+            <div class="wiki-infobox-title">
+                ${character.title}
+            </div>
+
+
+            <div class="wiki-infobox-row">
+                <strong>Species</strong>
+                <span>${character.infobox.species}</span>
+            </div>
+
+
+            <div class="wiki-infobox-row">
+                <strong>First appearance</strong>
+                <span>
+                    <a href="wiki.html?type=episode&id=${firstAppearance}">
+                        Episode ${firstAppearance}
+                    </a>
+                </span>
+            </div>
+
+        </div>
+
+    `;
+
+
+    const sections = document.getElementById('article-sections');
+
+    sections.innerHTML = '';
+
+
+    addCharacterSection(
+        sections,
+        'Personality',
+        character.personality
+    );
+
+
+    addCharacterSection(
+        sections,
+        'Appearance',
+        character.appearance
+    );
+
+
+    addCharacterSection(
+        sections,
+        'History',
+        character.history
+    );
+
+
+    addCharacterSection(
+        sections,
+        'Trivia',
+        character.trivia
+    );
+
+
+    addCharacterSection(
+        sections,
+        'Behind the scenes',
+        character.behindTheScenes
+    );
+
+}
+
+
+function addCharacterSection(container, title, content) {
+
+    if (!content || content.trim() === '') {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+
+    section.innerHTML = `
+        <h2>${title}</h2>
+        <p>${content}</p>
+    `;
+
+
+    container.appendChild(section);
+
+}
+
+
 function renderArticle(article) {
 
-    document.getElementById('article-title').innerText = article.title;
+    document.getElementById('article-title').innerText =
+        article.title;
 
 
     document.getElementById('article-intro-text').innerHTML =
@@ -227,7 +457,9 @@ function renderArticle(article) {
 
     const infobox = document.getElementById('article-infobox');
 
+
     infobox.innerHTML = `
+
         <div class="wiki-infobox">
 
             <div class="wiki-infobox-title">
@@ -235,13 +467,16 @@ function renderArticle(article) {
             </div>
 
             ${Object.entries(article.infobox).map(([key, value]) => `
+
                 <div class="wiki-infobox-row">
                     <strong>${key}</strong>
                     <span>${value}</span>
                 </div>
+
             `).join('')}
 
         </div>
+
     `;
 
 
@@ -254,10 +489,12 @@ function renderArticle(article) {
 
         const sectionElement = document.createElement('section');
 
+
         sectionElement.innerHTML = `
             <h2>${section.title}</h2>
             <p>${section.content}</p>
         `;
+
 
         sections.appendChild(sectionElement);
 
