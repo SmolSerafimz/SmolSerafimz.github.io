@@ -416,7 +416,7 @@ body.dark-mode .wiki-contents-box {
     background: rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
     .site-wrapper {
         display: flex;
         flex-direction: column;
