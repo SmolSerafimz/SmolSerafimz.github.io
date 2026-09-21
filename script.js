@@ -229,34 +229,37 @@ function populateLatestUpdate() {
 
 function populateUpdatesArchive() {
 
-    const latestUpdate = document.getElementById('latest-update');
+    const mainColumn = document.querySelector('main.column');
 
-    if (!latestUpdate || !updatesData.updates) {
+    if (!mainColumn || !updatesData.updates) {
         return;
     }
 
-    latestUpdate.innerHTML = `
-        <h2>Past Updates</h2>
+    const updatesHTML = updatesData.updates.map(update => {
 
-        ${updatesData.updates.map(update => {
+        const paragraphs = update.text
+            .split('\n\n')
+            .map(paragraph => `<p>${paragraph}</p>`)
+            .join('');
 
-            const paragraphs = update.text
-                .split('\n\n')
-                .map(paragraph => `<p>${paragraph}</p>`)
-                .join('');
+        return `
+            <div class="box update-archive-item">
+                <h2>${update.title}</h2>
+                ${paragraphs}
+                <small>${update.date}</small>
+            </div>
+        `;
 
-            return `
-                <div class="box update-archive-item">
-                    <h3>${update.title}</h3>
-                    ${paragraphs}
-                    <small>${update.date}</small>
-                </div>
-            `;
+    }).join('');
 
-        }).join('')}
+    mainColumn.innerHTML = `
+        <div class="box">
+            <h2>Past Updates</h2>
+            ${updatesHTML}
 
-        <div class="latest-update-link">
-            <a href="index.html">Back to homepage</a>
+            <div class="latest-update-link">
+                <a href="index.html">Back to homepage</a>
+            </div>
         </div>
     `;
 }
