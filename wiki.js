@@ -56,11 +56,35 @@ function initializeWiki() {
     }
 
 
+    // Episode article
+    if (type === 'episode' && id && episodesData[id]) {
+
+        renderEpisodeArticle(id, episodesData[id]);
+
+        return;
+
+    }
+
+
+    // Season article
+    if (type === 'season' && id) {
+
+        renderSeasonArticle(id);
+
+        return;
+
+    }
+
+
     // Default: wiki landing page
     renderLandingPage();
 
 }
 
+
+/* =========================================================
+   LANDING PAGE
+   ========================================================= */
 
 function renderLandingPage() {
 
@@ -74,7 +98,8 @@ function renderLandingPage() {
         </p>
 
         <p>
-            This is the temporary landing page for the wiki.
+            This wiki contains information about the characters,
+            episodes, and world of Smol Serafimz.
         </p>
     `;
 
@@ -142,6 +167,10 @@ function renderLandingPage() {
 
 }
 
+
+/* =========================================================
+   CHARACTER LIST
+   ========================================================= */
 
 function renderCast() {
 
@@ -232,6 +261,10 @@ function renderCast() {
 
 }
 
+
+/* =========================================================
+   EPISODE TABLE ON LANDING PAGE
+   ========================================================= */
 
 function renderEpisodeTable() {
 
@@ -325,6 +358,10 @@ function renderEpisodeTable() {
 }
 
 
+/* =========================================================
+   CHARACTER ARTICLE
+   ========================================================= */
+
 function renderCharacterArticle(character) {
 
     document.getElementById('article-title').innerText =
@@ -336,7 +373,6 @@ function renderCharacterArticle(character) {
 
 
     const infobox = document.getElementById('article-infobox');
-
 
     const firstAppearance = character.infobox.firstAppearance;
 
@@ -444,6 +480,400 @@ function addCharacterSection(container, title, content) {
 
 }
 
+
+/* =========================================================
+   EPISODE ARTICLE
+   ========================================================= */
+
+function renderEpisodeArticle(id, episode) {
+
+    const info = episode.info || {};
+
+
+    document.getElementById('article-title').innerText =
+        episode.title;
+
+
+    document.getElementById('article-intro-text').innerHTML =
+        episode.intro
+            ? `<p>${episode.intro}</p>`
+            : '';
+
+
+    const infobox = document.getElementById('article-infobox');
+
+
+    infobox.innerHTML = `
+
+        <div class="wiki-infobox">
+
+            <div class="wiki-infobox-title">
+                ${episode.title}
+            </div>
+
+
+            <div class="wiki-infobox-row">
+                <strong>Season</strong>
+                <span>
+                    <a href="wiki.html?type=season&id=${info.season}">
+                        ${info.season}
+                    </a>
+                </span>
+            </div>
+
+
+            <div class="wiki-infobox-row">
+                <strong>Number</strong>
+                <span>${id}</span>
+            </div>
+
+
+            <div class="wiki-infobox-row">
+                <strong>Name</strong>
+                <span>${episode.title}</span>
+            </div>
+
+
+            <div class="wiki-infobox-row">
+                <strong>Panels</strong>
+                <span>${info.panels ?? '—'}</span>
+            </div>
+
+
+            ${info.location
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Location</strong>
+                        <span>${info.location}</span>
+                    </div>
+                `
+                : ''
+            }
+
+
+            ${info.previous
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Previous</strong>
+                        <span>
+                            <a href="wiki.html?type=episode&id=${info.previous}">
+                                Episode ${info.previous}
+                            </a>
+                        </span>
+                    </div>
+                `
+                : ''
+            }
+
+
+            ${info.next
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Next</strong>
+                        <span>
+                            <a href="wiki.html?type=episode&id=${info.next}">
+                                Episode ${info.next}
+                            </a>
+                        </span>
+                    </div>
+                `
+                : ''
+            }
+
+        </div>
+
+    `;
+
+
+    const sections = document.getElementById('article-sections');
+
+    sections.innerHTML = '';
+
+
+    addEpisodeSection(
+        sections,
+        'Characters',
+        episode.characters
+    );
+
+
+    addEpisodeSection(
+        sections,
+        'Plot',
+        episode.plot
+    );
+
+
+    addEpisodeSection(
+        sections,
+        'Notable objects',
+        episode.notableObjects
+    );
+
+
+    addEpisodeSection(
+        sections,
+        'Behind the scenes',
+        episode.behindTheScenes
+    );
+
+
+    addEpisodeNavigation(
+        sections,
+        info.previous,
+        info.next
+    );
+
+}
+
+
+function addEpisodeSection(container, title, content) {
+
+    if (!content) {
+        return;
+    }
+
+
+    if (Array.isArray(content) && content.length === 0) {
+        return;
+    }
+
+
+    if (typeof content === 'string' && content.trim() === '') {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+
+    let html = '';
+
+
+    if (Array.isArray(content)) {
+
+        html = `
+            <ul>
+                ${content.map(item => {
+
+                    const characterId = findCharacterId(item);
+
+                    if (characterId) {
+
+                        return `
+                            <li>
+                                <a href="wiki.html?type=character&id=${characterId}">
+                                    ${item}
+                                </a>
+                            </li>
+                        `;
+
+                    }
+
+                    return `<li>${item}</li>`;
+
+                }).join('')}
+            </ul>
+        `;
+
+    } else {
+
+        html = `<p>${content}</p>`;
+
+    }
+
+
+    section.innerHTML = `
+        <h2>${title}</h2>
+        ${html}
+    `;
+
+
+    container.appendChild(section);
+
+}
+
+
+function findCharacterId(name) {
+
+    const entry = Object.entries(charactersData).find(
+        ([id, character]) =>
+            character.title.toLowerCase() === String(name).toLowerCase()
+    );
+
+
+    return entry ? entry[0] : null;
+
+}
+
+
+function addEpisodeNavigation(container, previous, next) {
+
+    if (!previous && !next) {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+    section.className = 'wiki-episode-navigation';
+
+
+    section.innerHTML = `
+
+        <div class="wiki-episode-nav">
+
+            ${previous
+                ? `
+                    <a href="wiki.html?type=episode&id=${previous}">
+                        ← Episode ${previous}
+                    </a>
+                `
+                : '<span></span>'
+            }
+
+
+            ${next
+                ? `
+                    <a href="wiki.html?type=episode&id=${next}">
+                        Episode ${next} →
+                    </a>
+                `
+                : '<span></span>'
+            }
+
+        </div>
+
+    `;
+
+
+    container.appendChild(section);
+
+}
+
+
+/* =========================================================
+   SEASON ARTICLE
+   ========================================================= */
+
+function renderSeasonArticle(seasonId) {
+
+    const seasonEpisodes = Object.entries(episodesData)
+        .filter(([id, episode]) =>
+            String(episode.info?.season || 1) === String(seasonId)
+        )
+        .map(([id, episode]) => ({
+            id,
+            ...episode
+        }))
+        .sort((a, b) => Number(a.id) - Number(b.id));
+
+
+    document.getElementById('article-title').innerText =
+        `Season ${seasonId}`;
+
+
+    document.getElementById('article-intro-text').innerHTML = `
+
+        <p>
+            Season ${seasonId} of <em>Smol Serafimz</em>.
+        </p>
+
+    `;
+
+
+    document.getElementById('article-infobox').innerHTML = `
+
+        <div class="wiki-infobox">
+
+            <div class="wiki-infobox-title">
+                Season ${seasonId}
+            </div>
+
+            <div class="wiki-infobox-row">
+                <strong>Series</strong>
+                <span>
+                    <a href="wiki.html">
+                        Smol Serafimz
+                    </a>
+                </span>
+            </div>
+
+            <div class="wiki-infobox-row">
+                <strong>Season</strong>
+                <span>${seasonId}</span>
+            </div>
+
+            <div class="wiki-infobox-row">
+                <strong>Episodes</strong>
+                <span>${seasonEpisodes.length}</span>
+            </div>
+
+        </div>
+
+    `;
+
+
+    const sections = document.getElementById('article-sections');
+
+    sections.innerHTML = `
+
+        <section id="episodes">
+
+            <h2>Episodes</h2>
+
+            <table class="wiki-episode-list">
+
+                <thead>
+
+                    <tr>
+                        <th>No.</th>
+                        <th>Title</th>
+                        <th>Panels</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    ${seasonEpisodes.map(episode => `
+
+                        <tr>
+
+                            <td>
+                                <a href="wiki.html?type=episode&id=${episode.id}">
+                                    ${episode.id}
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="wiki.html?type=episode&id=${episode.id}">
+                                    ${episode.title}
+                                </a>
+                            </td>
+
+                            <td>
+                                ${episode.info?.panels ?? '—'}
+                            </td>
+
+                        </tr>
+
+                    `).join('')}
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    `;
+
+}
+
+
+/* =========================================================
+   TEST ARTICLE
+   ========================================================= */
 
 function renderArticle(article) {
 
