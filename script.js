@@ -28,10 +28,11 @@ Promise.all([
     })
 ])
 
-.then(([episodes, updates]) => {
+.then(([episodes, updates, siteContent]) => {
 
     comicData = episodes;
     updatesData = updates;
+    siteContentData = siteContent;
 
     initializeSite();
 
