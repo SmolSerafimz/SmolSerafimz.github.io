@@ -136,6 +136,19 @@ body.dark-mode {
     letter-spacing: 1px;
 }
 
+.latest-update-link {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.latest-update-link a {
+    text-decoration: none;
+}
+
+.latest-update-link a:hover {
+    text-decoration: underline;
+}
+
 .featured-content {
     border: 2px solid var(--accent);
     box-shadow: 0 0 15px rgba(255, 195, 0, 0.1);
