@@ -200,6 +200,19 @@ body.dark-mode {
     padding-right: 10px;
 }
 
+#archive-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#archive-list::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+#archive-list::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
 .panel-nav {
     display: flex;
     justify-content: center;
