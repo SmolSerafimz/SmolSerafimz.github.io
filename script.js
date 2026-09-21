@@ -95,7 +95,7 @@ function createStars() {
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        generateStars(); // Re-calculates coordinates for the new screen size
+        generateStars();
     });
     
     function draw() {
@@ -176,7 +176,6 @@ function populateArchive() {
     const archiveList = document.getElementById('archive-list');
     if (!archiveList) return;
 
-
     archiveList.innerHTML = '';
 
     const keys = Object.keys(comicData).sort((a, b) => b.localeCompare(a));
@@ -225,15 +224,58 @@ function populateLatestUpdate() {
         <h3>${latest.title}</h3>
         ${paragraphs}
         <small>${latest.date}</small>
-        
+    `;
+}
+
+function populateUpdatesArchive() {
+
+    const latestUpdate = document.getElementById('latest-update');
+
+    if (!latestUpdate || !updatesData.updates) {
+        return;
+    }
+
+    latestUpdate.innerHTML = `
+        <h2>Past Updates</h2>
+
+        ${updatesData.updates.map(update => {
+
+            const paragraphs = update.text
+                .split('\n\n')
+                .map(paragraph => `<p>${paragraph}</p>`)
+                .join('');
+
+            return `
+                <div class="box update-archive-item">
+                    <h3>${update.title}</h3>
+                    ${paragraphs}
+                    <small>${update.date}</small>
+                </div>
+            `;
+
+        }).join('')}
+
+        <div class="latest-update-link">
+            <a href="index.html">Back to homepage</a>
+        </div>
     `;
 }
 
 function initializeSite() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('updates')) {
+        createStars();
+        updateUniversalTicker();
+        setDailyQuote();
+        populateUpdatesArchive();
+        return;
+    }
+
     const episodeKeys = Object.keys(comicData);
 
     if (document.getElementById('main-comic-display')) {
-        const urlParams = new URLSearchParams(window.location.search);
         const requestedEpisode = urlParams.get('episode');
 
         if (requestedEpisode && comicData[requestedEpisode]) {
@@ -251,4 +293,3 @@ function initializeSite() {
     populateArchive();
     populateLatestUpdate();
 }
-
