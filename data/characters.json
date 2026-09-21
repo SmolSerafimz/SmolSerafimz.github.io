@@ -1,1 +1,65 @@
-{}
+{
+  "fluff": {
+    "title": "Fluff",
+    "category": "Celestimals",
+    "intro": "Temporary introduction for Fluff.",
+    "infobox": {
+      "species": "Celestimal",
+      "firstAppearance": "001",
+      "image": ""
+    },
+    "personality": "Temporary personality information for Fluff.",
+    "appearance": "Temporary appearance information for Fluff.",
+    "history": "Temporary history information for Fluff.",
+    "trivia": "Temporary trivia information for Fluff.",
+    "behindTheScenes": "Temporary behind-the-scenes information for Fluff."
+  },
+
+  "bun": {
+    "title": "Bun",
+    "category": "Celestimals",
+    "intro": "Temporary introduction for Bun.",
+    "infobox": {
+      "species": "Celestimal",
+      "firstAppearance": "002",
+      "image": ""
+    },
+    "personality": "Temporary personality information for Bun.",
+    "appearance": "Temporary appearance information for Bun.",
+    "history": "Temporary history information for Bun.",
+    "trivia": "Temporary trivia information for Bun.",
+    "behindTheScenes": "Temporary behind-the-scenes information for Bun."
+  },
+
+  "cake": {
+    "title": "Cake",
+    "category": "Celestimals",
+    "intro": "Temporary introduction for Cake.",
+    "infobox": {
+      "species": "Celestimal",
+      "firstAppearance": "002",
+      "image": ""
+    },
+    "personality": "Temporary personality information for Cake.",
+    "appearance": "Temporary appearance information for Cake.",
+    "history": "Temporary history information for Cake.",
+    "trivia": "Temporary trivia information for Cake.",
+    "behindTheScenes": "Temporary behind-the-scenes information for Cake."
+  },
+
+  "waffle": {
+    "title": "Waffle",
+    "category": "Celestimals",
+    "intro": "Temporary introduction for Waffle.",
+    "infobox": {
+      "species": "Celestimal",
+      "firstAppearance": "023",
+      "image": ""
+    },
+    "personality": "Temporary personality information for Waffle.",
+    "appearance": "Temporary appearance information for Waffle.",
+    "history": "Temporary history information for Waffle.",
+    "trivia": "Temporary trivia information for Waffle.",
+    "behindTheScenes": "Temporary behind-the-scenes information for Waffle."
+  }
+}
