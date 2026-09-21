@@ -1,5 +1,6 @@
 let comicData = {};
 let updatesData = {};
+let siteContentData = {};
 
 Promise.all([
     fetch('data/episodes.json').then(response => {
@@ -16,13 +17,22 @@ Promise.all([
         }
 
         return response.json();
+    }),
+
+    fetch('data/site-content.json').then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to load site-content.json: ${response.status}`);
+        }
+
+        return response.json();
     })
 ])
 
-.then(([episodes, updates]) => {
+.then(([episodes, updates, siteContent]) => {
 
     comicData = episodes;
     updatesData = updates;
+    siteContentData = siteContent;
 
     initializeSite();
 
