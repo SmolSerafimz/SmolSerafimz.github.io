@@ -236,3 +236,27 @@
 .wiki-object-card:hover {
     transform: translateY(-3px);
 }
+
+.wiki-bottom-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto 10px;
+    padding: 15px 0;
+    
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+.wiki-bottom-nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.wiki-bottom-nav a:hover {
+    text-decoration: underline;
+}
