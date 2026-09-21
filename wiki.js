@@ -1,19 +1,19 @@
-let wikiData = {};
+let wikiHomeData = {};
 let charactersData = {};
 let episodesData = {};
 let locationsData = {};
 let objectsData = {};
 
 Promise.all([
-    fetch('data/wiki-test.json').then(response => response.json()),
+	fetch('data/wiki-home.json').then(response => response.json()),
     fetch('data/characters.json').then(response => response.json()),
     fetch('data/episodes.json').then(response => response.json()),
     fetch('data/locations.json').then(response => response.json()),
     fetch('data/objects.json').then(response => response.json())
 ])
-    .then(([wiki, characters, episodes, locations, objects]) => {
+    .then(([wikiHome, characters, episodes, locations, objects]) => {
 
-        wikiData = wiki;
+		wikiHomeData = wikiHome;
         charactersData = characters;
         episodesData = episodes;
         locationsData = locations;
@@ -34,16 +34,6 @@ function initializeWiki() {
     const articleId = urlParams.get('article');
     const type = urlParams.get('type');
     const id = urlParams.get('id');
-
-
-    // Temporary test article
-    if (articleId && wikiData[articleId]) {
-
-        renderArticle(wikiData[articleId]);
-
-        return;
-
-    }
 
 
     // Character article
@@ -109,77 +99,118 @@ function initializeWiki() {
 function renderLandingPage() {
 
     document.getElementById('article-title').innerText =
-        'Smol Serafimz Official Wiki';
+        wikiHomeData.title || 'Smol Serafimz Official Wiki';
 
 
-    document.getElementById('article-intro-text').innerHTML = `
-        <p>
-            Welcome to the Smol Serafimz Official Wiki.
-        </p>
+    document.getElementById('article-intro-text').innerHTML =
+        wikiHomeData.intro
+            ? `<p>${wikiHomeData.intro}</p>`
+            : '';
 
-        <p>
-            This wiki contains information about the characters,
-            episodes, and world of Smol Serafimz.
-        </p>
-    `;
 
+    const infobox = wikiHomeData.infobox || {};
 
     document.getElementById('article-infobox').innerHTML = `
+
         <div class="wiki-infobox">
 
             <div class="wiki-infobox-title">
-                Smol Serafimz
+                ${infobox.title || 'Smol Serafimz'}
             </div>
 
-            <div class="wiki-infobox-row">
-                <strong>Type</strong>
-                <span>Webcomic</span>
-            </div>
+            ${infobox.type
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Type</strong>
+                        <span>${infobox.type}</span>
+                    </div>
+                `
+                : ''
+            }
 
-            <div class="wiki-infobox-row">
-                <strong>Creator</strong>
-                <span>Smol Serafimz</span>
-            </div>
+            ${infobox.creator
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Creator</strong>
+                        <span>${infobox.creator}</span>
+                    </div>
+                `
+                : ''
+            }
 
-            <div class="wiki-infobox-row">
-                <strong>Started</strong>
-                <span>2026</span>
-            </div>
+            ${infobox.started
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Started</strong>
+                        <span>${infobox.started}</span>
+                    </div>
+                `
+                : ''
+            }
 
-            <div class="wiki-infobox-row">
-                <strong>Status</strong>
-                <span>Ongoing</span>
-            </div>
+            ${infobox.status
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Status</strong>
+                        <span>${infobox.status}</span>
+                    </div>
+                `
+                : ''
+            }
 
         </div>
+
     `;
+
+
+    const sections = wikiHomeData.sections || {};
 
 
     document.getElementById('article-sections').innerHTML = `
 
         <section>
-            <h2>Meet the Cast</h2>
+            <h2>${sections.cast?.title || 'Meet the Cast'}</h2>
+
+            ${sections.cast?.intro
+                ? `<p>${sections.cast.intro}</p>`
+                : ''
+            }
 
             <div id="wiki-cast"></div>
         </section>
 
 
         <section>
-            <h2>Episodes</h2>
+            <h2>${sections.episodes?.title || 'Episodes'}</h2>
+
+            ${sections.episodes?.intro
+                ? `<p>${sections.episodes.intro}</p>`
+                : ''
+            }
 
             <div id="wiki-episode-table"></div>
         </section>
 
 
         <section>
-            <h2>Explore the World</h2>
+            <h2>${sections.world?.title || 'Explore the World'}</h2>
+
+            ${sections.world?.intro
+                ? `<p>${sections.world.intro}</p>`
+                : ''
+            }
 
             <div id="wiki-locations"></div>
         </section>
 
 
         <section>
-            <h2>Objects</h2>
+            <h2>${sections.objects?.title || 'Objects'}</h2>
+
+            ${sections.objects?.intro
+                ? `<p>${sections.objects.intro}</p>`
+                : ''
+            }
 
             <div id="wiki-objects"></div>
         </section>
@@ -1331,67 +1362,5 @@ function addObjectAppearances(container, appearances) {
 
 
     container.appendChild(section);
-
-}
-
-
-/* =========================================================
-   TEST ARTICLE
-   ========================================================= */
-
-function renderArticle(article) {
-
-    document.getElementById('article-title').innerText =
-        article.title;
-
-
-    document.getElementById('article-intro-text').innerHTML =
-        `<p>${article.intro}</p>`;
-
-
-    const infobox = document.getElementById('article-infobox');
-
-
-    infobox.innerHTML = `
-
-        <div class="wiki-infobox">
-
-            <div class="wiki-infobox-title">
-                ${article.title}
-            </div>
-
-            ${Object.entries(article.infobox).map(([key, value]) => `
-
-                <div class="wiki-infobox-row">
-                    <strong>${key}</strong>
-                    <span>${value}</span>
-                </div>
-
-            `).join('')}
-
-        </div>
-
-    `;
-
-
-    const sections = document.getElementById('article-sections');
-
-    sections.innerHTML = '';
-
-
-    article.sections.forEach(section => {
-
-        const sectionElement = document.createElement('section');
-
-
-        sectionElement.innerHTML = `
-            <h2>${section.title}</h2>
-            <p>${section.content}</p>
-        `;
-
-
-        sections.appendChild(sectionElement);
-
-    });
 
 }
