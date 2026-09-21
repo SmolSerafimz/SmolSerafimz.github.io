@@ -206,3 +206,34 @@
 .wiki-location-card:hover {
     transform: translateY(-3px);
 }
+
+.wiki-object-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 15px 0 25px;
+}
+
+.wiki-object-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 70px;
+
+    padding: 12px;
+
+    border: 1px solid #aaa;
+    background: rgba(128, 128, 128, 0.08);
+
+    text-decoration: none;
+    color: inherit;
+
+    font-weight: bold;
+
+    transition: transform 0.15s ease;
+}
+
+.wiki-object-card:hover {
+    transform: translateY(-3px);
+}
