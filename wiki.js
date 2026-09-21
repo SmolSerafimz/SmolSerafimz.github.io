@@ -76,6 +76,16 @@ function initializeWiki() {
     }
 
 
+    // Location article
+    if (type === 'location' && id && locationsData[id]) {
+
+        renderLocationArticle(locationsData[id]);
+
+        return;
+
+    }
+
+
     // Default: wiki landing page
     renderLandingPage();
 
@@ -154,9 +164,7 @@ function renderLandingPage() {
         <section>
             <h2>Explore the World</h2>
 
-            <p>
-                Locations and other world information will appear here.
-            </p>
+            <div id="wiki-locations"></div>
         </section>
 
     `;
@@ -164,6 +172,7 @@ function renderLandingPage() {
 
     renderCast();
     renderEpisodeTable();
+    renderLocations();
 
 }
 
@@ -263,7 +272,7 @@ function renderCast() {
 
 
 /* =========================================================
-   EPISODE TABLE ON LANDING PAGE
+   EPISODE TABLE
    ========================================================= */
 
 function renderEpisodeTable() {
@@ -352,6 +361,51 @@ function renderEpisodeTable() {
             </tbody>
 
         </table>
+
+    `;
+
+}
+
+
+/* =========================================================
+   LOCATION LIST
+   ========================================================= */
+
+function renderLocations() {
+
+    const container = document.getElementById('wiki-locations');
+
+    const locations = Object.entries(locationsData);
+
+
+    if (locations.length === 0) {
+
+        container.innerHTML =
+            '<p>No locations have been added yet.</p>';
+
+        return;
+
+    }
+
+
+    container.innerHTML = `
+
+        <div class="wiki-location-list">
+
+            ${locations.map(([id, location]) => `
+
+                <a
+                    class="wiki-location-card"
+                    href="wiki.html?type=location&id=${id}"
+                >
+
+                    <span>${location.title}</span>
+
+                </a>
+
+            `).join('')}
+
+        </div>
 
     `;
 
@@ -867,6 +921,165 @@ function renderSeasonArticle(seasonId) {
         </section>
 
     `;
+
+}
+
+
+/* =========================================================
+   LOCATION ARTICLE
+   ========================================================= */
+
+function renderLocationArticle(location) {
+
+    document.getElementById('article-title').innerText =
+        location.title;
+
+
+    document.getElementById('article-intro-text').innerHTML =
+        location.intro
+            ? `<p>${location.intro}</p>`
+            : '';
+
+
+    const infobox = document.getElementById('article-infobox');
+
+
+    const firstAppearance = location.infobox?.firstAppearance;
+
+
+    infobox.innerHTML = `
+
+        <div class="wiki-infobox">
+
+            <div class="wiki-infobox-title">
+                ${location.title}
+            </div>
+
+
+            ${location.infobox?.type
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>Type</strong>
+                        <span>${location.infobox.type}</span>
+                    </div>
+                `
+                : ''
+            }
+
+
+            ${firstAppearance
+                ? `
+                    <div class="wiki-infobox-row">
+                        <strong>First appearance</strong>
+                        <span>
+                            <a href="wiki.html?type=episode&id=${firstAppearance}">
+                                Episode ${firstAppearance}
+                            </a>
+                        </span>
+                    </div>
+                `
+                : ''
+            }
+
+        </div>
+
+    `;
+
+
+    const sections = document.getElementById('article-sections');
+
+    sections.innerHTML = '';
+
+
+    addLocationSection(
+        sections,
+        'Description',
+        location.description
+    );
+
+
+    addLocationSection(
+        sections,
+        'History',
+        location.history
+    );
+
+
+    addLocationAppearances(
+        sections,
+        location.appearances
+    );
+
+
+    addLocationSection(
+        sections,
+        'Trivia',
+        location.trivia
+    );
+
+
+    addLocationSection(
+        sections,
+        'Behind the scenes',
+        location.behindTheScenes
+    );
+
+}
+
+
+function addLocationSection(container, title, content) {
+
+    if (!content || content.trim() === '') {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+
+    section.innerHTML = `
+        <h2>${title}</h2>
+        <p>${content}</p>
+    `;
+
+
+    container.appendChild(section);
+
+}
+
+
+function addLocationAppearances(container, appearances) {
+
+    if (!appearances || appearances.length === 0) {
+        return;
+    }
+
+
+    const section = document.createElement('section');
+
+
+    section.innerHTML = `
+
+        <h2>Appearances</h2>
+
+        <ul>
+
+            ${appearances.map(episodeId => `
+
+                <li>
+                    <a href="wiki.html?type=episode&id=${episodeId}">
+                        Episode ${episodeId}
+                    </a>
+                </li>
+
+            `).join('')}
+
+        </ul>
+
+    `;
+
+
+    container.appendChild(section);
 
 }
 
