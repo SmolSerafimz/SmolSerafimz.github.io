@@ -1,22 +1,30 @@
 let wikiData = {};
+let charactersData = {};
+let episodesData = {};
+let locationsData = {};
+let objectsData = {};
 
-fetch('data/wiki-test.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Failed to load wiki-test.json: ${response.status}`);
-        }
+Promise.all([
+    fetch('data/wiki-test.json').then(response => response.json()),
+    fetch('data/characters.json').then(response => response.json()),
+    fetch('data/episodes.json').then(response => response.json()),
+    fetch('data/locations.json').then(response => response.json()),
+    fetch('data/objects.json').then(response => response.json())
+])
+    .then(([wiki, characters, episodes, locations, objects]) => {
 
-        return response.json();
-    })
-    .then(data => {
-        wikiData = data;
+        wikiData = wiki;
+        charactersData = characters;
+        episodesData = episodes;
+        locationsData = locations;
+        objectsData = objects;
 
         initializeWiki();
+
     })
     .catch(error => {
         console.error('Failed to load wiki data:', error);
     });
-
 
 function initializeWiki() {
 
