@@ -1,1 +1,15 @@
-{}
+{
+  "test-location": {
+    "title": "Test Location",
+    "intro": "This is a temporary test location used to test the Smol Serafimz location wiki system.",
+    "infobox": {
+      "type": "Test location",
+      "firstAppearance": "001"
+    },
+    "description": "This is temporary placeholder information describing the location.",
+    "history": "This is temporary placeholder history information.",
+    "appearances": [],
+    "trivia": "This location is temporary and will eventually be replaced with real world information.",
+    "behindTheScenes": "Temporary behind-the-scenes information."
+  }
+}
