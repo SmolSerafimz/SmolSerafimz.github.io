@@ -26,6 +26,7 @@ Promise.all([
         console.error('Failed to load wiki data:', error);
     });
 
+
 function initializeWiki() {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -106,9 +107,7 @@ function renderLandingPage() {
         <section>
             <h2>Episodes</h2>
 
-            <p>
-                Season and episode information will appear here.
-            </p>
+            <div id="wiki-episode-table"></div>
         </section>
 
 
@@ -119,6 +118,98 @@ function renderLandingPage() {
                 Locations and other world information will appear here.
             </p>
         </section>
+
+    `;
+
+
+    renderEpisodeTable();
+
+}
+
+
+function renderEpisodeTable() {
+
+    const container = document.getElementById('wiki-episode-table');
+
+    const episodes = Object.entries(episodesData);
+
+    if (episodes.length === 0) {
+
+        container.innerHTML = '<p>No episodes have been added yet.</p>';
+
+        return;
+
+    }
+
+
+    const seasons = {};
+
+
+    episodes.forEach(([id, episode]) => {
+
+        const season = episode.info?.season || 1;
+
+        if (!seasons[season]) {
+            seasons[season] = [];
+        }
+
+        seasons[season].push({
+            id,
+            ...episode
+        });
+
+    });
+
+
+    const sortedSeasons = Object.keys(seasons)
+        .sort((a, b) => Number(a) - Number(b));
+
+
+    container.innerHTML = `
+
+        <table class="wiki-season-table">
+
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Episodes</th>
+                    <th>Originally released</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                ${sortedSeasons.map(season => {
+
+                    const seasonEpisodes = seasons[season];
+
+                    return `
+                        <tr>
+
+                            <td>
+                                <a href="wiki.html?type=season&id=${season}">
+                                    Season ${season}
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="wiki.html?type=season&id=${season}#episodes">
+                                    ${seasonEpisodes.length}
+                                </a>
+                            </td>
+
+                            <td>
+                                —
+                            </td>
+
+                        </tr>
+                    `;
+
+                }).join('')}
+
+            </tbody>
+
+        </table>
 
     `;
 
