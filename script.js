@@ -1,5 +1,6 @@
 let comicData = {};
 let updatesData = {};
+let siteContentData = {};
 
 Promise.all([
     fetch('data/episodes.json').then(response => {
@@ -13,6 +14,14 @@ Promise.all([
     fetch('data/updates.json').then(response => {
         if (!response.ok) {
             throw new Error(`Failed to load updates.json: ${response.status}`);
+        }
+
+        return response.json();
+    }),
+
+    fetch('data/site-content.json').then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to load site-content.json: ${response.status}`);
         }
 
         return response.json();
