@@ -194,6 +194,12 @@ body.dark-mode {
     transition: all 0.2s ease;
 }
 
+#archive-list {
+    max-height: 1150px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
 .panel-nav {
     display: flex;
     justify-content: center;
