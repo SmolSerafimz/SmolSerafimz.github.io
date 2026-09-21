@@ -194,6 +194,25 @@ body.dark-mode {
     transition: all 0.2s ease;
 }
 
+#archive-list {
+    max-height: 1150px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#archive-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#archive-list::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+#archive-list::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
 .panel-nav {
     display: flex;
     justify-content: center;
