@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #FFF7E6;
+    color: #3A3530;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.welcome-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 40px 30px 60px;
+}
+
+/* Logo */
+
+.welcome-logo {
+    width: min(70vw, 900px);
+    height: auto;
+    display: block;
+
+    margin-top: 20px;
+}
+
+/* Introduction */
+
+.welcome-intro {
+    width: min(700px, 90%);
+    text-align: center;
+
+    margin-top: 15px;
+    margin-bottom: 45px;
+}
+
+.welcome-intro p {
+    margin: 0;
+
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+/* Navigation buttons */
+
+.welcome-buttons {
+    width: min(1100px, 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 45px;
+}
+
+/* Individual button */
+
+.welcome-button {
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #3A3530;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.welcome-button img {
+    width: 220px;
+    height: 220px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.welcome-button span {
+    margin-top: 14px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* Hover */
+
+.welcome-button:hover {
+    transform: translateY(-8px);
+    filter: brightness(1.04);
+}
+
+.welcome-button:hover span {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .welcome-page {
+        padding: 25px 20px 45px;
+    }
+
+    .welcome-logo {
+        width: min(85vw, 650px);
+    }
+
+    .welcome-intro {
+        margin-top: 10px;
+        margin-bottom: 35px;
+    }
+
+    .welcome-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 25px;
+        max-width: 600px;
+    }
+
+    .welcome-button {
+        width: 100%;
+    }
+
+    .welcome-button img {
+        width: min(35vw, 180px);
+        height: min(35vw, 180px);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .welcome-page {
+        padding: 20px 15px 40px;
+    }
+
+    .welcome-logo {
+        width: 95vw;
+    }
+
+    .welcome-intro {
+        width: 95%;
+        margin-bottom: 30px;
+    }
+
+    .welcome-intro p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .welcome-buttons {
+        gap: 30px 15px;
+    }
+
+    .welcome-button img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .welcome-button span {
+        margin-top: 10px;
+        font-size: 0.95rem;
+    }
+}
