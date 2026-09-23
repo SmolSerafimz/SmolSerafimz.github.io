@@ -40,12 +40,10 @@ h1 {
 }
 
 .character-row img {
-    width: 220px;
     height: 220px;
+    width: auto;
 
-    object-fit: cover;
-    border-radius: 50%;
-
+    display: block;
     flex-shrink: 0;
 }
 
