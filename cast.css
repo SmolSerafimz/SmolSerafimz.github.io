@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #FFF7E6;
+    color: #3A3530;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cast-page {
+    min-height: 100vh;
+    width: min(1000px, 92%);
+
+    margin: 0 auto;
+    padding: 45px 0 60px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 55px;
+    font-size: 2.5rem;
+}
+
+.character-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    margin-bottom: 55px;
+}
+
+.character-row img {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+.character-text {
+    flex: 1;
+    max-width: 450px;
+}
+
+.character-text h2 {
+    margin: 0 0 12px;
+    font-size: 1.8rem;
+}
+
+.character-text p {
+    margin: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.cast-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 20px;
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(58, 53, 48, 0.3);
+}
+
+.cast-button {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border: 2px solid #3A3530;
+    border-radius: 30px;
+
+    color: #3A3530;
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cast-button:hover {
+    background-color: #3A3530;
+    color: #FFF7E6;
+
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .cast-page {
+        width: 90%;
+        padding-top: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .character-row,
+    .character-row.reverse {
+        flex-direction: column;
+        gap: 20px;
+
+        text-align: center;
+
+        margin-bottom: 50px;
+    }
+
+    .character-row img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .character-text {
+        max-width: 500px;
+    }
+
+    .character-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .character-text p {
+        font-size: 1rem;
+    }
+
+    .cast-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cast-button {
+        width: 220px;
+        text-align: center;
+    }
+}
