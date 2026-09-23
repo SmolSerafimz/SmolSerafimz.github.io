@@ -53,16 +53,16 @@ function loadEpisode(epNumber) {
     document.getElementById('episode-about-text').innerHTML = `<p>${data.intro}</p>`;
 
     const dotContainer = document.getElementById('panel-dots');
-    dotContainer.innerHTML = ''; 
-    
+    dotContainer.innerHTML = '';
+
     for (let i = 0; i < data.info.panels; i++) {
         const dot = document.createElement('span');
         const panelNumber = i + 1;
         dot.className = (i === 0) ? 'dot active' : 'dot';
-        
+
         dot.onclick = function() {
             document.getElementById('main-comic-display').src = `assets/${epNumber}_${panelNumber}.webp`;
-            
+
             document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
             dot.classList.add('active');
         };
@@ -72,13 +72,13 @@ function loadEpisode(epNumber) {
 }
 
 function createStars() {
-    
+
     const container = document.getElementById('star-container');
     if (!container) return;
-    
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     container.appendChild(canvas);
@@ -107,7 +107,7 @@ function createStars() {
         canvas.height = window.innerHeight;
         generateStars();
     });
-    
+
     function draw() {
         if (!document.body.classList.contains('dark-mode')) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -127,8 +127,10 @@ function createStars() {
             ctx.globalAlpha = Math.max(0, Math.min(1, star.opacity));
             ctx.fillRect(star.x, star.y, star.size, star.size);
         }
+
         requestAnimationFrame(draw);
     }
+
     requestAnimationFrame(draw);
 }
 
@@ -194,11 +196,11 @@ function populateArchive() {
     keys.forEach(epKey => {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        
+
         a.href = "#";
         const epTitle = comicData[epKey].title;
         a.innerText = `${epKey}: ${epTitle}`;
-        
+
         a.onclick = (e) => {
             e.preventDefault();
             loadEpisode(epKey);
