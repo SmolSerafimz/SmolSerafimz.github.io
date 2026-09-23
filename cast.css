@@ -125,10 +125,9 @@ h1 {
     }
 
     .character-row img {
-        width: 220px;
-        height: 220px;
+        height: 180px;
+        width: auto;
     }
-
     .character-text {
         max-width: 500px;
     }
