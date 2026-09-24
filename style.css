@@ -156,9 +156,10 @@ body.dark-mode {
 
 .episode-navigation {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 10px 20px;
 
     width: 100%;
     max-width: 800px;
@@ -200,6 +201,40 @@ body.dark-mode {
     transform: none;
 }
 
+.episode-navigation-secondary {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 2px;
+}
+
+.episode-navigation-small-button {
+    padding: 6px 12px;
+
+    border: 1px solid #888;
+    border-radius: 4px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.episode-navigation-small-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
 @media (max-width: 600px) {
 
     .episode-navigation {
@@ -209,6 +244,11 @@ body.dark-mode {
     .episode-navigation-button {
         padding: 10px 8px;
         font-size: 0.85rem;
+    }
+
+    .episode-navigation-small-button {
+        padding: 5px 9px;
+        font-size: 0.75rem;
     }
 }
 
