@@ -121,25 +121,40 @@
     </div>
 
     <div class="episode-navigation" id="episode-navigation">
+    <button
+        type="button"
+        id="previous-episode"
+        class="episode-navigation-button"
+    >
+        ← Previous Episode
+    </button>
 
+    <button
+        type="button"
+        id="next-episode"
+        class="episode-navigation-button"
+    >
+        Next Episode →
+    </button>
+
+    <div class="episode-navigation-secondary">
         <button
             type="button"
-            id="previous-episode"
-            class="episode-navigation-button"
+            id="read-from-beginning"
+            class="episode-navigation-small-button"
         >
-            ← Previous Episode
+            Read from Beginning
         </button>
 
-        <button
-            type="button"
-            id="next-episode"
-            class="episode-navigation-button"
+        <select
+            id="season-selector"
+            class="episode-navigation-small-button"
+            aria-label="Select season"
         >
-            Next Episode →
-        </button>
-
+            <option value="1">Season 1</option>
+        </select>
     </div>
-
+</div>
     <h2 class="centered-header">About Episode</h2>
 
     <div id="episode-about-text" class="episode-lore-box">

@@ -34,6 +34,9 @@ Promise.all([
     updatesData = updates;
     siteContentData = siteContent;
 
+    populateSeasonSelector();
+    setupSeasonNavigation();
+
     initializeSite();
 
 })
@@ -94,6 +97,70 @@ function loadEpisode(epNumber, scrollToComic = false) {
             });
         }
     }
+}
+
+function populateSeasonSelector() {
+
+    const seasonSelector =
+        document.getElementById('season-selector');
+
+    if (!seasonSelector) return;
+
+    const seasons = [
+        ...new Set(
+            Object.values(comicData)
+                .map(episode => episode.info.season)
+                .filter(season => season !== undefined)
+        )
+    ].sort((a, b) => a - b);
+
+    seasonSelector.innerHTML = '';
+
+    seasons.forEach(season => {
+
+        const option =
+            document.createElement('option');
+
+        option.value = season;
+        option.innerText = `Season ${season}`;
+
+        seasonSelector.appendChild(option);
+
+    });
+
+    // Always start on Season 1
+    if (seasons.includes(1)) {
+        seasonSelector.value = '1';
+    }
+}
+
+function setupSeasonNavigation() {
+
+    const seasonSelector =
+        document.getElementById('season-selector');
+
+    const readFromBeginningButton =
+        document.getElementById('read-from-beginning');
+
+    if (!seasonSelector || !readFromBeginningButton) return;
+
+    readFromBeginningButton.onclick = function() {
+
+        const selectedSeason =
+            Number(seasonSelector.value);
+
+        const firstEpisode =
+            Object.keys(comicData)
+                .filter(epNumber =>
+                    comicData[epNumber].info.season === selectedSeason
+                )
+                .sort((a, b) => Number(a) - Number(b))[0];
+
+        if (!firstEpisode) return;
+
+        navigateToEpisode(firstEpisode);
+
+    };
 }
 
 function navigateToEpisode(epNumber) {
