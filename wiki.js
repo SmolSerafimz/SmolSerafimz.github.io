@@ -800,6 +800,12 @@ function renderEpisodeArticle(id, episode) {
                 <span>${info.panels ?? '—'}</span>
             </div>
 
+			<div class="wiki-infobox-row">
+			    <strong>Read</strong>
+ 			    <span>
+					<a href="comic.html?episode=${id}">Link</a>
+    			</span>
+			</div>
 
             ${info.location
                 ? `
