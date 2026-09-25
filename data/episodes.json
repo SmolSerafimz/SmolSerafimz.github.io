@@ -1,4 +1,20 @@
 {
+        "026": {
+        "title": "Cute-a-geddon",
+        "image": "assets/026_1.webp",
+        "info": {
+            "season": 1,
+            "panels": 8,
+            "location": "",
+            "previous": "025",
+            "next": null
+        },
+        "intro": "Fluff and Bun are at their rivalry again with a device they found in the Gnome Village while Cake's curiosity is unsupervised. Oh dear.",
+        "characters": [],
+        "plot": "",
+        "notableObjects": [],
+        "behindTheScenes": ""
+    },
     "025": {
         "title": "Raptor Training",
         "image": "assets/025_1.webp",
@@ -7,7 +23,7 @@
             "panels": 3,
             "location": "",
             "previous": "024",
-            "next": null
+            "next": "026"
         },
         "intro": "Fluff has decided that it's time for Waffle to become a proper raptor, like in the movies. So training is underway.",
         "characters": [],
