@@ -808,6 +808,7 @@ function initializeSite() {
     createStars();
     updateUniversalTicker();
     setDailyQuote();
+    populateLatestUpdate();
     populateArchive();
 }
 
