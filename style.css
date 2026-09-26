@@ -61,6 +61,10 @@ body.dark-mode {
     box-sizing: border-box;
 }
 
+.site-wrapper.downloads-layout #main-column {
+    grid-column: 2 / 4;
+}
+
 .site-wrapper.wiki-layout {
     grid-template-columns: 250px 1fr; /* Two columns: Sidebar and expanding Center */
 }
@@ -233,6 +237,117 @@ body.dark-mode {
 
 .episode-navigation-small-button:hover {
     background: rgba(255, 255, 255, 0.12);
+}
+
+/* --- DOWNLOADS --- */
+
+.downloads-box {
+    text-align: left;
+}
+
+.downloads-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.downloads-navigation a {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.downloads-navigation a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.downloads-section {
+    margin-bottom: 45px;
+    scroll-margin-top: 20px;
+}
+
+.downloads-section h2 {
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+.download-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.download-image {
+    flex: 0 0 280px;
+}
+
+.download-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--accent);
+}
+
+.download-info {
+    flex: 1;
+    text-align: left;
+}
+
+.download-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.download-info p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid var(--accent);
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.download-button:hover {
+    background: var(--accent);
+    color: var(--header-text);
+}
+
+@media (max-width: 600px) {
+
+    .downloads-navigation {
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+
+    .download-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .download-image {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .download-info {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
