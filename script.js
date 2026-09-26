@@ -2,6 +2,8 @@ let comicData = {};
 let updatesData = {};
 let siteContentData = {};
 
+let currentEpisode = null;
+
 Promise.all([
     fetch('data/episodes.json').then(response => {
         if (!response.ok) {
@@ -36,6 +38,7 @@ Promise.all([
 
     populateSeasonSelector();
     setupSeasonNavigation();
+    setupDownloadsNavigation();
 
     initializeSite();
 
@@ -51,6 +54,8 @@ function loadEpisode(epNumber, scrollToComic = false) {
 
     const data = comicData[epNumber];
     if (!data) return;
+
+    currentEpisode = epNumber;
 
     document.getElementById('episode-title').innerText =
         "Episode " + epNumber + ": " + data.title;
@@ -175,6 +180,8 @@ function navigateToEpisode(epNumber) {
         url
     );
 
+    showComic();
+
     loadEpisode(epNumber, true);
 }
 
@@ -182,12 +189,18 @@ function updateEpisodeNavigation(epNumber) {
 
     const data = comicData[epNumber];
 
-    const previousButton = document.getElementById('previous-episode');
-    const nextButton = document.getElementById('next-episode');
+    const previousButton =
+        document.getElementById('previous-episode');
+
+    const nextButton =
+        document.getElementById('next-episode');
 
     if (!previousButton || !nextButton || !data) return;
 
-    if (data.info.previous && comicData[data.info.previous]) {
+    if (
+        data.info.previous &&
+        comicData[data.info.previous]
+    ) {
 
         previousButton.disabled = false;
 
@@ -199,9 +212,13 @@ function updateEpisodeNavigation(epNumber) {
 
         previousButton.disabled = true;
         previousButton.onclick = null;
+
     }
 
-    if (data.info.next && comicData[data.info.next]) {
+    if (
+        data.info.next &&
+        comicData[data.info.next]
+    ) {
 
         nextButton.disabled = false;
 
@@ -213,7 +230,179 @@ function updateEpisodeNavigation(epNumber) {
 
         nextButton.disabled = true;
         nextButton.onclick = null;
+
     }
+}
+
+function setupDownloadsNavigation() {
+
+    const downloadsLink =
+        document.getElementById('downloads-link');
+
+    const comicLink =
+        document.getElementById('comic-link');
+
+    if (!downloadsLink || !comicLink) return;
+
+    downloadsLink.onclick = function(event) {
+
+        event.preventDefault();
+
+        history.pushState(
+            { downloads: true },
+            '',
+            'comic.html?downloads'
+        );
+
+        showDownloads();
+
+    };
+
+    comicLink.onclick = function(event) {
+
+        event.preventDefault();
+
+        let episodeToLoad = currentEpisode;
+
+        if (
+            !episodeToLoad ||
+            !comicData[episodeToLoad]
+        ) {
+
+            const latestEp =
+                Math.max(
+                    ...Object.keys(comicData).map(Number)
+                );
+
+            episodeToLoad =
+                latestEp
+                    .toString()
+                    .padStart(3, '0');
+
+        }
+
+        history.pushState(
+            { episode: episodeToLoad },
+            '',
+            `comic.html?episode=${episodeToLoad}`
+        );
+
+        showComic();
+
+        loadEpisode(episodeToLoad);
+
+    };
+
+}
+
+function showDownloads() {
+
+    const siteWrapper =
+        document.getElementById('site-wrapper');
+
+    const comicBox =
+        document.getElementById('comic-box');
+
+    const latestUpdate =
+        document.getElementById('latest-update');
+
+    const rightColumn =
+        document.getElementById('right-column');
+
+    const downloadsBox =
+        document.getElementById('downloads-box');
+
+    const downloadsLink =
+        document.getElementById('downloads-link');
+
+    const comicLink =
+        document.getElementById('comic-link');
+
+    if (!downloadsBox) return;
+
+    if (siteWrapper) {
+        siteWrapper.classList.add('downloads-layout');
+    }
+
+    if (comicBox) {
+        comicBox.style.display = 'none';
+    }
+
+    if (latestUpdate) {
+        latestUpdate.style.display = 'none';
+    }
+
+    if (rightColumn) {
+        rightColumn.style.display = 'none';
+    }
+
+    downloadsBox.style.display = 'block';
+
+    if (downloadsLink) {
+        downloadsLink.classList.add('active');
+    }
+
+    if (comicLink) {
+        comicLink.classList.remove('active');
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function showComic() {
+
+    const siteWrapper =
+        document.getElementById('site-wrapper');
+
+    const comicBox =
+        document.getElementById('comic-box');
+
+    const latestUpdate =
+        document.getElementById('latest-update');
+
+    const rightColumn =
+        document.getElementById('right-column');
+
+    const downloadsBox =
+        document.getElementById('downloads-box');
+
+    const downloadsLink =
+        document.getElementById('downloads-link');
+
+    const comicLink =
+        document.getElementById('comic-link');
+
+    if (siteWrapper) {
+        siteWrapper.classList.remove('downloads-layout');
+    }
+
+    if (downloadsBox) {
+        downloadsBox.style.display = 'none';
+    }
+
+    if (comicBox) {
+        comicBox.style.display = 'block';
+    }
+
+    if (latestUpdate) {
+        latestUpdate.style.display = 'block';
+    }
+
+    if (rightColumn) {
+        rightColumn.style.display = '';
+    }
+
+    if (downloadsLink) {
+        downloadsLink.classList.remove('active');
+    }
+
+    if (comicLink) {
+        comicLink.classList.add('active');
+    }
+
 }
 
 function createStars() {
@@ -234,7 +423,8 @@ function createStars() {
 
         stars = [];
 
-        const starCount = window.innerWidth < 768 ? 30 : 100;
+        const starCount =
+            window.innerWidth < 768 ? 30 : 100;
 
         for (let i = 0; i < starCount; i++) {
 
@@ -264,14 +454,28 @@ function createStars() {
 
         if (!document.body.classList.contains('dark-mode')) {
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
 
-            setTimeout(() => requestAnimationFrame(draw), 500);
+            setTimeout(
+                () => requestAnimationFrame(draw),
+                500
+            );
 
             return;
         }
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
         ctx.fillStyle = "white";
 
         for (let i = 0; i < stars.length; i++) {
@@ -280,12 +484,18 @@ function createStars() {
 
             star.opacity += star.speed;
 
-            if (star.opacity > 1 || star.opacity < 0) {
+            if (
+                star.opacity > 1 ||
+                star.opacity < 0
+            ) {
                 star.speed *= -1;
             }
 
             ctx.globalAlpha =
-                Math.max(0, Math.min(1, star.opacity));
+                Math.max(
+                    0,
+                    Math.min(1, star.opacity)
+                );
 
             ctx.fillRect(
                 star.x,
@@ -301,7 +511,8 @@ function createStars() {
     requestAnimationFrame(draw);
 }
 
-const themeCheckbox = document.getElementById('theme-checkbox');
+const themeCheckbox =
+    document.getElementById('theme-checkbox');
 
 function setTheme(isDark) {
 
@@ -324,9 +535,13 @@ function setTheme(isDark) {
     }
 }
 
-const savedTheme = localStorage.getItem('theme');
+const savedTheme =
+    localStorage.getItem('theme');
+
 const systemPrefersDark =
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
+    window.matchMedia(
+        '(prefers-color-scheme: dark)'
+    ).matches;
 
 if (savedTheme) {
 
@@ -340,11 +555,12 @@ if (savedTheme) {
 
 if (themeCheckbox) {
 
-    themeCheckbox.addEventListener('change', () => {
-
-        setTheme(themeCheckbox.checked);
-
-    });
+    themeCheckbox.addEventListener(
+        'change',
+        () => {
+            setTheme(themeCheckbox.checked);
+        }
+    );
 
 }
 
@@ -365,7 +581,8 @@ function setDailyQuote() {
         return;
     }
 
-    const today = new Date();
+    const today =
+        new Date();
 
     const dateSeed =
         today.getFullYear() * 10000 +
@@ -400,10 +617,14 @@ function populateArchive() {
 
     keys.forEach(epKey => {
 
-        const li = document.createElement('li');
-        const a = document.createElement('a');
+        const li =
+            document.createElement('li');
 
-        a.href = `comic.html?episode=${epKey}`;
+        const a =
+            document.createElement('a');
+
+        a.href =
+            `comic.html?episode=${epKey}`;
 
         const epTitle =
             comicData[epKey].title;
@@ -525,7 +746,9 @@ function populateUpdatesArchive() {
 function initializeSite() {
 
     const urlParams =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+            window.location.search
+        );
 
     if (urlParams.has('updates')) {
 
@@ -533,6 +756,17 @@ function initializeSite() {
         updateUniversalTicker();
         setDailyQuote();
         populateUpdatesArchive();
+
+        return;
+    }
+
+    if (urlParams.has('downloads')) {
+
+        showDownloads();
+
+        createStars();
+        updateUniversalTicker();
+        setDailyQuote();
 
         return;
     }
@@ -580,7 +814,16 @@ function initializeSite() {
 window.addEventListener('popstate', () => {
 
     const urlParams =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+            window.location.search
+        );
+
+    if (urlParams.has('downloads')) {
+
+        showDownloads();
+
+        return;
+    }
 
     const episode =
         urlParams.get('episode');
@@ -590,8 +833,28 @@ window.addEventListener('popstate', () => {
         comicData[episode]
     ) {
 
-        loadEpisode(episode, true);
+        showComic();
 
+        loadEpisode(
+            episode,
+            true
+        );
+
+        return;
     }
+
+    showComic();
+
+    const latestEp =
+        Math.max(
+            ...Object.keys(comicData).map(Number)
+        );
+
+    const paddedEp =
+        latestEp
+            .toString()
+            .padStart(3, '0');
+
+    loadEpisode(paddedEp);
 
 });
