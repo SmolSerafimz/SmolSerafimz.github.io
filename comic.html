@@ -32,7 +32,7 @@
 
     <div id="star-container"></div>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" id="site-wrapper">
 
         <header class="header-banner">
             <img src="assets/logo.png" alt="SmolSerafimz Logo" class="logo">
@@ -48,149 +48,340 @@
 
             <div class="box">
                 <div class="box-header">NAVIGATION</div>
+
                 <ul class="nav-links">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="comic.html" class="active">COMIC</a></li>
-                    <li><a href="wiki.html">WIKI</a></li>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+
+                    <li>
+                        <a href="comic.html" class="active" id="comic-link">
+                            COMIC
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="wiki.html">WIKI</a>
+                    </li>
+
+                    <li>
+                        <a href="comic.html?downloads" id="downloads-link">
+                            DOWNLOADS
+                        </a>
+                    </li>
                 </ul>
             </div>
 
             <div class="box">
                 <div class="box-header">SOCIAL MEDIA</div>
+
                 <ul class="nav-links">
-                    <li><a href="https://www.instagram.com/lordfluffs" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
-                    <li><a href="https://lordfluffs.newgrounds.com/" target="_blank" rel="noopener noreferrer">NEWGROUNDS</a></li>
+                    <li>
+                        <a
+                            href="https://www.instagram.com/lordfluffs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            INSTAGRAM
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://lordfluffs.newgrounds.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            NEWGROUNDS
+                        </a>
+                    </li>
                 </ul>
             </div>
 
             <div class="box quote-box">
                 <div class="box-header">DAILY QUOTE</div>
-                <p id="daily-quote">"Placeholder."</p>
-                <small>— Char Name</small>
+
+                <p id="daily-quote">
+                    "Placeholder."
+                </p>
+
+                <small>
+                    — Char Name
+                </small>
             </div>
 
             <div class="box">
                 <div class="box-header">SITE THEME</div>
+
                 <div class="theme-controls">
                     <span>Day</span>
+
                     <label class="switch">
-                        <input type="checkbox" id="theme-checkbox">
+                        <input
+                            type="checkbox"
+                            id="theme-checkbox"
+                        >
+
                         <span class="slider"></span>
                     </label>
+
                     <span>Night</span>
                 </div>
             </div>
 
             <div class="box">
                 <div class="box-header">VISITORS</div>
+
                 <div style="text-align: center; padding: 15px;">
-                    <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fsmolserafimz.github.io%2F&label=Visitors&icon=github&color=%23ffc107&message=&style=for-the-badge&tz=Europe%2FBelgrade" alt="Visitor Count">
+                    <img
+                        src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fsmolserafimz.github.io%2F&label=Visitors&icon=github&color=%23ffc107&message=&style=for-the-badge&tz=Europe%2FBelgrade"
+                        alt="Visitor Count"
+                    >
                 </div>
             </div>
 
         </aside>
 
-        <main class="column">
+        <main class="column" id="main-column">
 
             <div class="box" id="latest-update">
+
                 <h2>Latest Update</h2>
 
                 <div id="latest-update-content"></div>
 
                 <div class="latest-update-link">
-                    <a href="comic.html?updates">View past updates</a>
+                    <a href="comic.html?updates">
+                        View past updates
+                    </a>
                 </div>
+
             </div>
 
             <div class="box featured-content" id="comic-box">
 
-    <h2 class="centered-header" id="episode-title">Initializing...</h2>
+                <h2 class="centered-header" id="episode-title">
+                    Initializing...
+                </h2>
 
-    <img
-        src="assets/ep21_web.webp"
-        id="main-comic-display"
-        style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"
-        alt="Comic Page"
-    >
+                <img
+                    src="assets/ep21_web.webp"
+                    id="main-comic-display"
+                    style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"
+                    alt="Comic Page"
+                >
 
-    <div class="panel-nav" id="panel-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+                <div class="panel-nav" id="panel-dots">
 
-    <div class="episode-navigation" id="episode-navigation">
-    <button
-        type="button"
-        id="previous-episode"
-        class="episode-navigation-button"
-    >
-        ← Previous Episode
-    </button>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
 
-    <button
-        type="button"
-        id="next-episode"
-        class="episode-navigation-button"
-    >
-        Next Episode →
-    </button>
+                </div>
 
-    <div class="episode-navigation-secondary">
-        <button
-            type="button"
-            id="read-from-beginning"
-            class="episode-navigation-small-button"
-        >
-            Read from Beginning
-        </button>
+                <div
+                    class="episode-navigation"
+                    id="episode-navigation"
+                >
 
-        <select
-            id="season-selector"
-            class="episode-navigation-small-button"
-            aria-label="Select season"
-        >
-            <option value="1">Season 1</option>
-        </select>
-    </div>
-</div>
-    <h2 class="centered-header">About Episode</h2>
+                    <button
+                        type="button"
+                        id="previous-episode"
+                        class="episode-navigation-button"
+                    >
+                        ← Previous Episode
+                    </button>
 
-    <div id="episode-about-text" class="episode-lore-box">
-        <p>Welcome to the latest entry in the chronicle...</p>
-    </div>
+                    <button
+                        type="button"
+                        id="next-episode"
+                        class="episode-navigation-button"
+                    >
+                        Next Episode →
+                    </button>
 
-</div>
+                    <div class="episode-navigation-secondary">
+
+                        <button
+                            type="button"
+                            id="read-from-beginning"
+                            class="episode-navigation-small-button"
+                        >
+                            Read from Beginning
+                        </button>
+
+                        <select
+                            id="season-selector"
+                            class="episode-navigation-small-button"
+                            aria-label="Select season"
+                        >
+                            <option value="1">
+                                Season 1
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <h2 class="centered-header">
+                    About Episode
+                </h2>
+
+                <div
+                    id="episode-about-text"
+                    class="episode-lore-box"
+                >
+                    <p>
+                        Welcome to the latest entry in the chronicle...
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- DOWNLOADS -->
+
+            <div
+                class="box downloads-box"
+                id="downloads-box"
+                style="display: none;"
+            >
+
+                <h2 class="centered-header">
+                    Downloads
+                </h2>
+
+                <div class="downloads-navigation">
+
+                    <a href="#downloads-3d-prints">
+                        3D Print Models
+                    </a>
+
+                    <a href="#downloads-wallpapers">
+                        Wallpapers (WIP)
+                    </a>
+
+                </div>
+
+                <section
+                    id="downloads-3d-prints"
+                    class="downloads-section"
+                >
+
+                    <h2>
+                        3D Print Models
+                    </h2>
+
+                    <div class="download-item">
+
+                        <div class="download-image">
+
+                            <img
+                                src="assets/fluff_3dprint.webp"
+                                alt="Fluff 3D printed model"
+                            >
+
+                        </div>
+
+                        <div class="download-info">
+
+                            <h3>
+                                Fluff
+                            </h3>
+
+                            <p>
+                                A 3D-printable model of Fluff from
+                                Smol Serafimz. Print your own little
+                                Celestimal!
+                            </p>
+
+                            <a
+                                href="assets/Fluff - Smol serafimz.stl"
+                                class="download-button"
+                                download
+                            >
+                                Download STL
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section
+                    id="downloads-wallpapers"
+                    class="downloads-section"
+                >
+
+                    <h2>
+                        Wallpapers
+                    </h2>
+
+                    <p>
+                        Wallpapers are coming soon!
+                    </p>
+
+                </section>
+
+            </div>
+
         </main>
 
-        <aside class="column">
+        <aside
+            class="column"
+            id="right-column"
+        >
 
             <div class="box">
-                <div class="box-header">ARCHIVE</div>
-                <ul class="nav-links" id="archive-list">
+
+                <div class="box-header">
+                    ARCHIVE
+                </div>
+
+                <ul
+                    class="nav-links"
+                    id="archive-list"
+                >
                 </ul>
+
             </div>
 
         </aside>
 
     </div>
 
-    <footer style="text-align: center; padding: 40px 20px; opacity: 0.9; font-family: 'Courier New', Courier, monospace; color: #bbb; background: rgba(0,0,0,0.7);">
+    <footer
+        style="text-align: center; padding: 40px 20px; opacity: 0.9; font-family: 'Courier New', Courier, monospace; color: #bbb; background: rgba(0,0,0,0.7);"
+    >
 
-        <div style="border-top: 1px solid #333; width: 60%; margin: 20px auto; padding-top: 20px;">
+        <div
+            style="border-top: 1px solid #333; width: 60%; margin: 20px auto; padding-top: 20px;"
+        >
 
-            <p style="letter-spacing: 2px; color: #aaa;">
-                <strong>© 2026 NECROMYD // SMOL SERAFIMZ™</strong>
+            <p
+                style="letter-spacing: 2px; color: #aaa;"
+            >
+                <strong>
+                    © 2026 NECROMYD // SMOL SERAFIMZ™
+                </strong>
             </p>
 
-            <p style="font-size: 0.8em; max-width: 500px; margin: 10px auto; line-height: 1.5;">
-                All content, including but not limited to artwork, characters, and narrative lore,
-                is the original intellectual property of the author, Lord Fluffs.
+            <p
+                style="font-size: 0.8em; max-width: 500px; margin: 10px auto; line-height: 1.5;"
+            >
+                All content, including but not limited to artwork,
+                characters, and narrative lore, is the original
+                intellectual property of the author, Lord Fluffs.
+
                 <br>
-                No part of this publication may be reproduced, edited, distributed, or transmitted in any form
-                or by any means, including scraping or training for generative AI models,
-                without the prior written permission of the copyright holder.
+
+                No part of this publication may be reproduced,
+                edited, distributed, or transmitted in any form
+                or by any means, including scraping or training
+                for generative AI models, without the prior written
+                permission of the copyright holder.
             </p>
 
         </div>
