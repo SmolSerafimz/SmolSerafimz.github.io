@@ -176,6 +176,10 @@
     text-decoration: none;
 }
 
+.wiki-text {
+    white-space: pre-line;
+}
+
 .wiki-location-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
