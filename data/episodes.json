@@ -405,7 +405,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "The Meadow", "The First Tree",
+            "location": ["The Meadow", "The First Tree"],
             "previous": "001",
             "next": "003"
         },
@@ -421,7 +421,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "The Meadow", "Gnome Village", "The First Tree",
+            "location": ["The Meadow", "Gnome Village", "The First Tree"],
             "previous": null,
             "next": "002"
         },
