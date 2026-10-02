@@ -961,7 +961,7 @@ function addEpisodeSection(container, title, content) {
 
     } else {
 
-        html = `<p>${content}</p>`;
+        html = `<p class="wiki-text">${content}</p>`;
 
     }
 
