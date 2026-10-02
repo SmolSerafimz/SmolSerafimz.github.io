@@ -3,21 +3,24 @@ let charactersData = {};
 let episodesData = {};
 let locationsData = {};
 let objectsData = {};
+let seasonData = {};
 
 Promise.all([
 	fetch('data/wiki-home.json').then(response => response.json()),
     fetch('data/characters.json').then(response => response.json()),
     fetch('data/episodes.json').then(response => response.json()),
     fetch('data/locations.json').then(response => response.json()),
-    fetch('data/objects.json').then(response => response.json())
+    fetch('data/objects.json').then(response => response.json()),
+	fetch('data/season-data.json').then(response => response.json())
 ])
-    .then(([wikiHome, characters, episodes, locations, objects]) => {
+    .then(([wikiHome, characters, episodes, locations, objects, seasons]) => {
 
 		wikiHomeData = wikiHome;
         charactersData = characters;
         episodesData = episodes;
         locationsData = locations;
         objectsData = objects;
+		seasonData = seasons;
 
         initializeWiki();
 
@@ -512,7 +515,7 @@ function renderEpisodeTable() {
                             </td>
 
                             <td>
-                                —
+                                ${seasonData[season]?.originallyReleased || '—'}
                             </td>
 
                         </tr>
@@ -1054,6 +1057,8 @@ function addEpisodeNavigation(container, previous, next) {
 
 function renderSeasonArticle(seasonId) {
 
+    const season = seasonData[seasonId];
+
     const seasonEpisodes = Object.entries(episodesData)
         .filter(([id, episode]) =>
             String(episode.info?.season || 1) === String(seasonId)
@@ -1069,22 +1074,15 @@ function renderSeasonArticle(seasonId) {
         `Season ${seasonId}`;
 
 
-    document.getElementById('article-intro-text').innerHTML = `
-
-        <p>
-            Season ${seasonId} of <em>Smol Serafimz</em>.
-        </p>
-
-    `;
+    document.getElementById('article-intro-text').innerHTML =
+        season?.intro
+            ? `<p>${season.intro}</p>`
+            : '';
 
 
     document.getElementById('article-infobox').innerHTML = `
 
         <div class="wiki-infobox">
-
-            <div class="wiki-infobox-title">
-                Season ${seasonId}
-            </div>
 
             <div class="wiki-infobox-row">
                 <strong>Series</strong>
