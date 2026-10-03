@@ -94,12 +94,6 @@ function renderLandingPage() {
         wikiHomeData.title || 'Smol Serafimz Official Wiki';
 
 
-	document.getElementById('article-intro-text').innerHTML =
-	    episode.intro
-	        ? `<p class="wiki-text">${episode.intro}</p>`
-	        : '';
-
-
     const infobox = wikiHomeData.infobox || {};
 
     document.getElementById('article-infobox').innerHTML = `
