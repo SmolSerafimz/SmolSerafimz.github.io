@@ -52,6 +52,11 @@
     color: #222;
 }
 
+.wiki-infobox-row ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
 #article-sections {
     margin-top: 25px;
 }

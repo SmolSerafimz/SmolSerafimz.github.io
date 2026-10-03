@@ -1,21 +1,21 @@
 {
-    "027": {
-        "title": "Dr. Cake",
-        "image": "assets/027_1.webp",
-        "info": {
-            "season": 1,
-            "panels": 4,
-            "location": ["The Meadow"],
-            "previous": "026",
-            "next": null
+         "027": {
+            "title": "Dr. Cake",
+            "image": "assets/027_1.webp",
+            "info": {
+                "season": 1,
+                "panels": 4,
+                "location": "The Meadow",
+                "previous": "026",
+                "next": null
+            },
+            "intro": "Waffle has played in the water for too long, which caused a harmless little 'coldiness' sensation of a sneeze and shiver. That is more than enough for Dr. Cake to step onto the scene.",
+            "characters": ["Waffle", "Cake", "Bun", "Fluff"],
+            "plot": "After the whole bath arc, reality catches up to Waffle's shenanigans. Harmlessly so, in the form of a slight sneeze that tells him he spent too much time in the water. Cake immediately steps in to handle the issue by making Waffle as cozy as possible, ensuring he gets all he needs and beyond.",
+            "notableObjects": ["Fluff plush", "Gnometec mini"],
+            "behindTheScenes": "Given that illnesses can't exist in their realm, this condition Waffle has could cause confusion. But it is merely a little rule-of-reality sensation that tells him that perhaps he can put his time into other things too, while viewers can relate it to the common cold in real life, which is far less pleasant."
         },
-        "intro": "Waffle has played in the water for too long, which caused a harmless little 'coldiness' sensation of a sneeze and shiver. That is more than enough for Dr. Cake to step onto the scene.",
-        "characters": ["Waffle", "Cake", "Bun", "Fluff"],
-        "plot": "After the whole bath arc, reality catches up to Waffle's shenanigans. Harmlessly so, in the form of a slight sneeze that tells him he spent too much time in the water. Cake immediately steps in to handle the issue by making Waffle as cozy as possible, ensuring he gets all he needs and beyond.",
-        "notableObjects": ["Fluff plush", "Gnometec mini"],
-        "behindTheScenes": "Given that illnesses can't exist in their realm, this condition Waffle has could cause confusion. But it is merely a little rule-of-reality sensation that tells him that perhaps he can put his time into other things too, while viewers can relate it to the common cold in real life, which is far less pleasant."
-    },
-    "026": {
+        "026": {
         "title": "Cute-a-geddon",
         "image": "assets/026_1.webp",
         "info": {
