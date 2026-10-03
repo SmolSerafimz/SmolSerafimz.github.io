@@ -21,7 +21,7 @@
         "info": {
             "season": 1,
             "panels": 8,
-            "location": "",
+            "location": [],
             "previous": "025",
             "next": "027"
         },
@@ -37,7 +37,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "024",
             "next": "026"
         },
@@ -53,7 +53,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "",
+            "location": [],
             "previous": "023",
             "next": "025"
         },
@@ -69,7 +69,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "",
+            "location": [],
             "previous": "022",
             "next": "024"
         },
@@ -85,7 +85,7 @@
         "info": {
             "season": 1,
             "panels": 2,
-            "location": "",
+            "location": [],
             "previous": "021",
             "next": "023"
         },
@@ -101,7 +101,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "",
+            "location": [],
             "previous": "020",
             "next": "022"
         },
@@ -117,7 +117,7 @@
         "info": {
             "season": 1,
             "panels": 1,
-            "location": "",
+            "location": [],
             "previous": "019",
             "next": "021"
         },
@@ -133,7 +133,7 @@
         "info": {
             "season": 1,
             "panels": 2,
-            "location": "",
+            "location": [],
             "previous": "018",
             "next": "020"
         },
@@ -149,7 +149,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "017",
             "next": "019"
         },
@@ -165,7 +165,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "",
+            "location": [],
             "previous": "016",
             "next": "018"
         },
@@ -181,7 +181,7 @@
         "info": {
             "season": 1,
             "panels": 5,
-            "location": "",
+            "location": [],
             "previous": "015",
             "next": "017"
         },
@@ -197,7 +197,7 @@
         "info": {
             "season": 1,
             "panels": 1,
-            "location": "",
+            "location": [],
             "previous": "014",
             "next": "016"
         },
@@ -213,7 +213,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "",
+            "location": [],
             "previous": "013",
             "next": "015"
         },
@@ -229,7 +229,7 @@
         "info": {
             "season": 1,
             "panels": 1,
-            "location": "",
+            "location": [],
             "previous": "012",
             "next": "014"
         },
@@ -245,7 +245,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "011",
             "next": "013"
         },
@@ -261,7 +261,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "010",
             "next": "012"
         },
@@ -277,7 +277,7 @@
         "info": {
             "season": 1,
             "panels": 5,
-            "location": "",
+            "location": [],
             "previous": "009",
             "next": "011"
         },
@@ -293,7 +293,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "008",
             "next": "010"
         },
@@ -309,7 +309,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "",
+            "location": [],
             "previous": "007",
             "next": "009"
         },
@@ -325,7 +325,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "006",
             "next": "008"
         },
@@ -341,7 +341,7 @@
         "info": {
             "season": 1,
             "panels": 1,
-            "location": "",
+            "location": [],
             "previous": "005",
             "next": "007"
         },
@@ -357,7 +357,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "",
+            "location": [],
             "previous": "004",
             "next": "006"
         },
@@ -373,7 +373,7 @@
         "info": {
             "season": 1,
             "panels": 4,
-            "location": "The Meadow",
+            "location": ["The Meadow"],
             "previous": "003",
             "next": "005"
         },
@@ -389,7 +389,7 @@
         "info": {
             "season": 1,
             "panels": 3,
-            "location": "The Meadow",
+            "location": ["The Meadow"],
             "previous": "002",
             "next": "004"
         },
