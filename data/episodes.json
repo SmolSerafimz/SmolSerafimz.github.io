@@ -5,7 +5,7 @@
             "info": {
                 "season": 1,
                 "panels": 4,
-                "location": "The Meadow",
+                "location": ["The Meadow"],
                 "previous": "026",
                 "next": null
             },
