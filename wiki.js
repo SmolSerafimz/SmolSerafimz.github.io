@@ -810,15 +810,33 @@ function renderEpisodeArticle(id, episode) {
     			</span>
 			</div>
 
-            ${info.location
-                ? `
-                    <div class="wiki-infobox-row">
-                        <strong>Location</strong>
-                        <span>${info.location}</span>
-                    </div>
-                `
-                : ''
-            }
+${info.location && info.location.length
+    ? `
+        <div class="wiki-infobox-row">
+            <strong>Location</strong>
+            <ul>
+                ${info.location.map(locationName => {
+
+                    const locationId = findLocationId(locationName);
+
+                    if (locationId) {
+                        return `
+                            <li>
+                                <a href="wiki.html?type=location&id=${locationId}">
+                                    ${locationName}
+                                </a>
+                            </li>
+                        `;
+                    }
+
+                    return `<li>${locationName}</li>`;
+
+                }).join('')}
+            </ul>
+        </div>
+    `
+    : ''
+}
 
 
             ${info.previous
@@ -998,6 +1016,18 @@ function findObjectId(name) {
     const entry = Object.entries(objectsData).find(
         ([id, object]) =>
             object.title.toLowerCase() === String(name).toLowerCase()
+    );
+
+
+    return entry ? entry[0] : null;
+
+}
+
+function findLocationId(name) {
+
+    const entry = Object.entries(locationsData).find(
+        ([id, location]) =>
+            location.title.toLowerCase() === String(name).toLowerCase()
     );
 
 
