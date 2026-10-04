@@ -95,8 +95,8 @@ function renderLandingPage() {
 
 
 	document.getElementById('article-intro-text').innerHTML =
-	    episode.intro
-	        ? `<p class="wiki-text">${episode.intro}</p>`
+	    wikiHomeData.intro
+	        ? `<p class="wiki-text">${wikiHomeData.intro}</p>`
 	        : '';
 
 
