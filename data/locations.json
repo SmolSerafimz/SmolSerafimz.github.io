@@ -11,5 +11,10 @@
     "appearances": [],
     "trivia": "This location is temporary and will eventually be replaced with real world information.",
     "behindTheScenes": "Temporary behind-the-scenes information."
+    "map": {
+      "x": 2100,
+      "y": 3400,
+      "radius": 100
+    }
   }
 }
