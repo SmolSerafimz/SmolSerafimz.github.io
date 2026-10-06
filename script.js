@@ -3,6 +3,7 @@ let updatesData = {};
 let siteContentData = {};
 
 let currentEpisode = null;
+let worldMap = null;
 
 Promise.all([
     fetch('data/episodes.json').then(response => {
@@ -459,6 +460,40 @@ function showMap() {
         top: 0,
         behavior: 'smooth'
     });
+
+    initializeWorldMap();
+}
+
+function initializeWorldMap() {
+
+    const mapElement =
+        document.getElementById('world-map');
+
+    if (!mapElement) return;
+
+    if (worldMap) {
+        worldMap.invalidateSize();
+        return;
+    }
+
+    const mapBounds =
+        [[0, 0], [8192, 8192]];
+
+    worldMap =
+        L.map('world-map', {
+            crs: L.CRS.Simple,
+            minZoom: -5,
+            maxBounds: mapBounds,
+            maxBoundsViscosity: 1.0
+        });
+
+    L.imageOverlay(
+        'assets/Cozy Realm - Living Map.webp',
+        mapBounds
+    ).addTo(worldMap);
+
+    worldMap.fitBounds(mapBounds);
+
 }
 
 function showComic() {
