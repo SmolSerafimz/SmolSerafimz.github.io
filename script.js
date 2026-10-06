@@ -522,9 +522,11 @@ function initializeWorldMap() {
 
         const marker =
             L.circle(
-                [y, x],
+                [8192 - y, x],
                 {
-                    radius: radius
+                    radius: radius,
+                    opacity: 0,
+                    fillOpacity: 0
                 }
             ).addTo(worldMap);
 
