@@ -1,7 +1,7 @@
 let comicData = {};
 let updatesData = {};
 let siteContentData = {};
-let locationsData = {};
+let mapLocationsData = {};
 
 let currentEpisode = null;
 let worldMap = null;
@@ -45,7 +45,7 @@ Promise.all([
     comicData = episodes;
     updatesData = updates;
     siteContentData = siteContent;
-    locationsData = locations;
+    mapLocationsData = locations;
 
     populateSeasonSelector();
     setupSeasonNavigation();
@@ -504,7 +504,7 @@ function initializeWorldMap() {
 
     worldMap.fitBounds(mapBounds);
 
-    Object.entries(locationsData).forEach(([id, location]) => {
+    Object.entries(mapLocationsData).forEach(([id, location]) => {
 
         if (!location.map) return;
 
