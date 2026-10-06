@@ -1,9 +1,3 @@
-<script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin="">
-</script>
-
 let comicData = {};
 let updatesData = {};
 let siteContentData = {};
@@ -45,6 +39,7 @@ Promise.all([
     populateSeasonSelector();
     setupSeasonNavigation();
     setupDownloadsNavigation();
+    setupMapNavigation();
 
     initializeSite();
 
@@ -301,6 +296,29 @@ function setupDownloadsNavigation() {
 
 }
 
+
+function setupMapNavigation() {
+
+    const mapLink =
+        document.getElementById('map-link');
+
+    if (!mapLink) return;
+
+    mapLink.onclick = function(event) {
+
+        event.preventDefault();
+
+        history.pushState(
+            { map: true },
+            '',
+            'comic.html?map'
+        );
+
+        showMap();
+
+    };
+}
+
 function showDownloads() {
 
     const siteWrapper =
@@ -324,6 +342,12 @@ function showDownloads() {
     const comicLink =
         document.getElementById('comic-link');
 
+    const mapBox =
+    document.getElementById('map-box');
+
+    const mapLink =
+    document.getElementById('map-link');
+
     if (!downloadsBox) return;
 
     if (siteWrapper) {
@@ -346,6 +370,85 @@ function showDownloads() {
 
     if (downloadsLink) {
         downloadsLink.classList.add('active');
+    }
+
+    if (comicLink) {
+        comicLink.classList.remove('active');
+    }
+
+    if (mapBox) {
+    mapBox.style.display = 'none';
+    }
+
+    if (mapLink) {
+    mapLink.classList.remove('active');
+    }
+    
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function showMap() {
+
+    const siteWrapper =
+        document.getElementById('site-wrapper');
+
+    const comicBox =
+        document.getElementById('comic-box');
+
+    const latestUpdate =
+        document.getElementById('latest-update');
+
+    const rightColumn =
+        document.getElementById('right-column');
+
+    const downloadsBox =
+        document.getElementById('downloads-box');
+
+    const mapBox =
+        document.getElementById('map-box');
+
+    const mapLink =
+        document.getElementById('map-link');
+
+    const downloadsLink =
+        document.getElementById('downloads-link');
+
+    const comicLink =
+        document.getElementById('comic-link');
+
+    if (!mapBox) return;
+
+    if (siteWrapper) {
+        siteWrapper.classList.add('downloads-layout');
+    }
+
+    if (comicBox) {
+        comicBox.style.display = 'none';
+    }
+
+    if (latestUpdate) {
+        latestUpdate.style.display = 'none';
+    }
+
+    if (rightColumn) {
+        rightColumn.style.display = 'none';
+    }
+
+    if (downloadsBox) {
+        downloadsBox.style.display = 'none';
+    }
+
+    mapBox.style.display = 'block';
+
+    if (mapLink) {
+        mapLink.classList.add('active');
+    }
+
+    if (downloadsLink) {
+        downloadsLink.classList.remove('active');
     }
 
     if (comicLink) {
@@ -381,6 +484,12 @@ function showComic() {
     const comicLink =
         document.getElementById('comic-link');
 
+    const mapBox =
+    document.getElementById('map-box');
+
+    const mapLink =
+    document.getElementById('map-link');
+
     if (siteWrapper) {
         siteWrapper.classList.remove('downloads-layout');
     }
@@ -407,6 +516,14 @@ function showComic() {
 
     if (comicLink) {
         comicLink.classList.add('active');
+    }
+
+    if (mapBox) {
+    mapBox.style.display = 'none';
+    }
+
+    if (mapLink) {
+    mapLink.classList.remove('active');
     }
 
 }
@@ -756,6 +873,17 @@ function initializeSite() {
             window.location.search
         );
 
+    if (urlParams.has('map')) {
+
+    showMap();
+
+    createStars();
+    updateUniversalTicker();
+    setDailyQuote();
+
+    return;
+    }
+    
     if (urlParams.has('updates')) {
 
         createStars();
@@ -824,6 +952,13 @@ window.addEventListener('popstate', () => {
         new URLSearchParams(
             window.location.search
         );
+
+    if (urlParams.has('map')) {
+
+        showMap();
+
+        return;
+    }
 
     if (urlParams.has('downloads')) {
 
