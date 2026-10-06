@@ -1,6 +1,6 @@
 {
   "test-location": {
-    "title": "Test Location",
+    "title": "Gnome Village",
     "intro": "This is a temporary test location used to test the Smol Serafimz location wiki system.",
     "infobox": {
       "type": "Test location",
@@ -10,11 +10,11 @@
     "history": "This is temporary placeholder history information.",
     "appearances": [],
     "trivia": "This location is temporary and will eventually be replaced with real world information.",
-    "behindTheScenes": "Temporary behind-the-scenes information."
+    "behindTheScenes": "Temporary behind-the-scenes information.",
     "map": {
-      "x": 2100,
-      "y": 3400,
-      "radius": 100
+      "x": 2270,
+      "y": 2770,
+      "radius": 200
     }
   }
 }

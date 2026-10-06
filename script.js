@@ -1,6 +1,7 @@
 let comicData = {};
 let updatesData = {};
 let siteContentData = {};
+let locationsData = {};
 
 let currentEpisode = null;
 let worldMap = null;
@@ -28,14 +29,23 @@ Promise.all([
         }
 
         return response.json();
+    }),
+    
+    fetch('data/locations.json').then(response => {
+    if (!response.ok) {
+        throw new Error(`Failed to load locations.json: ${response.status}`);
+    }
+
+    return response.json();
     })
 ])
 
-.then(([episodes, updates, siteContent]) => {
+.then(([episodes, updates, siteContent, locations]) => {
 
     comicData = episodes;
     updatesData = updates;
     siteContentData = siteContent;
+    locationsData = locations;
 
     populateSeasonSelector();
     setupSeasonNavigation();
@@ -493,6 +503,40 @@ function initializeWorldMap() {
     ).addTo(worldMap);
 
     worldMap.fitBounds(mapBounds);
+
+    Object.entries(locationsData).forEach(([id, location]) => {
+
+        if (!location.map) return;
+
+        const x = location.map.x;
+        const y = location.map.y;
+        const radius = location.map.radius;
+
+        if (
+            typeof x !== 'number' ||
+            typeof y !== 'number' ||
+            typeof radius !== 'number'
+        ) {
+            return;
+        }
+
+        const marker =
+            L.circle(
+                [y, x],
+                {
+                    radius: radius
+                }
+            ).addTo(worldMap);
+
+        marker.bindPopup(`
+            <strong>${location.title}</strong>
+            <p>${location.intro || ''}</p>
+            <a href="wiki.html?type=location&id=${id}">
+                Open Wiki
+            </a>
+        `);
+
+    });
 
 }
 
