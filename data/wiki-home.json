@@ -1,29 +1,29 @@
 {
   "title": "Smol Serafimz Official Wiki",
-  "intro": "Welcome to the official Smol Serafimz Wiki. \n\nSmol Serafimz is a hobby project made by LordFluffs depicting cute and mischievous slice-of-life moments of the titular characters in a carefree world. It's presented in various mediums, though most commonly via a comic strip. \n\nThis wiki serves as a database that logs all notable lore and data from the franchise as it grows over time.",
+  "intro": "Welcome to the official Smol Serafimz Wiki. \n\nSmol Serafimz is a hobby project made by LordFluffs depicting cute and mischievous slice-of-life moments of the titular characters in a carefree world. It's presented in various mediums, though most commonly as a comic. \n\nThis wiki serves as a database that logs all notable lore and data from the franchise as it grows over time.",
   "infobox": {
     "title": "Smol Serafimz",
     "type": "Webcomic",
-    "creator": "Smol Serafimz",
+    "creator": "Lord Fluffs",
     "started": "2026",
     "status": "Ongoing"
   },
   "sections": {
     "cast": {
       "title": "Meet the Cast",
-      "intro": ""
+      "intro": "Cozy Realm is a home to all sorts of being and creatures. Comic introduces many new characters over time. Here you can learn more about them."
     },
     "episodes": {
       "title": "Episodes",
-      "intro": ""
+      "intro": "Episodes are weekly published and are together forming seasons. Each season tends to have its own theme and changes, always improving upon the previous."
     },
     "world": {
       "title": "Explore the World",
-      "intro": ""
+      "intro": "Cozy Realm may be a cute paradise realm but it's bigger than it seems. Here you can read about each notable location."
     },
     "objects": {
       "title": "Objects",
-      "intro": ""
+      "intro": "Objects that appear more commonly or are of higher importance are listed here."
     }
   }
 }
