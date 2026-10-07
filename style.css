@@ -242,7 +242,6 @@ body.dark-mode {
 #latest-update-content {
     max-height: 180px;
     overflow: hidden;
-    position: relative;
 }
 
 #latest-update.expanded #latest-update-content {
