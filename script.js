@@ -907,7 +907,22 @@ function populateLatestUpdate() {
     const paragraphs =
         latest.text
             .split('\n\n')
-            .map(paragraph => `<p>${paragraph}</p>`)
+            .map(block => {
+    
+                const lines = block.split('\n');
+    
+                if (lines.every(line => line.startsWith('- '))) {
+    
+                    const items = lines
+                        .map(line => `<li>${line.substring(2)}</li>`)
+                        .join('');
+    
+                    return `<ul>${items}</ul>`;
+                }
+    
+                return `<p>${block}</p>`;
+    
+            })
             .join('');
 
     updateElement.innerHTML = `
@@ -976,11 +991,26 @@ function populateUpdatesArchive() {
         updatesData.updates
             .map(update => {
 
-                const paragraphs =
-                    update.text
-                        .split('\n\n')
-                        .map(paragraph => `<p>${paragraph}</p>`)
+    const paragraphs =
+        update.text
+            .split('\n\n')
+            .map(block => {
+    
+                const lines = block.split('\n');
+    
+                if (lines.every(line => line.startsWith('- '))) {
+    
+                    const items = lines
+                        .map(line => `<li>${line.substring(2)}</li>`)
                         .join('');
+    
+                    return `<ul>${items}</ul>`;
+                }
+    
+                return `<p>${block}</p>`;
+    
+            })
+            .join('');
 
                 return `
                     <div class="box update-archive-item">
