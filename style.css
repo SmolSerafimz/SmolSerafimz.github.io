@@ -244,6 +244,13 @@ body.dark-mode {
     overflow: hidden;
 }
 
+#latest-update-content ul {
+    display: inline-block;
+    text-align: left;
+    margin: 1em auto;
+    padding-left: 1.5em;
+}
+
 #latest-update-toggle {
     margin-top: 10px;
     cursor: pointer;
