@@ -245,7 +245,7 @@ body.dark-mode {
 }
 
 #latest-update-content ul,
-#archive-list ul {
+.update-archive-item ul {
     display: inline-block;
     text-align: left;
     margin: 1em auto;
