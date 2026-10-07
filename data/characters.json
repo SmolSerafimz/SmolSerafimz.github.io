@@ -2,17 +2,17 @@
   "fluff": {
     "title": "Fluff",
     "category": "Celestimals",
-    "intro": "Temporary introduction for Fluff.",
+    "intro": "Fluff, the Celestimal of Order is the unofficial leader of the cute team of Serafimz. Often the one to keep the gang in check and organize most of their activities. She was the first to appear in the comic.",
     "infobox": {
       "species": "Celestimal",
-      "firstAppearance": "001",
-      "image": ""
+      "firstAppearance": "002",
+      "image": "assets/wiki/fluff.webp"
     },
-    "personality": "Temporary personality information for Fluff.",
-    "appearance": "Temporary appearance information for Fluff.",
-    "history": "Temporary history information for Fluff.",
-    "trivia": "Temporary trivia information for Fluff.",
-    "behindTheScenes": "Temporary behind-the-scenes information for Fluff."
+    "personality": "Fluff's personality revolves around order, seriousness, responsibility and peace. She also loves knowledge and desires to know how most things work and why. Among the Celestimals she is the most knowledgeable about the lore of the Cozy Realm. While being more grounded and behaving unlike the rest of the Celestimals she does love to play and will never turn down an opportunity for that.",
+    "appearance": "Fluff resembles a polar fox. Her fluffy fur is mostly white save for the black ear tips, eyes and nose. Her eyelids and the area under her eyebrows are a shade of grey.",
+    "history": "Once arriving to Cozy World Fluff was quick to learn about the nature of things around her. She was quick to discover the library in the Gnome Village and start borrowing books that sound fun. Her curiosity for knowledge did not stop at lore but got her to ponder the actions and decisions other Celestimals make. Beside knowledge she also has a running rivalry with Bun, though it's obviously of a playful sort.",
+    "trivia": "She has a running gag with Bun involving pillow fights, with Bun often being the one to start it.",
+    "behindTheScenes": "Fluff was inspired by a minor character/species from a Dungeon Village 2 game made by Kairsoft, called Tuff-Fluff. They are small fluffy and cute yet formidable fighters. This inspired the appearance and the serious nature of Fluff."
   },
 
   "bun": {
