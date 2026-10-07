@@ -916,39 +916,50 @@ function populateLatestUpdate() {
         <small>${latest.date}</small>
     `;
 
-    updateBox.classList.remove('expanded');
+    // Start collapsed.
+    updateElement.style.maxHeight = '180px';
 
     if (toggleButton) {
 
         toggleButton.innerText = 'Show more';
 
-        // Check whether the content actually exceeds the collapsed height.
-        if (
-            updateElement.scrollHeight >
-            updateElement.clientHeight
-        ) {
+        // Give the browser a moment to calculate the actual content height.
+        requestAnimationFrame(() => {
 
-            toggleButton.style.display = 'inline-block';
+            const contentHeight =
+                updateElement.scrollHeight;
 
-            toggleButton.onclick = function() {
+            if (contentHeight > 185) {
 
-                const expanded =
-                    updateBox.classList.toggle('expanded');
+                toggleButton.style.display = 'inline-block';
 
-                toggleButton.innerText =
-                    expanded ? 'Show less' : 'Show more';
+                toggleButton.onclick = function() {
 
-            };
+                    const expanded =
+                        updateElement.style.maxHeight !== '180px';
 
-        } else {
+                    if (expanded) {
 
-            toggleButton.style.display = 'none';
-            toggleButton.onclick = null;
+                        updateElement.style.maxHeight = '180px';
+                        toggleButton.innerText = 'Show more';
 
-        }
+                    } else {
+
+                        updateElement.style.maxHeight =
+                            `${contentHeight}px`;
+
+                        toggleButton.innerText = 'Show less';
+                    }
+                };
+
+            } else {
+
+                toggleButton.style.display = 'none';
+                toggleButton.onclick = null;
+            }
+        });
     }
 }
-
 function populateUpdatesArchive() {
 
     const mainColumn =
