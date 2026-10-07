@@ -244,10 +244,6 @@ body.dark-mode {
     overflow: hidden;
 }
 
-#latest-update.expanded #latest-update-content {
-    max-height: none;
-}
-
 #latest-update-toggle {
     margin-top: 10px;
     cursor: pointer;
