@@ -999,7 +999,7 @@ function populateUpdatesArchive() {
             ${updatesHTML}
 
             <div class="latest-update-link">
-                <a href="index.html">Back to homepage</a>
+                <a href="comic.html">Back to homepage</a>
             </div>
         </div>
     `;
