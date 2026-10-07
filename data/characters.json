@@ -2,64 +2,64 @@
   "fluff": {
     "title": "Fluff",
     "category": "Celestimals",
-    "intro": "Temporary introduction for Fluff.",
+    "intro": "Fluff, the Celestimal of Order is the unofficial leader of the cute team of Serafimz. Often the one to keep the gang in check and organize most of their activities. She was the first to appear in the comic.",
     "infobox": {
       "species": "Celestimal",
-      "firstAppearance": "001",
-      "image": ""
+      "firstAppearance": "002",
+      "image": "assets/wiki/fluff.webp"
     },
-    "personality": "Temporary personality information for Fluff.",
-    "appearance": "Temporary appearance information for Fluff.",
-    "history": "Temporary history information for Fluff.",
-    "trivia": "Temporary trivia information for Fluff.",
-    "behindTheScenes": "Temporary behind-the-scenes information for Fluff."
+    "personality": "Fluff's personality revolves around order, seriousness, responsibility and peace. She also loves knowledge and desires to know how most things work and why. Among the Celestimals she is the most knowledgeable about the lore of the Cozy Realm. While being more grounded and behaving unlike the rest of the Celestimals she does love to play and will never turn down an opportunity for that.",
+    "appearance": "Fluff resembles a polar fox. Her fluffy fur is mostly white save for the black ear tips, eyes and nose. Her eyelids and the area under her eyebrows are a shade of grey.",
+    "history": "Once arriving to Cozy World Fluff was quick to learn about the nature of things around her. She was quick to discover the library in the Gnome Village and start borrowing books that sound fun. Her curiosity for knowledge did not stop at lore but got her to ponder the actions and decisions other Celestimals make. Beside knowledge she also has a running rivalry with Bun, though it's obviously of a playful sort.",
+    "trivia": "She has a running gag with Bun involving pillow fights, with Bun often being the one to start it.",
+    "behindTheScenes": "Fluff was inspired by a minor character/species from a Dungeon Village 2 game made by Kairsoft, called Tuff-Fluff. They are small fluffy and cute yet formidable fighters. This inspired the appearance and the serious nature of Fluff."
   },
 
   "bun": {
     "title": "Bun",
     "category": "Celestimals",
-    "intro": "Temporary introduction for Bun.",
+    "intro": "Bun, the arbiter of mischief and adorableness, is the second Celestimal to appear in the comic. She is the source of rebellion and ambition among her friends. Often underestimated, she is quite capable of most things she puts her mind to. Despite the mischief she has a very endearing side.",
     "infobox": {
       "species": "Celestimal",
       "firstAppearance": "002",
-      "image": ""
+      "image": "assets/wiki/bun.webp"
     },
-    "personality": "Temporary personality information for Bun.",
-    "appearance": "Temporary appearance information for Bun.",
-    "history": "Temporary history information for Bun.",
-    "trivia": "Temporary trivia information for Bun.",
-    "behindTheScenes": "Temporary behind-the-scenes information for Bun."
+    "personality": "When there is trouble, it's likely Bun started it, and it's always of a cute and funny sort. This bunny does not rest easy. She represents fun, ambition, mischief and friendship. Either you'll find her looking cute or stirring trouble. Two sides of the same Bun coin. Despite rebellious nature she is also very attached to her friends. She loves to help whenever help is needed. She also tends to play with Waffle a lot. Which is a recipe for chaos.",
+    "appearance": "Bun looks like a small pink bunny. She has white fluff around her neck and her eartips, whisker area, front paws and tail are white. Her eyes are blue while her nose is reddish/pink.",
+    "history": "After arriving to Cozy Realm she quickly found a mischief to start. Borrowing a pillow from Beardy's home she snuck up on Fluff and before the latter could ask what she is doing, she hit her with it. All that just so she could get Fluff to chase her back, something she likes a lot. She found fondness in Cozy Realm fruit and can be sometimes seen munching on it. She also likes visiting Mittens's bakery to watch him prepare tasty pastry, often bringing some back to her friends.",
+    "trivia": "Besides her running gag with Fluff involving pillow fights, she also has a big play with BatCake which is yet to be revealed.",
+    "behindTheScenes": "Originally designed as a character purely because little bunnies are adorable, and when you make them mischievous it takes things to the next level."
   },
 
   "cake": {
     "title": "Cake",
     "category": "Celestimals",
-    "intro": "Temporary introduction for Cake.",
+    "intro": "Cake, a kitten Celestimal with no bounds of curiosity, is the wildcard of the gang. Very caring on one and very predestined for chaos on the other side. When unsupervised.",
     "infobox": {
       "species": "Celestimal",
       "firstAppearance": "002",
-      "image": ""
+      "image": "assets/wiki/cake.webp"
     },
-    "personality": "Temporary personality information for Cake.",
-    "appearance": "Temporary appearance information for Cake.",
-    "history": "Temporary history information for Cake.",
-    "trivia": "Temporary trivia information for Cake.",
-    "behindTheScenes": "Temporary behind-the-scenes information for Cake."
+    "personality": "Cake is a simple kitten that is very curious, caring, creative and adventurous. To very notable degrees. No, seriously. If there is a disaster nearby, she is likely sitting closer. Unless Fluff ensures she is supervised. Besides curiosity, Cake loves keeping her friends safe and getting them all they need or desire. When bored she might borrow a random device from Tinkerhat to play with, or go on adventures and explore. She loves finding new things and new friends.",
+    "appearance": "Her appearance pretty much is that of a cute little yellow cat. Her whiskers area is white, along a ring on her tail, fluffy chest fur and all four paws. Her ears have a notable lynx like fluff on their tips. She has silly slit pupils.",
+    "history": "Once in Cozy Realm Cake was notably missing for a bit. That being the curious nature of her taking her to Gnome Village to explore. She was quick to find Tinkerhat's workshop and the place to borrow toys from in the future. And quickly enough she was already on his superbike speeding across The Meadows. She was the one to find Waffle's egg and discover the Big Dragon in the forest. Eventually her curiosity with fizz candy and soda caused a major detonation that covered the Gnome Village and the surrounding region in bubble foam, which was the first major disaster.",
+    "trivia": "Cake has an alter ego of BatCake, a super hero that solves mysteries and brings tasty snacks to her friends. She always pronounces word cake in a shortened form of 'cak', while her name despite the same she always pronounces properly.",
+    "behindTheScenes": "Cake is the first of the trio to be drawn and designed. A concept sketch was drawn depicting her purring and daydreaming about cake, happiness and sleeping."
   },
 
   "waffle": {
     "title": "Waffle",
     "category": "Celestimals",
-    "intro": "Temporary introduction for Waffle.",
+    "intro": "It's a dinosaur! And a raptor Celestimal specifically. A cute little engine of curiosity and playful energy. Impossible to tame and irresistible to say no to.",
     "infobox": {
       "species": "Celestimal",
-      "firstAppearance": "023",
-      "image": ""
+      "firstAppearance": "017",
+      "image": "assets/wiki/waffle.webp"
     },
-    "personality": "Temporary personality information for Waffle.",
-    "appearance": "Temporary appearance information for Waffle.",
-    "history": "Temporary history information for Waffle.",
-    "trivia": "Temporary trivia information for Waffle.",
-    "behindTheScenes": "Temporary behind-the-scenes information for Waffle."
+    "personality": "Mix curiosity, playfulness and desire to explore with shenanigans while adding extra amount of cuteness and you get Waffle. His spirit for curiosity matches that of Cake's while being focused on exploration and trying new things. His very determined nature gives Fluff some trouble to control, something she gets Cake to help with.",
+    "appearance": "Waffle resembles a little green dinosaur. His frontal area is of lighter shade of green alongside his hands/claws. His claws on legs are white while the fluff along his arms and his tail fluff are red. His eyes are silly slit pupils.",
+    "history": "Waffle arrived in the Cozy Realm mid-way the season 1. His egg was discovered by Cake who also kept it around the group before he appeared from it. Once he finally appeared Cake tossed a waffle at him which he took immediate liking for, something he also inherited his name from. Onward he would be shown many things and places by others, occasionally wandering off by himself to explore. Fluff also started to train him how to be a 'proper' raptor just like in the movies, which started to unlock his fierce nature.",
+    "trivia": "He has a running gag of being the villainous raptor just like in the Jurassic Park franchise, which the Celestimals like to play pretend with.",
+    "behindTheScenes": "Waffle is the true catalyst of this franchise. He predates all the other character designs and ideas, including the rest of the Celestimals. Originally, he and his personality were designed for an Android pet game centered around playing and spending time with him, exploring with him, giving him snacks, and more. Ultimately it was never made so his idea remained in the limbo until Smol Serafimz came into plan where he was scheduled to be a part of from the very beginning. Given his significance it was decided that he should be the anticipated arrival rather than being present in the very first comic."
   }
 }
