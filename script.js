@@ -886,8 +886,15 @@ function populateLatestUpdate() {
     const updateElement =
         document.getElementById('latest-update-content');
 
+    const updateBox =
+        document.getElementById('latest-update');
+
+    const toggleButton =
+        document.getElementById('latest-update-toggle');
+
     if (
         !updateElement ||
+        !updateBox ||
         !updatesData.updates ||
         updatesData.updates.length === 0
     ) {
@@ -908,27 +915,38 @@ function populateLatestUpdate() {
         ${paragraphs}
         <small>${latest.date}</small>
     `;
-}
 
-function setupLatestUpdateToggle() {
+    updateBox.classList.remove('expanded');
 
-    const updateBox =
-        document.getElementById('latest-update');
+    if (toggleButton) {
 
-    const toggleButton =
-        document.getElementById('latest-update-toggle');
+        toggleButton.innerText = 'Show more';
 
-    if (!updateBox || !toggleButton) return;
+        // Check whether the content actually exceeds the collapsed height.
+        if (
+            updateElement.scrollHeight >
+            updateElement.clientHeight
+        ) {
 
-    toggleButton.onclick = function() {
+            toggleButton.style.display = 'inline-block';
 
-        const expanded =
-            updateBox.classList.toggle('expanded');
+            toggleButton.onclick = function() {
 
-        toggleButton.innerText =
-            expanded ? 'Show less' : 'Show more';
+                const expanded =
+                    updateBox.classList.toggle('expanded');
 
-    };
+                toggleButton.innerText =
+                    expanded ? 'Show less' : 'Show more';
+
+            };
+
+        } else {
+
+            toggleButton.style.display = 'none';
+            toggleButton.onclick = null;
+
+        }
+    }
 }
 
 function populateUpdatesArchive() {
