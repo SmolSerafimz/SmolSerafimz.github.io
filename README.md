@@ -6,4 +6,6 @@ All content, including but not limited to artwork, characters, and narrative lor
 is the original intellectual property of the author. 
 No part of this publication may be reproduced, edited, distributed, or transmitted in any form 
 or by any means, including scraping or training for generative AI models, 
-without the prior written permission of the copyright holder.
+without the prior written permission of the copyright holder. 
+Fanart is welcome and requires no permission,
+as long as it is not presented as official content or used commercially.
