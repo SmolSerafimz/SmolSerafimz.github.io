@@ -620,6 +620,8 @@ function createStars() {
     const container = document.getElementById('star-container');
     if (!container) return;
 
+    if (container.querySelector('canvas')) return;
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
