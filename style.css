@@ -239,6 +239,21 @@ body.dark-mode {
     background: rgba(255, 255, 255, 0.12);
 }
 
+#latest-update-content {
+    max-height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+#latest-update.expanded #latest-update-content {
+    max-height: none;
+}
+
+#latest-update-toggle {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 /* --- MAP --- */
 
 #world-map {
