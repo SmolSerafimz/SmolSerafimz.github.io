@@ -315,6 +315,11 @@ function setupMapNavigation() {
 
     if (!mapLink) return;
 
+    const mapBox =
+        document.getElementById('map-box');
+
+    if (!mapBox) return;
+
     mapLink.onclick = function(event) {
 
         event.preventDefault();
