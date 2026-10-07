@@ -910,6 +910,27 @@ function populateLatestUpdate() {
     `;
 }
 
+function setupLatestUpdateToggle() {
+
+    const updateBox =
+        document.getElementById('latest-update');
+
+    const toggleButton =
+        document.getElementById('latest-update-toggle');
+
+    if (!updateBox || !toggleButton) return;
+
+    toggleButton.onclick = function() {
+
+        const expanded =
+            updateBox.classList.toggle('expanded');
+
+        toggleButton.innerText =
+            expanded ? 'Show less' : 'Show more';
+
+    };
+}
+
 function populateUpdatesArchive() {
 
     const mainColumn =
