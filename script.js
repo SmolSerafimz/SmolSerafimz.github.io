@@ -612,6 +612,7 @@ function showComic() {
     mapLink.classList.remove('active');
     }
 
+    populateLatestUpdate();
 }
 
 function createStars() {
