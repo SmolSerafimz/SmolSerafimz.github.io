@@ -1,4 +1,20 @@
 {
+         "028": {
+            "title": "Jurassic Bun",
+            "image": "assets/028_1.webp",
+            "info": {
+                "season": 1,
+                "panels": 3,
+                "location": ["Southlands Savanna"],
+                "previous": "027",
+                "next": null
+            },
+            "intro": "",
+            "characters": ["Waffle", "Bun", "Fluff"],
+            "plot": "",
+            "notableObjects": [],
+            "behindTheScenes": ""
+        },
          "027": {
             "title": "Dr. Cake",
             "image": "assets/027_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 4,
                 "location": ["The Meadow"],
                 "previous": "026",
-                "next": null
+                "next": 028
             },
             "intro": "Waffle has played in the water for too long, which caused a harmless little 'coldiness' sensation of a sneeze and shiver. That is more than enough for Dr. Cake to step onto the scene.",
             "characters": ["Waffle", "Cake", "Bun", "Fluff"],
