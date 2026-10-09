@@ -23,7 +23,7 @@
                 "panels": 4,
                 "location": ["The Meadow"],
                 "previous": "026",
-                "next": 028
+                "next": "028"
             },
             "intro": "Waffle has played in the water for too long, which caused a harmless little 'coldiness' sensation of a sneeze and shiver. That is more than enough for Dr. Cake to step onto the scene.",
             "characters": ["Waffle", "Cake", "Bun", "Fluff"],
