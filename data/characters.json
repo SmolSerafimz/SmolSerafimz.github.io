@@ -61,5 +61,69 @@
     "history": "Waffle arrived in the Cozy Realm mid-way the season 1. His egg was discovered by Cake who also kept it around the group before he appeared from it. Once he finally appeared Cake tossed a waffle at him which he took immediate liking for, something he also inherited his name from. Onward he would be shown many things and places by others, occasionally wandering off by himself to explore. Fluff also started to train him how to be a 'proper' raptor just like in the movies, which started to unlock his fierce nature.",
     "trivia": "He has a running gag of being the villainous raptor just like in the Jurassic Park franchise, which the Celestimals like to play pretend with.",
     "behindTheScenes": "Waffle is the true catalyst of this franchise. He predates all the other character designs and ideas, including the rest of the Celestimals. Originally, he and his personality were designed for an Android pet game centered around playing and spending time with him, exploring with him, giving him snacks, and more. Ultimately it was never made so his idea remained in the limbo until Smol Serafimz came into plan where he was scheduled to be a part of from the very beginning. Given his significance it was decided that he should be the anticipated arrival rather than being present in the very first comic."
+  },
+  
+  "beardy": {
+    "title": "Beardy",
+    "category": "Gnomes",
+    "intro": "The leader of the gnomes and the decision-maker in the Gnome Village, Beardy is very calm and grandfatherly, always eager to help. His calm demeanour allows him to tolerate the antics of the Serafimz with ease, and he is never quick to judge. His wisdom is immense, and he always seems to know best.",
+    "infobox": {
+      "species": "Gnome",
+      "firstAppearance": "001",
+      "image": "assets/beardy.webp"
+    },
+    "personality": "Beardy is a calm and grandfatherly figure. His great wisdom ensures he always knows what is best for any occasion. He is never quick to judge and likes to see things from a broader point of view. He is quite perceptive and can predict outcomes by observing events as they unfold.",
+    "appearance": "He sports the classic gnome cone hat, a blue sweater, and brown pants. He wears a light brown belt and shoes. He is always seen with his glasses.",
+    "history": "Not much is known about the history of the gnomes, save that they moved into The Meadow from the depths of the Old Gnome Forest. With his kin, he established the Gnome Village in the upper region of The Meadow. Eventually, he came across the three Celestimal eggs and brought the news to the village. Given their shy nature, the gnomes decided to prepare a welcome cake but let the Celestimals establish themselves a bit before introducing themselves. He is seen witnessing the Fizz explosion event while tidying up the village and correctly deduces that Cake was likely responsible for it.",
+    "trivia": "His house is a giant mushroom in the center of the village.",
+    "behindTheScenes": "Inspirations for Beardy and gnomes in general came from The Smurfs franchise, with Papa Smurf serving as his counterpart. They share a red hat. Among the gnomes, however, a red hat is not a status symbol of leadership but merely a traditional gnome hat."
+}
+
+  "tinkerhat": {
+    "title": "Tinkerhat",
+    "category": "Gnomes",
+    "intro": "The mechanic, inventor, and developer. The master of all tech trades. His curiosity knows no bounds, and he invents everything, even things that have no real practical use in the Cozy Realm. If there is a device somewhere, he made it. He loves getting feedback from everyone who uses his creations. His house is also his workshop. It might be cluttered during the day, but he loves putting everything back in its place in the evening.",
+    "infobox": {
+      "species": "Gnome",
+      "firstAppearance": "001",
+      "image": "assets/tinkerhat.webp"
+    },
+    "personality": "He loves crafting things; it is his favourite pastime. Nobody knows where his knowledge of technology comes from, but he is very proficient in his craft. He may seem a bit less talkative than other gnomes, but that is mostly because he spends much of his time in his workshop rather than socialising. When he does talk, he is eager to fix anything or solve any problems others may have, even crafting new things that might be useful. Seeing his devices bring usefulness and fun to others is his primary desire.",
+    "appearance": "He wears a pointy red gnome hat with goggles on it, yellow clothes with brown overalls, brown shoes, and a tool belt. He has a wide, pointy black beard.",
+    "history": "He is first seen in his workshop repairing a fridge in the first episode. Every device seen in later episodes came from him, either borrowed by the Celestimals or given to them.",
+    "trivia": "Sometimes he might craft things that have no real purpose in the world, like bandages, coins, or weapons (with harm neither existing nor being possible in the reality of the Cozy Realm). This proves that he also makes non-technological items. Nevertheless, the Celestimals will always find ways to give them some purpose in their play.",
+    "behindTheScenes": "Given that the Cozy Realm is not a material reality, electricity is not a concept used in its technology. Instead, he was designed to use magic crystals that replace batteries and power his devices."
+  }
+
+  "mittens": {
+    "title": "Mittens",
+    "category": "Gnomes",
+    "intro": "The gnome baker and the main food maker in the Gnome Village. He has a jolly personality and loves preparing baked goods for everyone. His pretzels are legendary among Cozy Realm inhabitants. He takes great pleasure in running his bakery.",
+    "infobox": {
+      "species": "Gnome",
+      "firstAppearance": "001",
+      "image": "assets/mittens.webp"
+    },
+    "personality": "He is quite humorous and tends to find humour in all manner of things. He is eager to teach others how to prepare food.",
+    "appearance": "He wears a chef's hat, a blue T-shirt, black pants, brown shoes, a white-and-gold apron with a cupcake image on it, and a pair of blue mittens. His beard is grey, medium-length, and curly, forming an arch from ear to ear. He also has a thin, stylish, curved black moustache.",
+    "history": "He is first seen in the first episode preparing pizza. He is mentioned later by Bun in episode 23 for giving her a pretzel to share with her friends.",
+    "trivia": "He has gained a permanent number-one fan in Cake, as she adores his pretzels more than anyone else's, often yelling 'Pretzel!' whenever she sees one. He likes to occasionally surprise her with different kinds of pretzels.\n\nHis house can be seen on the map, where it is depicted as a shop with a sign panel above it.",
+    "behindTheScenes": "Like the rest of the gnomes, he was designed to represent the happiness people find in tasty foods and confectionery. Pretzels are the artist's favourite pastry."
+  }
+
+  "shrooms": {
+    "title": "Shrooms",
+    "category": "Gnomes",
+    "intro": "The caretaker of all plant-based things in the Cozy Realm. The gardener of forests and a gnome wizard of all things green.",
+    "infobox": {
+      "species": "Gnome",
+      "firstAppearance": "026",
+      "image": "assets/shrooms.webp"
+    },
+    "personality": "Shrooms is a very carefree gnome, always relaxed and never rushing into things. He loves nature, and some might say he tends to spend more time roaming outdoors than in the village. He likes to sit or lie down in the vast wilderness and listen to the wind and the rustling of the trees. He has a very calm and tranquil personality.",
+    "appearance": "He sports rather adventurous clothing. His hat is a yellow hybrid of a gnome hat and a straw hat. He wears grey khaki shorts with pockets, an orange T-shirt, a brown bandolier, and a pair of sandals. His beard style resembles a Uniform-Length Chin Curtain.",
+    "history": "His first appearance is in episode 26, where he is seen finishing sweeping leaves with Beardy near their homes. When the Fizz detonation took place and covered the village in pink bubble foam, he humorously called it 'The Fizz Season'.",
+    "trivia": "Given that the Cozy Realm is not a material world, plants are not living beings but part of the realm itself. Despite this, his interest in them is even greater, as it brings him closer to the source of all things.\n\nHis house is a giant tree he repurposed into a home.",
+    "behindTheScenes": "He was originally intended to look more like Gandalf, with a robe and hat. However, given the artist's adventurous spirit and history, he eventually adopted his current clothing style."
   }
 }
