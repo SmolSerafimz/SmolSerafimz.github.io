@@ -1,4 +1,20 @@
 {
+         "029": {
+            "title": "New HQ",
+            "image": "assets/029_1.webp",
+            "info": {
+                "season": 1,
+                "panels": 5,
+                "location": ["The Meadow"],
+                "previous": "028",
+                "next": null
+            },
+            "intro": "The time has come for the gang to find a base of operations, and a large tree has been chosen as the primary candidate. All that remains is to build it, and while they are skilled in many things, a bit of help won't hurt.",
+            "characters": ["Waffle", "Bun", "Fluff"],
+            "plot": "Fluff shows the others a hollow tree that she thinks is good for a new home. They borrow some tools and decide to build their home. After the initial uncertainty on how to begin, the gnomes show up to help. They spend the day building their home with gnomes showing them how to do many things. In the evening Bun hits Fluff with a pillow with the latter declaring war and episode ends with a pillow fight.",
+            "notableObjects": ["The chainsaw","The fridge","Gnometec"],
+            "behindTheScenes": "This is the first episode where gnomes directly interact and meet the Celestimals. Also the first episode that features Plank the builder gnome. This episode also closes the season with a pillow fight just as it originally began with between Fluff and Bun."
+        },
          "028": {
             "title": "Jurassic Bun",
             "image": "assets/028_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 3,
                 "location": ["Southlands Savanna"],
                 "previous": "027",
-                "next": null
+                "next": "029"
             },
             "intro": "Bun is hiding. Fluff wanna know why. The cause is about to reveal itself.",
             "characters": ["Waffle", "Bun", "Fluff"],
