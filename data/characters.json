@@ -125,5 +125,21 @@
     "history": "His first appearance is in episode 26, where he is seen finishing sweeping leaves with Beardy near their homes. When the Fizz detonation took place and covered the village in pink bubble foam, he humorously called it 'The Fizz Season'.",
     "trivia": "Given that the Cozy Realm is not a material world, plants are not living beings but part of the realm itself. Despite this, his interest in them is even greater, as it brings him closer to the source of all things.\n\nHis house is a giant tree he repurposed into a home.",
     "behindTheScenes": "He was originally intended to look more like Gandalf, with a robe and hat. However, given the artist's adventurous spirit and history, he eventually adopted his current clothing style."
+  },
+
+  "plank": {
+    "title": "Plank",
+    "category": "Gnomes",
+    "intro": "The master builder and repairman of the Gnome Village. He crafts everything from buildings and structures to furniture, bridges, and mines.",
+    "infobox": {
+      "species": "Gnome",
+      "firstAppearance": "029",
+      "image": "assets/planks.webp"
+    },
+    "personality": "As a master of all things related to construction, he is very eager to participate in anything involving it. Every building event feels like a birthday party to him. He likes to teach others the proper ways of making things and, when there is nothing to do, might even build things for no reason, even if they serve no purpose. While not an inventor like Tinkerhat, he does have an eye for beauty and can construct truly epic-looking decorative structures with great attention to detail.",
+    "appearance": "Plank is often seen wearing his yellow protective helmet and vest. He wears a black shirt, white pants, a brown belt, and brown shoes. He has a curly red beard that goes from ear to ear.",
+    "history": "When the Celestimals decided to find and build a home, they borrowed tools from Plank. Beardy anticipated that they were up to something and asked Plank what they needed the tools for. Once he was told, both agreed that it was time for gnomes to be shy no more and finally step in to help them. Plank was relieved, as he desperately wished to help them and participate in this iconic building event.",
+    "trivia": "His nickname is Planks, despite that being a longer word.",
+    "behindTheScenes": "He is the last new gnome to be introduced in the first season, and his first appearance also takes place during the first time the gnomes meet the Serafimz directly in an episode rather than off-screen."
   }
 }
