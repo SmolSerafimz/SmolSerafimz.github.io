@@ -1,4 +1,20 @@
 {
+         "031": {
+            "title": "New Spooks",
+            "image": "assets/031_1.webp",
+            "info": {
+                "season": 2,
+                "panels": 1,
+                "location": ["The Meadow"],
+                "previous": "030",
+                "next": null
+            },
+            "intro": "Spooky Season is back! And it has evolved into even more spooky ways. Is the gang brave enough to face this new spookiness?",
+            "characters": ["Waffle", "Bun", "Fluff", "Cake", "Gost"],
+            "plot": "The Serafimz are in the plains along the Gnome Road while the Spooky Moon casts its eerie glow over the land. Waffle is up for some treats and Fluff points him into the right direction. While she herself is about to make a little case of mistaken identity that re-affirms Bun's costume choice.",
+            "notableObjects": ["Spooky Pumpkin", "Vampire Staff"],
+            "behindTheScenes": "This episode makes the first ever appearance of Gost. AAnother character originally intended for a game long before the comic was ever put into motion. As old as Fluff is in concept, its appearance in Season 2 was a welcome surprise choice by the creator, especially to himself."
+        },
          "030": {
             "title": "Season 1 Review",
             "image": "assets/030_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 9,
                 "location": ["Tree House"],
                 "previous": "029",
-                "next": null
+                "next": "030"
             },
             "intro": "Season 1 is over and it's time to talk about all things that have happened so far including all the things Celestimals wish to see in Season 2!",
             "characters": ["Waffle", "Bun", "Fluff", "Cake"],
