@@ -1,4 +1,20 @@
 {
+         "032": {
+            "title": "The Alliance",
+            "image": "assets/032_1.webp",
+            "info": {
+                "season": 2,
+                "panels": 1,
+                "location": ["The Meadow", "Gnome Village"],
+                "previous": "031",
+                "next": null
+            },
+            "intro": "Bun and Waffle have teamed up. Cake is certain that this will lead to no good.",
+            "characters": ["Waffle", "Bun", "Fluff", "Cake"],
+            "plot": "Bun decided to team up with Waffle so they run off into fields. Cake has witnessed this new alliance and has reported it to Fluff who stated that those two are a deadly combo and must be stopped. The ongoing battle is shown where Bun and Waffle are creating bubble frenzy using leaf blower and bubble makaing rings while Cake and Fluff are trying to stop them with nets.",
+            "notableObjects": ["Bubble Maker Ring", "Leaf Blower"],
+            "behindTheScenes": "This is the first episode to feature a team-up. Given the specific nature of two participating celestimals, teaming up always results in a specific effect."
+        },
          "031": {
             "title": "New Spooks",
             "image": "assets/031_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 1,
                 "location": ["The Meadow"],
                 "previous": "030",
-                "next": null
+                "next": "032"
             },
             "intro": "Spooky Season is back! And it has evolved into even more spooky ways. Is the gang brave enough to face this new spookiness?",
             "characters": ["Waffle", "Bun", "Fluff", "Cake", "Gost"],
