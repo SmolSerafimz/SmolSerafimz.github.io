@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,21 +27,17 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
-
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    >
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
 
-    <div id="star-container"></div>
+    <div id="star-container" aria-hidden="true"></div>
 
     <div class="site-wrapper" id="site-wrapper">
 
         <header class="header-banner">
-            <img src="assets/logo.png" alt="SmolSerafimz Logo" class="logo">
+            <img src="assets/logo.png" alt="Smol Serafimz Logo" class="logo">
         </header>
 
         <div class="ticker-zone">
@@ -66,6 +63,12 @@
                     </li>
 
                     <li>
+                        <a href="comic.html?spin-offs" id="spin-offs-link">
+                            SPIN-OFFS
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="wiki.html">WIKI</a>
                     </li>
 
@@ -78,6 +81,10 @@
                             DOWNLOADS
                         </a>
                     </li>
+
+                    <li>
+                        <a href="comic.html?about" id="about-link">ABOUT</a>
+                    </li>
                 </ul>
             </div>
 
@@ -86,21 +93,17 @@
 
                 <ul class="nav-links">
                     <li>
-                        <a
-                            href="https://www.instagram.com/lordfluffs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://www.instagram.com/lordfluffs"
+                           target="_blank"
+                           rel="noopener noreferrer">
                             INSTAGRAM
                         </a>
                     </li>
 
                     <li>
-                        <a
-                            href="https://lordfluffs.newgrounds.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://lordfluffs.newgrounds.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
                             NEWGROUNDS
                         </a>
                     </li>
@@ -114,9 +117,7 @@
                     "Placeholder."
                 </p>
 
-                <small>
-                    — Char Name
-                </small>
+                <small>— Char Name</small>
             </div>
 
             <div class="box">
@@ -126,11 +127,7 @@
                     <span>Day</span>
 
                     <label class="switch">
-                        <input
-                            type="checkbox"
-                            id="theme-checkbox"
-                        >
-
+                        <input type="checkbox" id="theme-checkbox">
                         <span class="slider"></span>
                     </label>
 
@@ -145,6 +142,7 @@
                     <img
                         src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fsmolserafimz.github.io%2F&label=Visitors&icon=github&color=%23ffc107&message=&style=for-the-badge&tz=Europe%2FBelgrade"
                         alt="Visitor Count"
+                        loading="lazy"
                     >
                 </div>
             </div>
@@ -153,21 +151,27 @@
 
         <main class="column" id="main-column">
 
+            <!-- LATEST UPDATE -->
+
             <div class="box" id="latest-update">
 
                 <h2>Latest Update</h2>
 
                 <div id="latest-update-content"></div>
 
-                <button id="latest-update-toggle" type="button">Show more</button>
+                <button id="latest-update-toggle" type="button">
+                    Show more
+                </button>
 
                 <div class="latest-update-link">
-                    <a href="comic.html?updates">
+                    <a href="comic.html?updates" id="updates-link">
                         View past updates
                     </a>
                 </div>
 
             </div>
+
+            <!-- COMIC -->
 
             <div class="box featured-content" id="comic-box">
 
@@ -182,7 +186,9 @@
                     alt="Comic Page"
                 >
 
-                <div class="panel-nav" id="panel-dots">
+                <div class="panel-nav"
+                     id="panel-dots"
+                     aria-label="Comic panels">
 
                     <span class="dot active"></span>
                     <span class="dot"></span>
@@ -191,10 +197,7 @@
 
                 </div>
 
-                <div
-                    class="episode-navigation"
-                    id="episode-navigation"
-                >
+                <div class="episode-navigation" id="episode-navigation">
 
                     <button
                         type="button"
@@ -227,9 +230,7 @@
                             class="episode-navigation-small-button"
                             aria-label="Select season"
                         >
-                            <option value="1">
-                                Season 1
-                            </option>
+                            <option value="1">Season 1</option>
                         </select>
 
                     </div>
@@ -240,10 +241,7 @@
                     About Episode
                 </h2>
 
-                <div
-                    id="episode-about-text"
-                    class="episode-lore-box"
-                >
+                <div id="episode-about-text" class="episode-lore-box">
                     <p>
                         Welcome to the latest entry in the chronicle...
                     </p>
@@ -251,13 +249,25 @@
 
             </div>
 
+            <!-- SPIN-OFFS -->
+
+            <div class="box" id="spin-offs-box" style="display: none;">
+
+                <h2 class="centered-header">
+                    Spin-offs
+                </h2>
+
+                <div id="spin-offs-content"></div>
+
+                <div class="spin-offs-archive" id="spin-offs-archive"></div>
+
+            </div>
+
             <!-- DOWNLOADS -->
 
-            <div
-                class="box downloads-box"
-                id="downloads-box"
-                style="display: none;"
-            >
+            <div class="box downloads-box"
+                 id="downloads-box"
+                 style="display: none;">
 
                 <h2 class="centered-header">
                     Downloads
@@ -275,34 +285,27 @@
 
                 </div>
 
-                <section
-                    id="downloads-3d-prints"
-                    class="downloads-section"
-                >
+                <section id="downloads-3d-prints" class="downloads-section">
 
-                    <h2>
-                        3D Print Models
-                    </h2>
+                    <h2>3D Print Models</h2>
 
                     <div class="download-item">
 
                         <div class="download-image">
-
                             <img
                                 src="assets/fluff_3dprint.webp"
                                 alt="Fluff 3D printed model"
+                                loading="lazy"
                             >
-
                         </div>
 
                         <div class="download-info">
 
-                            <h3>
-                                Fluff
-                            </h3>
+                            <h3>Fluff</h3>
 
                             <p>
-                                A 3D-printable model of Fluff I made in Blender. It's low poly and it should print ok without supports. 
+                                A 3D-printable model of Fluff I made in Blender.
+                                It's low poly and it should print ok without supports.
                                 Now Fluff can decorate your desk :3
                             </p>
 
@@ -320,14 +323,9 @@
 
                 </section>
 
-                <section
-                    id="downloads-wallpapers"
-                    class="downloads-section"
-                >
+                <section id="downloads-wallpapers" class="downloads-section">
 
-                    <h2>
-                        Wallpapers
-                    </h2>
+                    <h2>Wallpapers</h2>
 
                     <p>
                         Wallpapers are coming soon!
@@ -337,17 +335,66 @@
 
             </div>
 
+            <!-- ABOUT -->
+
+            <section class="box about-box"
+                     id="about-box"
+                     style="display: none;">
+
+                <h2>About LordFluffs</h2>
+
+                <div class="about-content">
+
+                    <p>
+                        I am a hobby cartoonist/artist who is creating this comic
+                        in my spare time. My presence online is only on sites
+                        you can find in social media section. I do not have any
+                        other presence online beyond that. Should you encounter
+                        the same name anywhere else on the internet, know for
+                        certain that it is not me. I will always update this
+                        website to include any other place I make my account in.
+                    </p>
+
+                    <p>
+                        I do not take commissions at the moment. Contact is
+                        available via my currently existing social media.
+                        Thanks for visiting!
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- MAP -->
+
             <div id="map-box" class="box" style="display: none;">
+
                 <h2>Living World Map</h2>
-                <div id="world-map"></div>
+
+                <div id="world-map"
+                     role="application"
+                     aria-label="Interactive Cozy Realm world map">
+                </div>
+
+            </div>
+
+            <!-- PAST UPDATES -->
+
+            <div class="box" id="updates-box" style="display: none;">
+
+                <h2 class="centered-header">
+                    Past Updates
+                </h2>
+
+                <div id="updates-archive-content"></div>
+
             </div>
 
         </main>
 
-        <aside
-            class="column"
-            id="right-column"
-        >
+        <!-- RIGHT SIDEBAR -->
+
+        <aside class="column" id="right-column">
 
             <div class="box">
 
@@ -355,11 +402,7 @@
                     ARCHIVE
                 </div>
 
-                <ul
-                    class="nav-links"
-                    id="archive-list"
-                >
-                </ul>
+                <ul class="nav-links" id="archive-list"></ul>
 
             </div>
 
@@ -367,25 +410,20 @@
 
     </div>
 
-    <footer
-        style="text-align: center; padding: 40px 20px; opacity: 0.9; font-family: 'Courier New', Courier, monospace; color: #bbb; background: rgba(0,0,0,0.7);"
-    >
+    <!-- FOOTER -->
 
-        <div
-            style="border-top: 1px solid #333; width: 60%; margin: 20px auto; padding-top: 20px;"
-        >
+    <footer style="text-align: center; padding: 40px 20px; opacity: 0.9; font-family: 'Courier New', Courier, monospace; color: #bbb; background: rgba(0,0,0,0.7);">
 
-            <p
-                style="letter-spacing: 2px; color: #aaa;"
-            >
+        <div style="border-top: 1px solid #333; width: 60%; margin: 20px auto; padding-top: 20px;">
+
+            <p style="letter-spacing: 2px; color: #aaa;">
                 <strong>
                     © 2026 NECROMYD // SMOL SERAFIMZ™
                 </strong>
             </p>
 
-            <p
-                style="font-size: 0.8em; max-width: 500px; margin: 10px auto; line-height: 1.5;"
-            >
+            <p style="font-size: 0.8em; max-width: 500px; margin: 10px auto; line-height: 1.5;">
+
                 All content, including but not limited to artwork,
                 characters, and narrative lore, is the original
                 intellectual property of the author, Lord Fluffs.
@@ -397,13 +435,17 @@
                 or by any means, including scraping or training
                 for generative AI models, without the prior written
                 permission of the copyright holder.
+
                 Fanart is welcome and requires no permission, as long
                 as it is not presented as official content or used commercially.
+
             </p>
 
         </div>
 
     </footer>
+
+    <!-- SCRIPTS -->
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
