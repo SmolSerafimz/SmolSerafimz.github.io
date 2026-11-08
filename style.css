@@ -378,7 +378,7 @@ body.dark-mode {
 /* --- SPIN-OFFS --- */
 
 .site-wrapper.spin-offs-layout #main-column {
-    grid-column: 2 / 4;
+    grid-column: 2;
 }
 
 #spin-offs-box {
