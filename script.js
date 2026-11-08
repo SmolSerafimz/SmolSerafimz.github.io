@@ -517,16 +517,22 @@ function hidePageSections() {
         );
     }
 
-    document.querySelectorAll('.sidebar a.active, nav a.active').forEach(link => {
+    document.querySelectorAll('.sidebar a, nav a, .navigation a').forEach(link => {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
     });
 }
 
 
 function setActiveLink(id) {
-    document.getElementById(id)?.classList.add('active');
-}
 
+    const link = document.getElementById(id);
+
+    if (!link) return;
+
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+}
 
 // ==========================================
 // DOWNLOADS PAGE
