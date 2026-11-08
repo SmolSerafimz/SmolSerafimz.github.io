@@ -1,1 +1,14 @@
-
+{
+         "s01": {
+            "title": "Cute-Ni-Gru",
+            "image": "assets/s01.webp",
+            "info": {
+                "spinoff-franchise": "Devil May Cry 3",
+                "previous": null,
+                "next": null
+            },
+            "intro": "At the top of Cute-Ni-Gru Cake-te and Fluff-gil must settle the score once and for all.",
+            "characters": ["Fluff", "Cake"],
+            "behindTheScenes": "Decided to make a fun little drawing depicting my chars in that iconic scene."
+        }
+}
