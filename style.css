@@ -375,6 +375,95 @@ body.dark-mode {
     }
 }
 
+
+/* --- SPIN-OFFS --- */
+
+.site-wrapper.spin-offs-layout #main-column {
+    grid-column: 2 / 4;
+}
+
+#spin-offs-box {
+    text-align: left;
+}
+
+#spin-offs-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#spin-offs-content h2 {
+    text-align: center;
+}
+
+#spin-offs-content img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid var(--accent);
+}
+
+#spin-offs-content .episode-lore-box {
+    margin-top: 20px;
+}
+
+#spin-offs-archive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+}
+
+#spin-offs-archive button {
+    padding: 8px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#spin-offs-archive button:hover,
+#spin-offs-archive button.active {
+    background: var(--accent);
+    color: var(--header-text);
+}
+
+button.dot:focus-visible,
+#spin-offs-archive button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+    .site-wrapper.spin-offs-layout #main-column {
+        grid-column: auto;
+    }
+
+    #spin-offs-content img {
+        max-width: 100%;
+    }
+
+    #spin-offs-archive {
+        gap: 8px;
+    }
+
+    #spin-offs-archive button {
+        flex: 1 1 auto;
+    }
+}
+
+
 @media (max-width: 600px) {
 
     .episode-navigation {
@@ -484,7 +573,7 @@ body.dark-mode {
 .quote-box p {
     margin: 10px 0;
     font-style: italic;
-} /* SEALED */
+} 
 
 .quote-box small {
     display: block;
@@ -493,7 +582,7 @@ body.dark-mode {
     opacity: 0.8;
 }
 
-/* --- THEME CONTROLS ALIGNMENT --- */
+
 .theme-controls {
     display: flex;
     align-items: center;
@@ -534,14 +623,12 @@ body.dark-mode {
     height: 24px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* The actual slider track */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -549,12 +636,12 @@ body.dark-mode {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc; /* Grey when 'Off' (Day) */
+    background-color: #ccc;
     transition: .4s;
     border-radius: 34px;
 }
 
-/* The circle inside the slider */
+
 .slider:before {
     position: absolute;
     content: "";
@@ -571,13 +658,13 @@ body.dark-mode {
     text-align: left;
     padding: 15px;
     line-height: 1.6;
-    background: rgba(0, 0, 0, 0.05); /* Slight tint to separate it from the art */
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     margin-top: 10px;
 }
 
 body.dark-mode .episode-lore-box {
-    background: rgba(255, 255, 255, 0.05); /* Lighter tint for Night Mode */
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .episode-info-zone {
@@ -595,13 +682,13 @@ body.dark-mode .episode-lore-box {
     margin-bottom: 10px;
 }
 
-/* When checked (Night), change track to Gold */
+
 input:checked + .slider {
     background-color: var(--accent);
     box-shadow: 0 0 10px var(--accent);
 }
 
-/* When checked, move the circle to the right */
+
 input:checked + .slider:before {
     transform: translateX(24px);
 }
@@ -609,7 +696,7 @@ input:checked + .slider:before {
 .wiki-landing {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the title and links */
+    align-items: center;
 }
 
 .wiki-main-title {
