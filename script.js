@@ -517,7 +517,7 @@ function hidePageSections() {
         );
     }
 
-    document.querySelectorAll('.sidebar a, nav a, .navigation a').forEach(link => {
+    document.querySelectorAll('.sidebar a, nav a, .navigation a, .nav-links a').forEach(link => {
         link.classList.remove('active');
         link.removeAttribute('aria-current');
     });
