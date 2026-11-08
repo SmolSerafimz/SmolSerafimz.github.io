@@ -392,6 +392,25 @@ body.dark-mode {
     }
 }
 
+.site-wrapper.about-layout #main-column {
+    grid-column: 2 / 4;
+}
+
+.about-box {
+    text-align: left;
+    min-height: 250px;
+}
+
+.about-box h2 {
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
 .centered-header {
     text-align: center;
     border-bottom: 1px solid var(--accent);
