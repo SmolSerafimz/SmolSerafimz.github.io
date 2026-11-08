@@ -882,3 +882,9 @@ body.dark-mode .wiki-contents-box {
     opacity: 0.35;
     cursor: not-allowed;
 }
+
+.spinoff-intro-box {
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+}
