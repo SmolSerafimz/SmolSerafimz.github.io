@@ -439,7 +439,7 @@ body.dark-mode {
     color: var(--header-text);
 }
 
-button.dot:focus-visible,
+.dot:focus-visible,
 #spin-offs-archive button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
@@ -711,12 +711,10 @@ input:checked + .slider:before {
 .wiki-body-text {
     width: 100%;
     text-align: left;
-    line-height: 1.6;
-    font-size: 1.2rem;
     line-height: 1.8;
+    font-size: 1.2rem;
     margin-bottom: 40px;
     padding: 0 30px;
-    box-sizing: border-box;
 }
 
 .wiki-quick-links {
@@ -815,18 +813,72 @@ body.dark-mode .wiki-contents-box {
     width: 100%; /* Ensures they span the full width of the phone screen */
     }
 
-    body {
-        background-color: var(--bg-color) !important; 
-        color: var(--text-color);
-    }
-
-    body.dark-mode {
-        background-color: var(--bg-color) !important;
-        color: var(--text-color);
-    }
-
 /* Ensure the star container doesn't have a 'ghost' background */
 #star-container {
     background-color: transparent !important;
 }
+}
+
+
+/* --- UPDATES --- */
+
+.site-wrapper.updates-layout #main-column {
+    grid-column: 2 / 4;
+}
+
+#updates-box {
+    text-align: left;
+}
+
+#updates-archive-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.update-archive-item {
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.update-archive-item h2 {
+    text-align: center;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 10px;
+}
+
+.update-archive-item small {
+    display: block;
+    text-align: right;
+    opacity: 0.7;
+    margin-top: 15px;
+}
+
+.spin-off-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.spin-off-navigation button {
+    padding: 10px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.spin-off-navigation button:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--header-text);
+}
+
+.spin-off-navigation button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
 }
