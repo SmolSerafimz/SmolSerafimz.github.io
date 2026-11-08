@@ -720,6 +720,10 @@ function showSpinOffs() {
 
     const wrapper = document.getElementById('site-wrapper');
     const box = document.getElementById('spin-offs-box');
+    const rightColumn = document.getElementById('right-column');
+
+    const comicArchive = document.getElementById('comic-archive-box');
+    const spinOffArchive = document.getElementById('spin-offs-archive-box');
 
     if (wrapper) {
         wrapper.classList.add('spin-offs-layout');
@@ -729,9 +733,19 @@ function showSpinOffs() {
         box.style.display = 'block';
     }
 
-    setActiveLink('spin-offs-link');
+    if (rightColumn) {
+        rightColumn.style.display = '';
+    }
 
-    populateSpinOffArchive();
+    if (comicArchive) {
+        comicArchive.style.display = 'none';
+    }
+
+    if (spinOffArchive) {
+        spinOffArchive.style.display = 'block';
+    }
+
+    setActiveLink('spin-offs-link');
 
     const params = new URLSearchParams(window.location.search);
     const requestedId = params.get('id');
@@ -744,7 +758,17 @@ function showSpinOffs() {
 
     if (id) {
         loadSpinOff(id, false);
+    } else {
+        currentSpinOff = null;
+
+        const content = document.getElementById('spin-offs-content');
+
+        if (content) {
+            content.textContent = 'No spin-offs have been added yet.';
+        }
     }
+
+    populateSpinOffArchive();
 
     window.scrollTo({
         top: 0,
@@ -765,9 +789,9 @@ function populateSpinOffArchive() {
 
     if (!ids.length) {
 
-        const message = document.createElement('p');
+        const message = document.createElement('li');
 
-        message.textContent = 'No spin-offs have been added yet.';
+        message.textContent = 'No spin-offs available yet.';
 
         archive.appendChild(message);
 
@@ -776,25 +800,31 @@ function populateSpinOffArchive() {
 
     ids.forEach(id => {
 
-        const entry = spinOffData[id];
+        const item = document.createElement('li');
 
-        const button = document.createElement('button');
+        const link = document.createElement('a');
 
-        button.type = 'button';
-        button.textContent = entry.title || id;
+        link.href = `comic.html?spin-offs&id=${encodeURIComponent(id)}`;
 
-        button.classList.toggle('active', id === currentSpinOff);
+        link.textContent = `${id}: ${spinOffData[id].title || id}`;
 
-        button.setAttribute(
-            'aria-pressed',
-            String(id === currentSpinOff)
-        );
+        if (id === currentSpinOff) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
 
-        button.addEventListener('click', () => {
+        link.addEventListener('click', event => {
+
+            event.preventDefault();
+
             loadSpinOff(id);
+
         });
 
-        archive.appendChild(button);
+        item.appendChild(link);
+
+        archive.appendChild(item);
+
     });
 }
 
@@ -820,11 +850,15 @@ function loadSpinOff(id, updateUrl = true) {
 
     content.replaceChildren();
 
+    // Title
+
     const title = document.createElement('h2');
 
     title.textContent = entry.title || id;
 
     content.appendChild(title);
+
+    // Artwork
 
     if (entry.image) {
 
@@ -837,38 +871,24 @@ function loadSpinOff(id, updateUrl = true) {
         content.appendChild(image);
     }
 
+    // Introduction box
+
     if (entry.intro) {
+
+        const introBox = document.createElement('div');
+
+        introBox.className = 'box spinoff-intro-box';
 
         const intro = document.createElement('p');
 
         intro.textContent = entry.intro;
 
-        content.appendChild(intro);
+        introBox.appendChild(intro);
+
+        content.appendChild(introBox);
     }
 
-    if (Array.isArray(entry.characters) && entry.characters.length) {
-
-        const characters = document.createElement('p');
-
-        characters.textContent =
-            `Characters: ${entry.characters.join(', ')}`;
-
-        content.appendChild(characters);
-    }
-
-    const info = entry.info || {};
-    const franchise = info['spinoff-franchise'];
-
-    if (franchise) {
-
-        const franchiseText = document.createElement('p');
-
-        franchiseText.textContent = `Franchise: ${franchise}`;
-
-        content.appendChild(franchiseText);
-    }
-
-    // Previous and Next navigation.
+    // Previous and Next navigation
 
     const ids = getSortedSpinOffIds();
     const index = ids.indexOf(id);
@@ -907,30 +927,10 @@ function loadSpinOff(id, updateUrl = true) {
 
     content.appendChild(navigation);
 
-    // Behind the Scenes section.
-
-    if (entry.behindTheScenes) {
-
-        const lore = document.createElement('section');
-
-        lore.className = 'episode-lore-box';
-
-        const heading = document.createElement('h3');
-
-        heading.textContent = 'Behind the Scenes';
-
-        const paragraph = document.createElement('p');
-
-        paragraph.textContent = entry.behindTheScenes;
-
-        lore.append(heading, paragraph);
-
-        content.appendChild(lore);
-    }
+    // Refresh archive selection
 
     populateSpinOffArchive();
 }
-
 
 // ==========================================
 // UPDATES PAGE
@@ -1076,6 +1076,9 @@ function showComic() {
     const latestUpdate = document.getElementById('latest-update');
     const rightColumn = document.getElementById('right-column');
 
+    const comicArchive = document.getElementById('comic-archive-box');
+    const spinOffArchive = document.getElementById('spin-offs-archive-box');
+
     if (comicBox) {
         comicBox.style.display = 'block';
     }
@@ -1086,6 +1089,14 @@ function showComic() {
 
     if (rightColumn) {
         rightColumn.style.display = '';
+    }
+
+    if (comicArchive) {
+        comicArchive.style.display = 'block';
+    }
+
+    if (spinOffArchive) {
+        spinOffArchive.style.display = 'none';
     }
 
     setActiveLink('comic-link');
