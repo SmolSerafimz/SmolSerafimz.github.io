@@ -1,4 +1,20 @@
 {
+         "033": {
+            "title": "Dragon day",
+            "image": "assets/033_1.webp",
+            "info": {
+                "season": 2,
+                "panels": 1,
+                "location": ["Sleepy Forest", "Southern Ridge"],
+                "previous": "032",
+                "next": null
+            },
+            "intro": "The Serafimz have found something new to have fun with, throwing food at the giant dragon for example. But Fluff needs the Dragon to be still so she can paint.",
+            "characters": ["Waffle", "Bun", "Fluff", "Cake", "Dragon"],
+            "plot": "The Serafimz are seen throwing fruit at the Dragon to eat, including a giant cake that Cake is bringing along. Fluff is shouting towards them not to distract the Dragon because she did not finish her art piece yet.",
+            "notableObjects": ["Dragon Painting"],
+            "behindTheScenes": "The dragon painting is artist's older artwork from 2010 he had on deviant art which he re-used here. It is portraying the same dragon too."
+        },
          "032": {
             "title": "The Alliance",
             "image": "assets/032_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 1,
                 "location": ["The Meadow", "Gnome Village"],
                 "previous": "031",
-                "next": null
+                "next": "033"
             },
             "intro": "Bun and Waffle have teamed up. Cake is certain that this will lead to no good.",
             "characters": ["Waffle", "Bun", "Fluff", "Cake"],
