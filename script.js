@@ -1206,6 +1206,10 @@ function setDailyQuote() {
 
 function initializeSite() {
 
+    if (document.getElementById('article-title')) {
+        return;
+    }
+    
     createStars();
 
     updateUniversalTicker();
