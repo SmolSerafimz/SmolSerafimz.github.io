@@ -1,4 +1,20 @@
 {
+         "034": {
+            "title": "Fire Fruit",
+            "image": "assets/034_1.webp",
+            "info": {
+                "season": 2,
+                "panels": 1,
+                "location": ["The Meadow"],
+                "previous": "033",
+                "next": null
+            },
+            "intro": "Bun found something interesting. A fruit it seems. She decided to show it to Fluff and the others.",
+            "characters": ["Waffle", "Bun", "Fluff", "Cake"],
+            "plot": "Bun found a pepper and has shown it to Fluff. Fluff stated that gnomes like those and that they are supposedly hot. Cake and Waffle ignored the warning and started to eat a bit of theirs. Bun ate one whole and stated it's nothing to worry about. But once she saw Cake and Waffle breathe fire merely for eating the tips, she braced for the worst. Later Bun, now completely charred, asks Fluff to eat one who decides to run away. Bun pursues giggling while Cake and Waffle are seen in the background drinking water and imitating a dragon.",
+            "notableObjects": [],
+            "behindTheScenes": "This episode sets up a running gag where they tend to chase each other whenever one finds a pepper."
+        },
          "033": {
             "title": "Dragon day",
             "image": "assets/033_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 1,
                 "location": ["Sleepy Forest", "Southern Ridge"],
                 "previous": "032",
-                "next": null
+                "next": "034"
             },
             "intro": "The Serafimz have found something new to have fun with, throwing food at the giant dragon for example. But Fluff needs the Dragon to be still so she can paint.",
             "characters": ["Waffle", "Bun", "Fluff", "Cake", "Dragon"],
