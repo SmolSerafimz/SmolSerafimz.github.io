@@ -1,4 +1,20 @@
 {
+         "035": {
+            "title": "Therapy",
+            "image": "assets/035_1.webp",
+            "info": {
+                "season": 2,
+                "panels": 1,
+                "location": ["The Meadow"],
+                "previous": "034",
+                "next": null
+            },
+            "intro": "Fluff meets Dr.Bun. Dino therapy is in session.",
+            "characters": ["Waffle", "Bun", "Fluff"],
+            "plot": "Fluff discovers Bun placing bandages on Waffle and wonders why Tinkehat even invented them. While also noting that harm is not possible in Cozy Realm. Bun explains that they have a purpose after all.",
+            "notableObjects": ["Bandages 50 pack"],
+            "behindTheScenes": "The first appearance of multi pack items in the comic. It was planned to be a running gag for a long time."
+        },
          "034": {
             "title": "Fire Fruit",
             "image": "assets/034_1.webp",
@@ -7,7 +23,7 @@
                 "panels": 1,
                 "location": ["The Meadow"],
                 "previous": "033",
-                "next": null
+                "next": "035"
             },
             "intro": "Bun found something interesting. A fruit it seems. She decided to show it to Fluff and the others.",
             "characters": ["Waffle", "Bun", "Fluff", "Cake"],
